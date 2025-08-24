@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
+
 import HomePage from "../../app/page";
 
 // Mock next/link

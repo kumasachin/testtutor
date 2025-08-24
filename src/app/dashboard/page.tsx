@@ -1,29 +1,91 @@
 "use client";
 
-import { useAuth } from "@/contexts/AuthContext";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+
+import { useAuth } from "@/contexts/AuthContext";
+
+interface UserStats {
+  totalTests: number;
+  averageScore: number;
+  timeSpent: number;
+  improvementRate: number;
+  recentActivity: Array<{
+    id: string;
+    testTitle: string;
+    domain: string;
+    score: number;
+    completedAt: string;
+    timeSpent: number;
+  }>;
+  domainPerformance: Array<{
+    name: string;
+    attempts: number;
+    averageScore: number;
+    bestScore: number;
+  }>;
+  monthlyProgress: Array<{
+    month: string;
+    attempts: number;
+    averageScore: number;
+  }>;
+  streaks: {
+    current: number;
+    longest: number;
+  };
+}
+
+interface Test {
+  id: string;
+  title: string;
+  domain: {
+    displayName: string;
+    name: string;
+  };
+  status: string;
+}
+
+const COLORS = ["#3B82F6", "#10B981", "#F59E0B", "#EF4444", "#8B5CF6"];
 
 export default function Dashboard() {
   const { user, isLoading, isAuthenticated, logout } = useAuth();
   const router = useRouter();
-  const [stats, setStats] = useState({
+  const [stats, setStats] = useState<UserStats>({
     totalTests: 0,
     averageScore: 0,
     timeSpent: 0,
     improvementRate: 0,
+    recentActivity: [],
+    domainPerformance: [],
+    monthlyProgress: [],
+    streaks: { current: 0, longest: 0 },
   });
+  const [availableTests, setAvailableTests] = useState<Test[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      router.push("/auth/login");
+      router.push("/login");
       return;
     }
 
     if (user) {
-      // Load user stats
-      fetchUserStats();
+      // Load user stats and available tests
+      Promise.all([fetchUserStats(), fetchAvailableTests()]).finally(() => {
+        setLoading(false);
+      });
     }
   }, [isLoading, isAuthenticated, user, router]);
 
@@ -47,12 +109,41 @@ export default function Dashboard() {
     }
   };
 
+  const fetchAvailableTests = async () => {
+    try {
+      const response = await fetch("/api/tests");
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          setAvailableTests(result.data.tests.slice(0, 5)); // Get first 5 tests
+        }
+      }
+    } catch (error) {
+      console.error("Failed to load available tests:", error);
+    }
+  };
+
   const handleLogout = async () => {
     await logout();
     router.push("/");
   };
 
-  if (isLoading) {
+  const formatTime = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+  };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
+
+  if (isLoading || loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
@@ -64,12 +155,6 @@ export default function Dashboard() {
     return null;
   }
 
-  const formatTime = (minutes: number) => {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -78,7 +163,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <Link href="/" className="text-2xl font-bold text-blue-600">
-                TestPlatform
+                TestTutor
               </Link>
               <nav className="hidden md:flex space-x-6">
                 <Link
@@ -91,15 +176,17 @@ export default function Dashboard() {
                   Dashboard
                 </Link>
                 <Link
-                  href="/profile"
+                  href="/contact"
                   className="text-gray-600 hover:text-blue-600"
                 >
-                  Profile
+                  Contact
                 </Link>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-gray-700">Welcome, {user.firstName}!</span>
+              <span className="text-gray-700">
+                Welcome, {user.firstName || user.email}!
+              </span>
               <button
                 onClick={handleLogout}
                 className="text-gray-600 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium"
@@ -116,7 +203,7 @@ export default function Dashboard() {
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Welcome back, {user.firstName}!
+            Welcome back, {user.firstName || user.email}!
           </h1>
           <p className="text-gray-600">
             Track your progress and continue improving your test scores.
@@ -124,7 +211,7 @@ export default function Dashboard() {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <div className="bg-white rounded-lg shadow-sm border p-6">
             <div className="flex items-center">
               <div className="p-3 rounded-full bg-blue-100">
@@ -227,51 +314,180 @@ export default function Dashboard() {
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Improvement</p>
                 <p className="text-2xl font-bold text-gray-900">
-                  +{stats.improvementRate}%
+                  {stats.improvementRate > 0 ? "+" : ""}
+                  {stats.improvementRate}%
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm border p-6">
+            <div className="flex items-center">
+              <div className="p-3 rounded-full bg-red-100">
+                <svg
+                  className="w-6 h-6 text-red-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+                  />
+                </svg>
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-600">
+                  Current Streak
+                </p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {stats.streaks.current} days
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Quick Actions */}
+        {/* Performance Charts */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          {/* Monthly Progress Chart */}
+          <div className="bg-white rounded-lg shadow-sm border p-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              Performance Over Time
+            </h2>
+            {stats.monthlyProgress.length > 0 ? (
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={stats.monthlyProgress}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="month"
+                      tickFormatter={(value) => {
+                        const [year, month] = value.split("-");
+                        return new Date(
+                          parseInt(year),
+                          parseInt(month) - 1
+                        ).toLocaleDateString("en-US", { month: "short" });
+                      }}
+                    />
+                    <YAxis domain={[0, 100]} />
+                    <Tooltip
+                      formatter={(value: number) => [
+                        `${value}%`,
+                        "Average Score",
+                      ]}
+                      labelFormatter={(label: string) => {
+                        const [year, month] = label.split("-");
+                        return new Date(
+                          parseInt(year),
+                          parseInt(month) - 1
+                        ).toLocaleDateString("en-US", {
+                          month: "long",
+                          year: "numeric",
+                        });
+                      }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="averageScore"
+                      stroke="#3B82F6"
+                      strokeWidth={3}
+                      dot={{ fill: "#3B82F6", strokeWidth: 2, r: 4 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            ) : (
+              <div className="h-64 flex items-center justify-center text-gray-500">
+                <p>Start taking tests to see your progress!</p>
+              </div>
+            )}
+          </div>
+
+          {/* Domain Performance Chart */}
+          <div className="bg-white rounded-lg shadow-sm border p-6">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
+              Performance by Domain
+            </h2>
+            {stats.domainPerformance.length > 0 ? (
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={stats.domainPerformance}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="name"
+                      tick={{ fontSize: 12 }}
+                      interval={0}
+                      angle={-45}
+                      textAnchor="end"
+                      height={60}
+                    />
+                    <YAxis domain={[0, 100]} />
+                    <Tooltip
+                      formatter={(value: number) => [
+                        `${value}%`,
+                        "Average Score",
+                      ]}
+                    />
+                    <Bar dataKey="averageScore" fill="#10B981" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            ) : (
+              <div className="h-64 flex items-center justify-center text-gray-500">
+                <p>Take tests in different domains to see comparison!</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Continue Learning */}
+          {/* Available Tests */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-sm border p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-4">
-                Continue Learning
+                Available Tests
               </h2>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
-                  <div>
-                    <h3 className="font-medium text-blue-900">
-                      JavaScript Fundamentals
-                    </h3>
-                    <p className="text-sm text-blue-700">
-                      Progress: 7/10 questions completed
-                    </p>
+              {availableTests.length > 0 ? (
+                <div className="space-y-4">
+                  {availableTests.map((test) => (
+                    <div
+                      key={test.id}
+                      className="flex items-center justify-between p-4 bg-blue-50 rounded-lg"
+                    >
+                      <div>
+                        <h3 className="font-medium text-blue-900">
+                          {test.title}
+                        </h3>
+                        <p className="text-sm text-blue-700">
+                          Domain: {test.domain.displayName}
+                        </p>
+                      </div>
+                      <Link
+                        href={`/tests/${test.id}`}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        Start Test
+                      </Link>
+                    </div>
+                  ))}
+                  <div className="text-center pt-4">
+                    <Link
+                      href="/tests"
+                      className="text-blue-600 hover:text-blue-800 font-medium"
+                    >
+                      View All Tests →
+                    </Link>
                   </div>
-                  <Link
-                    href="/tests/javascript-fundamentals"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                  >
-                    Continue
-                  </Link>
                 </div>
-                <div className="flex items-center justify-between p-4 bg-green-50 rounded-lg">
-                  <div>
-                    <h3 className="font-medium text-green-900">React Basics</h3>
-                    <p className="text-sm text-green-700">New test available</p>
-                  </div>
-                  <Link
-                    href="/tests/react-basics"
-                    className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                  >
-                    Start
-                  </Link>
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  <p>No tests available. Check back later!</p>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -281,141 +497,157 @@ export default function Dashboard() {
               <h2 className="text-xl font-bold text-gray-900 mb-4">
                 Recent Activity
               </h2>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                      Completed Python Quiz
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      2 hours ago • Score: 85%
-                    </p>
-                  </div>
+              {stats.recentActivity.length > 0 ? (
+                <div className="space-y-3">
+                  {stats.recentActivity.slice(0, 5).map((activity) => (
+                    <div
+                      key={activity.id}
+                      className="flex items-center space-x-3"
+                    >
+                      <div
+                        className={`w-2 h-2 rounded-full ${
+                          activity.score >= 80
+                            ? "bg-green-500"
+                            : activity.score >= 60
+                              ? "bg-yellow-500"
+                              : "bg-red-500"
+                        }`}
+                      ></div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-900">
+                          {activity.testTitle}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {formatDate(activity.completedAt)} • Score:{" "}
+                          {activity.score}% • {activity.domain}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                      Started Math Practice
-                    </p>
-                    <p className="text-xs text-gray-500">1 day ago</p>
-                  </div>
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  <p>
+                    No recent activity. Start taking tests to see your progress!
+                  </p>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-gray-900">
-                      Completed HTML & CSS
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      3 days ago • Score: 92%
-                    </p>
-                  </div>
+              )}
+            </div>
+
+            {/* Study Streaks */}
+            <div className="bg-white rounded-lg shadow-sm border p-6 mt-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">
+                Study Streaks
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600">Current Streak</span>
+                  <span className="font-bold text-blue-600">
+                    {stats.streaks.current} days
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-600">Longest Streak</span>
+                  <span className="font-bold text-purple-600">
+                    {stats.streaks.longest} days
+                  </span>
+                </div>
+                <div className="pt-2 border-t">
+                  <p className="text-sm text-gray-500">
+                    Keep practicing daily to maintain your streak!
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Quick Test Categories */}
-        <div className="mt-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-6">
-            Browse Test Categories
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link
-              href="/tests/programming"
-              className="p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow text-center"
-            >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+        {/* Domain Performance Details */}
+        {stats.domainPerformance.length > 0 && (
+          <div className="mt-8">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">
+              Domain Performance Details
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {stats.domainPerformance.map((domain, index) => (
+                <div
+                  key={domain.name}
+                  className="bg-white rounded-lg shadow-sm border p-6"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-900">Programming</h3>
-              <p className="text-sm text-gray-500 mt-1">25 tests</p>
-            </Link>
+                  <div className="flex items-center mb-4">
+                    <div
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4`}
+                      style={{
+                        backgroundColor: COLORS[index % COLORS.length] + "20",
+                      }}
+                    >
+                      <div
+                        className={`w-6 h-6 rounded`}
+                        style={{
+                          backgroundColor: COLORS[index % COLORS.length],
+                        }}
+                      ></div>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900">{domain.name}</h3>
+                      <p className="text-sm text-gray-500">
+                        {domain.attempts} attempts
+                      </p>
+                    </div>
+                  </div>
 
-            <Link
-              href="/tests/mathematics"
-              className="p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow text-center"
-            >
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                <svg
-                  className="w-6 h-6 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-900">Mathematics</h3>
-              <p className="text-sm text-gray-500 mt-1">18 tests</p>
-            </Link>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Average Score</span>
+                      <span className="font-semibold">
+                        {domain.averageScore}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Best Score</span>
+                      <span className="font-semibold text-green-600">
+                        {domain.bestScore}%
+                      </span>
+                    </div>
 
-            <Link
-              href="/tests/science"
-              className="p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow text-center"
-            >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                <svg
-                  className="w-6 h-6 text-purple-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-900">Science</h3>
-              <p className="text-sm text-gray-500 mt-1">22 tests</p>
-            </Link>
-
-            <Link
-              href="/tests/language-arts"
-              className="p-6 bg-white rounded-lg shadow-sm border hover:shadow-md transition-shadow text-center"
-            >
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                <svg
-                  className="w-6 h-6 text-yellow-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-medium text-gray-900">Language Arts</h3>
-              <p className="text-sm text-gray-500 mt-1">15 tests</p>
-            </Link>
+                    {/* Progress bar */}
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="h-2 rounded-full transition-all duration-300"
+                        style={{
+                          width: `${domain.averageScore}%`,
+                          backgroundColor: COLORS[index % COLORS.length],
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+        )}
+
+        {/* Quick Actions */}
+        <div className="mt-8 text-center">
+          <Link
+            href="/tests"
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              />
+            </svg>
+            Browse All Tests
+          </Link>
         </div>
       </main>
     </div>

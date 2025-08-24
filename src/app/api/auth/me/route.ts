@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 // Mock user database (replace with actual database)
-let users: any[] = [];
+const users: any[] = [];
 
 export async function GET(request: NextRequest) {
   try {

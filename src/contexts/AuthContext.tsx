@@ -1,5 +1,7 @@
 "use client";
 
+import React, { createContext, useContext, useEffect, useState } from "react";
+
 import type {
   AuthContextType,
   LoginCredentials,
@@ -7,7 +9,6 @@ import type {
   User,
   UserPreferences,
 } from "@/lib/auth-types";
-import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
