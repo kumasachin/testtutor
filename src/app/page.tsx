@@ -491,61 +491,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Use TestTutor?
-            </h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Simple, effective test preparation that actually works
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="h-16 w-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-3xl">🎯</span>
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Real Questions
-              </h4>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Questions based on official exam patterns and syllabus so you
-                know what to expect on test day
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="h-16 w-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-3xl">�</span>
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Study Anywhere
-              </h4>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Use on any device, anytime. Study at your own pace wherever you
-                are
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="h-16 w-16 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-3xl">📊</span>
-              </div>
-              <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                See Your Progress
-              </h4>
-              <p className="text-gray-600 text-center leading-relaxed">
-                Keep track of your improvement with simple stats and feedback on
-                your weak areas
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
