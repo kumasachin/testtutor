@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import type {
-  TestSettings,
   QuestionResult,
   TestResults,
+  TestSettings,
 } from "@/lib/test-types";
 
 interface Question {
@@ -51,6 +51,7 @@ export default function TestTakingInterface({
   );
   const [showResult, setShowResult] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
 
   const [settings] = useState<TestSettings>({
     showResultsMode: "end",
@@ -168,6 +169,11 @@ export default function TestTakingInterface({
         ...prev,
         [questionId]: [optionIndex],
       }));
+
+      // Show immediate feedback for single choice questions
+      if (settings.showResultsMode === "immediate") {
+        showQuestionResult();
+      }
     } else if (currentQuestion.type === "MULTIPLE_CHOICE") {
       setAnswers((prev) => {
         const currentAnswers = prev[questionId] || [];
@@ -250,16 +256,34 @@ export default function TestTakingInterface({
       {/* Header */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">{test.title}</h1>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">{test.title}</h1>
+            <p className="text-sm text-gray-600 mt-1">
+              {Object.keys(answers).length === 0
+                ? "🌟 You've got this! Take your time and read each question carefully. Every expert was once a beginner!"
+                : Object.keys(answers).length === test.questions.length
+                  ? "🎉 Fantastic! All questions answered! You're doing amazing - ready to submit when you are."
+                  : Object.keys(answers).length === 1
+                    ? "✨ Great start! You're building momentum - keep it up!"
+                    : Object.keys(answers).length >= test.questions.length * 0.8
+                      ? `� You're on fire! Just ${test.questions.length - Object.keys(answers).length} more question${test.questions.length - Object.keys(answers).length === 1 ? '' : 's'} to go!`
+                      : `💪 Excellent progress! ${test.questions.length - Object.keys(answers).length} more to go - you're doing great!`}
+            </p>
+          </div>
           {timeRemaining !== null && (
             <div
-              className={`text-lg font-mono px-4 py-2 rounded-lg ${
+              className={`text-lg font-mono px-4 py-2 rounded-lg flex items-center gap-2 ${
                 timeRemaining <= 300
-                  ? "bg-red-100 text-red-600"
-                  : "bg-blue-100 text-blue-600"
+                  ? "bg-red-100 text-red-600 animate-pulse"
+                  : timeRemaining <= 600
+                    ? "bg-amber-100 text-amber-600"
+                    : "bg-blue-100 text-blue-600"
               }`}
             >
-              ⏱️ {formatTime(timeRemaining)}
+              <span>{timeRemaining <= 300 ? "⚠️" : timeRemaining <= 600 ? "⏰" : "⏱️"}</span>
+              <span>{formatTime(timeRemaining)}</span>
+              {timeRemaining <= 300 && <span className="text-xs font-bold">Time's running out!</span>}
+              {timeRemaining <= 60 && <span className="text-xs">🏃‍♂️ Final sprint!</span>}
             </div>
           )}
         </div>
@@ -268,33 +292,101 @@ export default function TestTakingInterface({
           <span>
             Question {currentQuestionIndex + 1} of {test.questions.length}
           </span>
-          <span>{Object.keys(answers).length} answered</span>
+          <span className="flex items-center gap-2">
+            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+              ✅ {Object.keys(answers).length} answered
+            </span>
+            {Object.keys(answers).length < test.questions.length && (
+              <span className="text-gray-500">
+                • {test.questions.length - Object.keys(answers).length}{" "}
+                {test.questions.length - Object.keys(answers).length === 1 ? "question" : "questions"} remaining
+              </span>
+            )}
+            {Object.keys(answers).length > 0 && Object.keys(answers).length < test.questions.length && (
+              <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full animate-bounce">
+                🌟 Keep going!
+              </span>
+            )}
+          </span>
         </div>
 
         {/* Progress Bar */}
-        <div className="mt-3 w-full bg-gray-200 rounded-full h-2">
-          <div
-            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-            style={{
-              width: `${
-                ((currentQuestionIndex + 1) / test.questions.length) * 100
-              }%`,
-            }}
-          ></div>
+        <div className="mt-3">
+          <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
+            <span>Progress</span>
+            <span>
+              {Math.round(
+                (Object.keys(answers).length / test.questions.length) * 100
+              )}
+              % complete
+            </span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-3 relative overflow-hidden">
+            <div
+              className={`h-3 rounded-full transition-all duration-500 ease-out ${
+                Object.keys(answers).length === test.questions.length
+                  ? "bg-gradient-to-r from-green-400 via-green-500 to-green-600 shadow-lg"
+                  : Object.keys(answers).length >= test.questions.length * 0.75
+                    ? "bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+                    : Object.keys(answers).length >= test.questions.length * 0.5
+                      ? "bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
+                      : "bg-gradient-to-r from-blue-400 to-blue-600"
+              }`}
+              role="progressbar"
+              aria-valuenow={Math.round(
+                (Object.keys(answers).length / test.questions.length) * 100
+              )}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              style={{
+                width: `${
+                  (Object.keys(answers).length / test.questions.length) * 100
+                }%`,
+              }}
+            >
+              {Object.keys(answers).length === test.questions.length && (
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-40 animate-pulse"></div>
+              )}
+              {Object.keys(answers).length >= test.questions.length * 0.75 && Object.keys(answers).length < test.questions.length && (
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-30 animate-pulse"></div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Question Card */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-6">
         <div className="mb-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            {currentQuestion.stem}
-          </h2>
-          <p className="text-sm text-gray-500">
-            {currentQuestion.type === "MULTIPLE_CHOICE"
-              ? "Select all correct answers"
-              : "Select one answer"}
-          </p>
+          <div className="flex items-start justify-between mb-4">
+            <h2 className="text-xl font-semibold text-gray-900 flex-1">
+              {currentQuestion.stem}
+            </h2>
+            <span className="ml-4 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+              {currentQuestion.points}{" "}
+              {currentQuestion.points === 1 ? "point" : "points"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <p className="text-sm text-gray-500">
+              {currentQuestion.type === "MULTIPLE_CHOICE"
+                ? "🔍 Select all correct answers - multiple choices may be right!"
+                : currentQuestion.type === "TRUE_FALSE"
+                  ? "🤔 Is this statement true or false? Think carefully!"
+                  : "🎯 Choose the best answer from the options below"}
+            </p>
+            {userAnswer.length === 0 && (
+              <span className="text-xs text-amber-600 bg-amber-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span className="animate-pulse">💭</span>
+                Answer required to continue
+              </span>
+            )}
+            {userAnswer.length > 0 && (
+              <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full flex items-center gap-1">
+                ✨ Great choice! Ready to move on?
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Answer Options */}
@@ -357,12 +449,49 @@ export default function TestTakingInterface({
           })}
         </div>
 
+        {/* General Feedback for Immediate Mode */}
+        {showResult && settings.showResultsMode === "immediate" && (
+          <div className="mt-6 p-4 rounded-lg text-center">
+            {(() => {
+              const result = calculateQuestionResult(
+                currentQuestion,
+                userAnswer
+              );
+              return (
+                <div
+                  className={`space-y-2 ${result.isCorrect ? "bg-green-50 border border-green-200" : "bg-red-50 border border-red-200"}`}
+                >
+                  <div
+                    className={`text-2xl ${result.isCorrect ? "text-green-600" : "text-red-600"}`}
+                  >
+                    {result.isCorrect ? "🎉" : "😔"}
+                  </div>
+                  <div
+                    className={`text-lg font-semibold ${result.isCorrect ? "text-green-600" : "text-red-600"}`}
+                  >
+                    {result.isCorrect
+                      ? "🎉 Excellent! That's absolutely correct!"
+                      : "🤗 Not quite right, but hey - learning is a journey!"}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {result.isCorrect
+                      ? `Amazing! You earned ${currentQuestion.points} ${currentQuestion.points === 1 ? "point" : "points"}! 🌟`
+                      : "Don't worry - every mistake is a step closer to mastery! 💪"}
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        )}
+
         {/* Explanation */}
         {showResult &&
           settings.showExplanations &&
           currentQuestion.explanation && (
             <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <h4 className="font-semibold text-blue-900 mb-2">Explanation:</h4>
+              <h4 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+                💡 Here's the science behind it!
+              </h4>
               <p className="text-blue-800">{currentQuestion.explanation}</p>
             </div>
           )}
@@ -373,12 +502,28 @@ export default function TestTakingInterface({
         <button
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
-          className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
         >
           ← Previous
         </button>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
+          {/* Progress encouragement */}
+          {!showResult && Object.keys(answers).length > 0 && (
+            <div className="text-sm text-gray-500 hidden sm:block">
+              🚀 {Math.round(
+                (Object.keys(answers).length / test.questions.length) * 100
+              )}
+              % complete!
+              {Object.keys(answers).length === test.questions.length - 1 &&
+                " 🏃‍♂️ One more question - you're almost there!"}
+              {Object.keys(answers).length >= test.questions.length * 0.8 && Object.keys(answers).length < test.questions.length - 1 &&
+                " 🔥 You're crushing it!"}
+              {Object.keys(answers).length >= test.questions.length * 0.5 && Object.keys(answers).length < test.questions.length * 0.8 &&
+                " 💪 Halfway there - keep the momentum going!"}
+            </div>
+          )}
+
           {showResult ? (
             <button
               onClick={() => {
@@ -389,33 +534,96 @@ export default function TestTakingInterface({
                   setCurrentQuestionIndex((prev) => prev + 1);
                 }
               }}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
             >
-              {isLastQuestion ? "Finish Test" : "Continue →"}
+              {isLastQuestion ? "🏁 Finish Test" : "Continue →"}
             </button>
           ) : (
             <>
               <button
                 onClick={handleNext}
                 disabled={userAnswer.length === 0}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
-                {isLastQuestion ? "Finish Test" : "Next →"}
+                {isLastQuestion ? "🏁 Finish Test" : "Next →"}
               </button>
 
-              {isLastQuestion && (
+              {isLastQuestion && userAnswer.length > 0 && (
                 <button
-                  onClick={handleSubmitTest}
+                  onClick={() => setShowConfirmSubmit(true)}
                   disabled={isSubmitting}
-                  className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50"
+                  className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 flex items-center gap-2"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Test"}
+                  {isSubmitting ? "⏳ Submitting..." : "✅ Submit Test"}
                 </button>
               )}
             </>
           )}
         </div>
       </div>
+
+      {/* Confirmation Dialog */}
+      {showConfirmSubmit && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 shadow-xl">
+            <div className="text-center mb-4">
+              <div className="text-4xl mb-2">🎯</div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Ready to Submit Your Amazing Work?
+              </h3>
+              <p className="text-sm text-gray-600 mt-1">
+                Take a moment to feel proud - you've put in great effort! 🌟
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4 mb-6">
+              <div className="text-sm text-gray-600 space-y-1">
+                <div className="flex justify-between">
+                  <span>Questions answered:</span>
+                  <span className="font-medium">
+                    {Object.keys(answers).length} of {test.questions.length}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Progress:</span>
+                  <span className="font-medium">
+                    {Math.round(
+                      (Object.keys(answers).length / test.questions.length) *
+                        100
+                    )}
+                    %
+                  </span>
+                </div>
+                {Object.keys(answers).length < test.questions.length && (
+                  <div className="text-amber-600 text-xs mt-2 flex items-center gap-1">
+                    <span>⚠️</span>
+                    <span>You have unanswered questions. That's okay though - you can still submit if you're ready!</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            <p className="text-gray-600 mb-6 text-center">
+              Once submitted, you won't be able to make any changes. Take a deep breath - you've prepared well! 🌟
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowConfirmSubmit(false)}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-2 transition-colors"
+              >
+                📝 Take Another Look
+              </button>
+              <button
+                onClick={() => {
+                  setShowConfirmSubmit(false);
+                  handleSubmitTest();
+                }}
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 flex items-center justify-center gap-2 transition-all shadow-lg"
+              >
+                🚀 Submit with Confidence!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

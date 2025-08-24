@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import type { TestResults, QuestionResult } from "@/lib/test-types";
+import type { QuestionResult, TestResults } from "@/lib/test-types";
 
 interface TestResultsDisplayProps {
   results: TestResults;

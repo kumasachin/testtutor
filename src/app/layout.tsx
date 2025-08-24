@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/contexts/AuthContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ExamKit - Online Exam Platform",
-  description: "Create, manage, and take exams online with approval workflows",
+  title: "TestPlatform - Online Test Practice Platform",
+  description: "Take practice tests, track your progress, and build confidence",
 };
 
 export default function RootLayout({
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <div className="min-h-screen bg-gray-50">{children}</div>
+        <AuthProvider>
+          <div className="min-h-screen bg-gray-50">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );
