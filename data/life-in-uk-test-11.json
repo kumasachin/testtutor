@@ -1,0 +1,304 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Post-War Britain & Social Change",
+  "testDescription": "Comprehensive test covering the period from 1950s to 1980s, including social changes, immigration, cultural developments, politics, and economic transformations in modern Britain.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Elizabeth II became queen in which year?",
+      "options": [
+        { "label": "1951", "isCorrect": false },
+        { "label": "1952", "isCorrect": true },
+        { "label": "1953", "isCorrect": false },
+        { "label": "1954", "isCorrect": false }
+      ],
+      "explanation": "Elizabeth II became queen in 1952 following the death of her father, King George VI. Her coronation was in 1953.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["elizabeth-ii", "1952", "accession"]
+    },
+    {
+      "stem": "The coronation of Elizabeth II was televised.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Elizabeth II's coronation in 1953 was the first major royal event to be televised, watched by millions worldwide.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["coronation", "1953", "television"]
+    },
+    {
+      "stem": "Which ship brought the first large group of Caribbean immigrants to Britain?",
+      "options": [
+        { "label": "HMS Victory", "isCorrect": false },
+        { "label": "Empire Windrush", "isCorrect": true },
+        { "label": "RMS Queen Mary", "isCorrect": false },
+        { "label": "SS Great Britain", "isCorrect": false }
+      ],
+      "explanation": "The Empire Windrush brought 492 Caribbean passengers to Britain in 1948, marking the beginning of large-scale Caribbean immigration.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["empire-windrush", "caribbean-immigration", "1948"]
+    },
+    {
+      "stem": "The Windrush generation settled mainly in which areas?",
+      "options": [
+        { "label": "London", "isCorrect": true },
+        { "label": "Birmingham", "isCorrect": true },
+        { "label": "Manchester", "isCorrect": true },
+        { "label": "Edinburgh", "isCorrect": false }
+      ],
+      "explanation": "Caribbean immigrants typically settled in London, Birmingham, Manchester, and other industrial cities where work was available.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["windrush-generation", "settlement", "cities"]
+    },
+    {
+      "stem": "The 1960s were known as the 'Swinging Sixties'.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The 1960s were called the 'Swinging Sixties' due to cultural revolution, fashion, music, and social liberation.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["swinging-sixties", "1960s", "culture"]
+    },
+    {
+      "stem": "Which band became internationally famous in the 1960s?",
+      "options": [
+        { "label": "The Beatles", "isCorrect": true },
+        { "label": "The Rolling Stones", "isCorrect": true },
+        { "label": "The Who", "isCorrect": true },
+        { "label": "Oasis", "isCorrect": false }
+      ],
+      "explanation": "The Beatles, Rolling Stones, and The Who all became famous in the 1960s. Oasis came much later in the 1990s.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["beatles", "rolling-stones", "1960s-music"]
+    },
+    {
+      "stem": "Mary Quant is famous for designing what?",
+      "options": [
+        { "label": "The mini skirt", "isCorrect": true },
+        { "label": "The wedding dress", "isCorrect": false },
+        { "label": "School uniforms", "isCorrect": false },
+        { "label": "Military uniforms", "isCorrect": false }
+      ],
+      "explanation": "Mary Quant is credited with popularizing the mini skirt in the 1960s, revolutionizing women's fashion.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["mary-quant", "mini-skirt", "fashion"]
+    },
+    {
+      "stem": "Comprehensive schools were introduced to replace the 11-plus system.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Comprehensive schools were introduced in the 1960s and 1970s to provide equal education opportunities for all children.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["comprehensive-schools", "11-plus", "education"]
+    },
+    {
+      "stem": "What was the purpose of comprehensive schools?",
+      "options": [
+        { "label": "To provide equal opportunities", "isCorrect": true },
+        { "label": "To end selection at age 11", "isCorrect": true },
+        { "label": "To educate all abilities together", "isCorrect": true },
+        {
+          "label": "To prepare students for university only",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Comprehensive schools aimed to provide equal opportunities, end 11+ selection, and educate children of all abilities together.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["comprehensive-schools", "equal-opportunities", "education"]
+    },
+    {
+      "stem": "The Open University was founded in which decade?",
+      "options": [
+        { "label": "1950s", "isCorrect": false },
+        { "label": "1960s", "isCorrect": true },
+        { "label": "1970s", "isCorrect": false },
+        { "label": "1980s", "isCorrect": false }
+      ],
+      "explanation": "The Open University was founded in 1969 to provide university education through distance learning and television.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["open-university", "1960s", "distance-learning"]
+    },
+    {
+      "stem": "Capital punishment was abolished in Britain in the 1960s.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Capital punishment was suspended in 1965 and formally abolished in 1969, representing a major social reform.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["capital-punishment", "abolition", "1960s"]
+    },
+    {
+      "stem": "Homosexuality was decriminalized in England and Wales in 1967.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Sexual Offences Act 1967 decriminalized homosexuality between consenting adults in private in England and Wales.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["homosexuality", "decriminalization", "1967"]
+    },
+    {
+      "stem": "Who was the first female Prime Minister of the UK?",
+      "options": [
+        { "label": "Margaret Thatcher", "isCorrect": true },
+        { "label": "Theresa May", "isCorrect": false },
+        { "label": "Mary Wilson", "isCorrect": false },
+        { "label": "Barbara Castle", "isCorrect": false }
+      ],
+      "explanation": "Margaret Thatcher became the first female Prime Minister in 1979, serving until 1990.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["margaret-thatcher", "first-female-pm", "1979"]
+    },
+    {
+      "stem": "The three-day week occurred in which decade?",
+      "options": [
+        { "label": "1960s", "isCorrect": false },
+        { "label": "1970s", "isCorrect": true },
+        { "label": "1980s", "isCorrect": false },
+        { "label": "1990s", "isCorrect": false }
+      ],
+      "explanation": "The three-day week occurred in 1974 during Edward Heath's government due to industrial disputes and power shortages.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["three-day-week", "1970s", "industrial-disputes"]
+    },
+    {
+      "stem": "Britain joined the European Economic Community (EEC) in 1973.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Britain joined the EEC in 1973 under Edward Heath's Conservative government, after previous applications were rejected.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["eec", "1973", "europe"]
+    },
+    {
+      "stem": "What were the main issues of the 1970s?",
+      "options": [
+        { "label": "High inflation", "isCorrect": true },
+        { "label": "Industrial strikes", "isCorrect": true },
+        { "label": "Power shortages", "isCorrect": true },
+        { "label": "World War III", "isCorrect": false }
+      ],
+      "explanation": "The 1970s were marked by high inflation, frequent strikes, and power shortages. There was no World War III.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["1970s-problems", "inflation", "strikes"]
+    },
+    {
+      "stem": "The Winter of Discontent occurred in 1978-79.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Winter of Discontent (1978-79) saw widespread strikes by public sector workers, helping to bring down Callaghan's government.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["winter-of-discontent", "1978-79", "strikes"]
+    },
+    {
+      "stem": "Which industries were privatized in the 1980s?",
+      "options": [
+        { "label": "Telecommunications (BT)", "isCorrect": true },
+        { "label": "Gas", "isCorrect": true },
+        { "label": "Water", "isCorrect": true },
+        { "label": "NHS", "isCorrect": false }
+      ],
+      "explanation": "Thatcher privatized many industries including BT, gas, and water companies. The NHS remained public.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["privatization", "1980s", "thatcher"]
+    },
+    {
+      "stem": "The Falklands War occurred in 1982.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Falklands War was fought between Britain and Argentina in 1982, lasting 74 days.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["falklands-war", "1982", "argentina"]
+    },
+    {
+      "stem": "Immigration from which regions increased in the 1960s-70s?",
+      "options": [
+        { "label": "India and Pakistan", "isCorrect": true },
+        { "label": "East Africa (Uganda)", "isCorrect": true },
+        { "label": "Bangladesh", "isCorrect": true },
+        { "label": "Australia", "isCorrect": false }
+      ],
+      "explanation": "Immigration increased from India, Pakistan, Bangladesh, and East Africa (including Ugandan Asians expelled in 1972).",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["immigration", "india", "pakistan", "uganda"]
+    },
+    {
+      "stem": "The Race Relations Act was passed to prevent discrimination.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Race Relations Acts (1965, 1968, 1976) were passed to prevent racial discrimination and promote equality.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["race-relations-act", "discrimination", "equality"]
+    },
+    {
+      "stem": "Which festivals celebrated diversity in British culture?",
+      "options": [
+        { "label": "Notting Hill Carnival", "isCorrect": true },
+        { "label": "Edinburgh Festival", "isCorrect": false },
+        { "label": "Glastonbury", "isCorrect": false },
+        { "label": "Royal Ascot", "isCorrect": false }
+      ],
+      "explanation": "Notting Hill Carnival, started in the 1960s, celebrates Caribbean culture and became Europe's largest street festival.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["notting-hill-carnival", "caribbean-culture", "diversity"]
+    },
+    {
+      "stem": "Decimal currency was introduced in 1971.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Decimal Day (15 February 1971) introduced new currency with 100 new pence to the pound, replacing the old £sd system.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["decimal-currency", "1971", "decimal-day"]
+    },
+    {
+      "stem": "What replaced the old currency system in 1971?",
+      "options": [
+        { "label": "100 new pence to the pound", "isCorrect": true },
+        { "label": "240 pence to the pound", "isCorrect": false },
+        { "label": "50 new pence to the pound", "isCorrect": false },
+        { "label": "1000 pence to the pound", "isCorrect": false }
+      ],
+      "explanation": "The decimal system introduced 100 new pence to the pound, replacing the old system of 240 old pence (20 shillings) to the pound.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["decimal-currency", "100-pence", "currency-reform"]
+    }
+  ]
+}

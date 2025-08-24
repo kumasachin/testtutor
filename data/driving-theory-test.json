@@ -1,0 +1,72 @@
+{
+  "domainName": "Driving Theory Test",
+  "testTitle": "UK Driving Theory Test - Highway Code",
+  "testDescription": "Practice questions covering UK Highway Code rules, road signs, and driving regulations.",
+  "passPercentage": 86,
+  "timeLimit": 57,
+  "questions": [
+    {
+      "stem": "What does a circular blue sign with a white arrow pointing left mean?",
+      "options": [
+        { "label": "Turn left ahead", "isCorrect": false },
+        { "label": "No left turn", "isCorrect": false },
+        { "label": "Compulsory left turn", "isCorrect": true },
+        { "label": "Left turn recommended", "isCorrect": false }
+      ],
+      "explanation": "A circular blue sign with a white arrow indicates a compulsory direction. All traffic must follow the direction shown by the arrow.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["road-signs", "mandatory", "highway-code"]
+    },
+    {
+      "stem": "What is the national speed limit on a dual carriageway for cars?",
+      "options": [
+        { "label": "60 mph", "isCorrect": false },
+        { "label": "70 mph", "isCorrect": true },
+        { "label": "80 mph", "isCorrect": false },
+        { "label": "50 mph", "isCorrect": false }
+      ],
+      "explanation": "The national speed limit for cars on dual carriageways is 70 mph, the same as on motorways.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["speed-limits", "dual-carriageway", "basic"]
+    },
+    {
+      "stem": "When should you use hazard warning lights?",
+      "options": [
+        { "label": "When your vehicle has broken down", "isCorrect": true },
+        { "label": "When parking illegally", "isCorrect": false },
+        { "label": "To thank another driver", "isCorrect": false },
+        { "label": "When driving in heavy rain", "isCorrect": false }
+      ],
+      "explanation": "Hazard warning lights should be used when your vehicle is stationary and causing an obstruction or danger to other road users.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["hazard-lights", "breakdowns", "safety"]
+    },
+    {
+      "stem": "You must NOT sound your horn between what hours in a built-up area?",
+      "options": [
+        { "label": "10:00 PM - 6:00 AM", "isCorrect": false },
+        { "label": "11:30 PM - 7:00 AM", "isCorrect": true },
+        { "label": "11:00 PM - 6:00 AM", "isCorrect": false },
+        { "label": "12:00 AM - 8:00 AM", "isCorrect": false }
+      ],
+      "explanation": "You must not sound your horn in a built-up area between 11:30 PM and 7:00 AM, except in emergency situations.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["horn", "built-up-area", "regulations"]
+    },
+    {
+      "stem": "A red triangle warning sign shows there is a steep hill ahead.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "Red triangular warning signs alert drivers to hazards ahead. A steep hill sign shows the percentage gradient (e.g., 20% or 1 in 5).",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["warning-signs", "hills", "gradients"]
+    }
+  ]
+}

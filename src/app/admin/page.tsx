@@ -44,7 +44,9 @@ export default function AdminDashboard() {
     totalAttempts: 0,
   });
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<"overview" | "tests" | "users">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "tests" | "users">(
+    "overview"
+  );
 
   useEffect(() => {
     loadDashboardData();
@@ -107,7 +109,10 @@ export default function AdminDashboard() {
     }
   };
 
-  const handleTestAction = async (testId: string, action: "approve" | "reject") => {
+  const handleTestAction = async (
+    testId: string,
+    action: "approve" | "reject"
+  ) => {
     try {
       // In a real app, this would be an API call
       console.log(`${action} test ${testId}`);
@@ -127,7 +132,9 @@ export default function AdminDashboard() {
     };
 
     return (
-      <span className={`px-2 py-1 rounded-full text-xs font-medium ${styles[status]}`}>
+      <span
+        className={`px-2 py-1 rounded-full text-xs font-medium ${styles[status]}`}
+      >
         {status.replace("_", " ")}
       </span>
     );
@@ -152,7 +159,9 @@ export default function AdminDashboard() {
                 <div className="h-8 w-8 bg-blue-600 rounded flex items-center justify-center">
                   <span className="text-white font-bold text-lg">E</span>
                 </div>
-                <h1 className="text-xl font-bold text-gray-900">ExamKit Admin</h1>
+                <h1 className="text-xl font-bold text-gray-900">
+                  ExamKit Admin
+                </h1>
               </Link>
             </div>
 
@@ -172,7 +181,9 @@ export default function AdminDashboard() {
         {/* Page Title */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900">Admin Dashboard</h2>
-          <p className="text-gray-600 mt-2">Manage tests, users, and platform content</p>
+          <p className="text-gray-600 mt-2">
+            Manage tests, users, and platform content
+          </p>
         </div>
 
         {/* Stats Cards */}
@@ -184,7 +195,9 @@ export default function AdminDashboard() {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-500">Total Tests</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.totalTests}</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {stats.totalTests}
+                </p>
               </div>
             </div>
           </div>
@@ -195,8 +208,12 @@ export default function AdminDashboard() {
                 <span className="text-yellow-600 text-lg">⏳</span>
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Pending Review</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.pendingReview}</p>
+                <p className="text-sm font-medium text-gray-500">
+                  Pending Review
+                </p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {stats.pendingReview}
+                </p>
               </div>
             </div>
           </div>
@@ -208,7 +225,9 @@ export default function AdminDashboard() {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-500">Total Users</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.totalUsers}</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {stats.totalUsers}
+                </p>
               </div>
             </div>
           </div>
@@ -219,8 +238,12 @@ export default function AdminDashboard() {
                 <span className="text-purple-600 text-lg">📊</span>
               </div>
               <div className="ml-4">
-                <p className="text-sm font-medium text-gray-500">Test Attempts</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.totalAttempts}</p>
+                <p className="text-sm font-medium text-gray-500">
+                  Test Attempts
+                </p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {stats.totalAttempts}
+                </p>
               </div>
             </div>
           </div>
@@ -254,23 +277,31 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow">
               <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-medium text-gray-900">Recent Activity</h3>
+                <h3 className="text-lg font-medium text-gray-900">
+                  Recent Activity
+                </h3>
               </div>
               <div className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600">Test &ldquo;Life in UK Practice 2024&rdquo; was published</span>
+                    <span className="text-sm text-gray-600">
+                      Test &ldquo;Life in UK Practice 2024&rdquo; was published
+                    </span>
                     <span className="text-xs text-gray-400">2 hours ago</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="h-2 w-2 bg-yellow-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600">New test submitted for review</span>
+                    <span className="text-sm text-gray-600">
+                      New test submitted for review
+                    </span>
                     <span className="text-xs text-gray-400">4 hours ago</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-sm text-gray-600">New user registered: john@example.com</span>
+                    <span className="text-sm text-gray-600">
+                      New user registered: john@example.com
+                    </span>
                     <span className="text-xs text-gray-400">6 hours ago</span>
                   </div>
                 </div>
@@ -282,7 +313,9 @@ export default function AdminDashboard() {
         {activeTab === "tests" && (
           <div className="bg-white rounded-lg shadow">
             <div className="px-6 py-4 border-b border-gray-200">
-              <h3 className="text-lg font-medium text-gray-900">Test Management</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                Test Management
+              </h3>
             </div>
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
@@ -310,8 +343,12 @@ export default function AdminDashboard() {
                     <tr key={test.id}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div>
-                          <div className="text-sm font-medium text-gray-900">{test.title}</div>
-                          <div className="text-sm text-gray-500">{test.questions} questions</div>
+                          <div className="text-sm font-medium text-gray-900">
+                            {test.title}
+                          </div>
+                          <div className="text-sm text-gray-500">
+                            {test.questions} questions
+                          </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -327,13 +364,17 @@ export default function AdminDashboard() {
                         {test.status === "PENDING_REVIEW" && (
                           <div className="flex space-x-2">
                             <button
-                              onClick={() => handleTestAction(test.id, "approve")}
+                              onClick={() =>
+                                handleTestAction(test.id, "approve")
+                              }
                               className="text-green-600 hover:text-green-900"
                             >
                               Approve
                             </button>
                             <button
-                              onClick={() => handleTestAction(test.id, "reject")}
+                              onClick={() =>
+                                handleTestAction(test.id, "reject")
+                              }
                               className="text-red-600 hover:text-red-900"
                             >
                               Reject
@@ -358,7 +399,9 @@ export default function AdminDashboard() {
         {activeTab === "users" && (
           <div className="bg-white rounded-lg shadow">
             <div className="px-6 py-4 border-b border-gray-200">
-              <h3 className="text-lg font-medium text-gray-900">User Management</h3>
+              <h3 className="text-lg font-medium text-gray-900">
+                User Management
+              </h3>
             </div>
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
@@ -386,15 +429,19 @@ export default function AdminDashboard() {
                           <div className="text-sm font-medium text-gray-900">
                             {user.name || "Unnamed User"}
                           </div>
-                          <div className="text-sm text-gray-500">{user.email}</div>
+                          <div className="text-sm text-gray-500">
+                            {user.email}
+                          </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          user.role === "ADMIN" 
-                            ? "bg-purple-100 text-purple-800" 
-                            : "bg-gray-100 text-gray-800"
-                        }`}>
+                        <span
+                          className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            user.role === "ADMIN"
+                              ? "bg-purple-100 text-purple-800"
+                              : "bg-gray-100 text-gray-800"
+                          }`}
+                        >
                           {user.role}
                         </span>
                       </td>

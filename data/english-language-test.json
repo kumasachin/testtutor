@@ -1,0 +1,176 @@
+{
+  "domainName": "English Language",
+  "testTitle": "English Language Proficiency Test",
+  "testDescription": "Comprehensive English language test covering grammar, vocabulary, reading comprehension, and practical communication skills for UK residents.",
+  "passPercentage": 75,
+  "timeLimit": 60,
+  "questions": [
+    {
+      "stem": "Choose the correct form: 'I _____ to London three times this year.'",
+      "options": [
+        { "label": "have been", "isCorrect": true },
+        { "label": "was", "isCorrect": false },
+        { "label": "went", "isCorrect": false },
+        { "label": "had been", "isCorrect": false }
+      ],
+      "explanation": "Present perfect 'have been' is correct because the action has a connection to the present time ('this year' is still ongoing).",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["grammar", "present-perfect", "verb-tenses"]
+    },
+    {
+      "stem": "What does the idiom 'break the ice' mean?",
+      "options": [
+        { "label": "To literally break ice", "isCorrect": false },
+        {
+          "label": "To start a conversation or social interaction",
+          "isCorrect": true
+        },
+        { "label": "To solve a difficult problem", "isCorrect": false },
+        { "label": "To end a relationship", "isCorrect": false }
+      ],
+      "explanation": "'Break the ice' means to initiate conversation or social interaction, especially in an awkward or formal situation, making people feel more comfortable.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["idioms", "vocabulary", "social-language"]
+    },
+    {
+      "stem": "Which of these are correct ways to form the plural?",
+      "options": [
+        { "label": "child → children", "isCorrect": true },
+        { "label": "foot → feet", "isCorrect": true },
+        { "label": "mouse → mice", "isCorrect": true },
+        { "label": "woman → womans", "isCorrect": false }
+      ],
+      "explanation": "Child→children, foot→feet, and mouse→mice are irregular plurals. Woman becomes 'women', not 'womans'.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["grammar", "plurals", "irregular-forms"]
+    },
+    {
+      "stem": "The word 'their' is a possessive pronoun.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "'Their' is indeed a possessive pronoun, indicating ownership by a group of people (e.g., 'their house', 'their ideas').",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["grammar", "pronouns", "possessives"]
+    },
+    {
+      "stem": "Choose the sentence with correct punctuation:",
+      "options": [
+        { "label": "It's a beautiful day, isn't it?", "isCorrect": true },
+        { "label": "Its a beautiful day, isnt it?", "isCorrect": false },
+        { "label": "It's a beautiful day isn't it?", "isCorrect": false },
+        { "label": "Its a beautiful day, isn't it?", "isCorrect": false }
+      ],
+      "explanation": "The correct answer uses the apostrophe in 'It's' (contraction of 'it is') and 'isn't' (contraction of 'is not'), plus a comma before the question tag.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["punctuation", "apostrophes", "question-tags"]
+    },
+    {
+      "stem": "What is the past participle of 'speak'?",
+      "options": [
+        { "label": "spoke", "isCorrect": false },
+        { "label": "spoken", "isCorrect": true },
+        { "label": "speaking", "isCorrect": false },
+        { "label": "speaked", "isCorrect": false }
+      ],
+      "explanation": "The past participle of 'speak' is 'spoken' (used with auxiliary verbs: 'have spoken', 'was spoken'). 'Spoke' is the simple past tense.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["grammar", "irregular-verbs", "past-participle"]
+    },
+    {
+      "stem": "Which words are synonyms for 'happy'?",
+      "options": [
+        { "label": "joyful", "isCorrect": true },
+        { "label": "cheerful", "isCorrect": true },
+        { "label": "content", "isCorrect": true },
+        { "label": "miserable", "isCorrect": false }
+      ],
+      "explanation": "Joyful, cheerful, and content are all synonyms for happy, expressing positive emotions. Miserable is an antonym (opposite meaning).",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["vocabulary", "synonyms", "emotions"]
+    },
+    {
+      "stem": "Complete the conditional sentence: 'If I _____ rich, I would travel the world.'",
+      "options": [
+        { "label": "was", "isCorrect": false },
+        { "label": "were", "isCorrect": true },
+        { "label": "am", "isCorrect": false },
+        { "label": "will be", "isCorrect": false }
+      ],
+      "explanation": "In second conditional sentences (hypothetical situations), we use 'were' for all persons: 'If I were rich...' This is the subjunctive mood.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["grammar", "conditionals", "subjunctive"]
+    },
+    {
+      "stem": "Double negatives are acceptable in standard English.",
+      "options": [
+        { "label": "True", "isCorrect": false },
+        { "label": "False", "isCorrect": true }
+      ],
+      "explanation": "Double negatives (like 'I don't have no money') are not acceptable in standard English. The correct form would be 'I don't have any money' or 'I have no money'.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["grammar", "negation", "standard-english"]
+    },
+    {
+      "stem": "What does 'mind the gap' mean in British English?",
+      "options": [
+        {
+          "label": "Be careful of the space between train and platform",
+          "isCorrect": true
+        },
+        { "label": "Pay attention to price differences", "isCorrect": false },
+        { "label": "Watch out for generation differences", "isCorrect": false },
+        { "label": "Be aware of social class distinctions", "isCorrect": false }
+      ],
+      "explanation": "'Mind the gap' is a common warning on the London Underground, telling passengers to be careful of the space between the train and the platform edge.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["british-english", "transport", "warnings"]
+    },
+    {
+      "stem": "Choose the correct relative pronoun: 'The book _____ I bought yesterday is very interesting.'",
+      "options": [
+        { "label": "who", "isCorrect": false },
+        { "label": "which", "isCorrect": true },
+        { "label": "where", "isCorrect": false },
+        { "label": "when", "isCorrect": false }
+      ],
+      "explanation": "'Which' is correct because it refers to a thing (book). 'Who' is for people, 'where' is for places, and 'when' is for time.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["grammar", "relative-pronouns", "relative-clauses"]
+    },
+    {
+      "stem": "What is the difference between 'lend' and 'borrow'?",
+      "options": [
+        {
+          "label": "Lend means to give temporarily, borrow means to take temporarily",
+          "isCorrect": true
+        },
+        { "label": "They mean exactly the same thing", "isCorrect": false },
+        {
+          "label": "Lend is for money, borrow is for objects",
+          "isCorrect": false
+        },
+        {
+          "label": "Borrow means to give, lend means to take",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "'Lend' means to give something temporarily (I lend you my book), while 'borrow' means to take something temporarily (I borrow your book).",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["vocabulary", "confusable-words", "meaning"]
+    }
+  ]
+}

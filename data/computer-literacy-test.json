@@ -1,0 +1,188 @@
+{
+  "domainName": "IT & Technology",
+  "testTitle": "Basic Computer & Digital Literacy Test",
+  "testDescription": "Essential computer skills and digital literacy test covering internet safety, basic software usage, and modern technology concepts relevant for daily life in the UK.",
+  "passPercentage": 70,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "What does 'phishing' refer to in internet security?",
+      "options": [
+        { "label": "Downloading files from the internet", "isCorrect": false },
+        {
+          "label": "Attempting to steal personal information through fake emails or websites",
+          "isCorrect": true
+        },
+        { "label": "Sharing photos on social media", "isCorrect": false },
+        { "label": "Using public Wi-Fi networks", "isCorrect": false }
+      ],
+      "explanation": "Phishing is a cybercrime where attackers impersonate legitimate organizations to steal personal information like passwords, credit card numbers, or identity details.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["internet-security", "phishing", "cybercrime"]
+    },
+    {
+      "stem": "Which of these are considered strong password practices?",
+      "options": [
+        {
+          "label": "Using a mix of uppercase and lowercase letters",
+          "isCorrect": true
+        },
+        {
+          "label": "Including numbers and special characters",
+          "isCorrect": true
+        },
+        {
+          "label": "Making passwords at least 8 characters long",
+          "isCorrect": true
+        },
+        {
+          "label": "Using the same password for all accounts",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Strong passwords should be long, include various character types, and be unique for each account. Using the same password everywhere is a major security risk.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["password-security", "cybersecurity", "best-practices"]
+    },
+    {
+      "stem": "What does 'URL' stand for?",
+      "options": [
+        { "label": "Universal Resource Locator", "isCorrect": false },
+        { "label": "Uniform Resource Locator", "isCorrect": true },
+        { "label": "United Reference Link", "isCorrect": false },
+        { "label": "Universal Reference Locator", "isCorrect": false }
+      ],
+      "explanation": "URL stands for Uniform Resource Locator - it's the address used to access resources on the internet, like websites or files.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["internet-basics", "acronyms", "web-technology"]
+    },
+    {
+      "stem": "Cookies are small files stored on your computer by websites.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "Cookies are indeed small text files that websites store on your computer to remember information about your visit, such as login status or preferences.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["web-technology", "cookies", "privacy"]
+    },
+    {
+      "stem": "Which key combination is commonly used to copy text in most software?",
+      "options": [
+        { "label": "Ctrl + X", "isCorrect": false },
+        { "label": "Ctrl + C", "isCorrect": true },
+        { "label": "Ctrl + V", "isCorrect": false },
+        { "label": "Ctrl + Z", "isCorrect": false }
+      ],
+      "explanation": "Ctrl + C is the standard keyboard shortcut for copying. Ctrl + X cuts, Ctrl + V pastes, and Ctrl + Z undoes the last action.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["keyboard-shortcuts", "basic-computing", "productivity"]
+    },
+    {
+      "stem": "What is cloud storage?",
+      "options": [
+        {
+          "label": "Storage space on your computer's hard drive",
+          "isCorrect": false
+        },
+        {
+          "label": "Storage space on internet servers accessible from anywhere",
+          "isCorrect": true
+        },
+        { "label": "A type of external hard drive", "isCorrect": false },
+        { "label": "Storage in your browser's cache", "isCorrect": false }
+      ],
+      "explanation": "Cloud storage refers to saving data on remote servers accessed via the internet, allowing you to access your files from any device with an internet connection.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["cloud-computing", "storage", "internet-services"]
+    },
+    {
+      "stem": "Which of these are examples of operating systems?",
+      "options": [
+        { "label": "Windows", "isCorrect": true },
+        { "label": "macOS", "isCorrect": true },
+        { "label": "Android", "isCorrect": true },
+        { "label": "Microsoft Word", "isCorrect": false }
+      ],
+      "explanation": "Windows, macOS, and Android are operating systems. Microsoft Word is application software that runs on an operating system.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["operating-systems", "software", "computer-basics"]
+    },
+    {
+      "stem": "What does 'Wi-Fi' allow you to do?",
+      "options": [
+        { "label": "Connect to the internet wirelessly", "isCorrect": true },
+        { "label": "Make phone calls", "isCorrect": false },
+        { "label": "Charge your device", "isCorrect": false },
+        { "label": "Store more files", "isCorrect": false }
+      ],
+      "explanation": "Wi-Fi is a wireless networking technology that allows devices to connect to the internet and local networks without cables.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["networking", "wifi", "internet-connection"]
+    },
+    {
+      "stem": "It's safe to download software from any website.",
+      "options": [
+        { "label": "True", "isCorrect": false },
+        { "label": "False", "isCorrect": true }
+      ],
+      "explanation": "It's not safe to download software from just any website. Only download from reputable sources to avoid malware, viruses, or other security threats.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["internet-safety", "software-security", "malware-prevention"]
+    },
+    {
+      "stem": "What is the purpose of antivirus software?",
+      "options": [
+        { "label": "To make your computer run faster", "isCorrect": false },
+        {
+          "label": "To protect against malicious software and viruses",
+          "isCorrect": true
+        },
+        { "label": "To create backup copies of files", "isCorrect": false },
+        { "label": "To improve internet connection speed", "isCorrect": false }
+      ],
+      "explanation": "Antivirus software is designed to detect, prevent, and remove malicious software (malware) including viruses, worms, trojans, and other threats.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["antivirus", "computer-security", "malware-protection"]
+    },
+    {
+      "stem": "Which of these are social media platforms?",
+      "options": [
+        { "label": "Facebook", "isCorrect": true },
+        { "label": "Twitter", "isCorrect": true },
+        { "label": "LinkedIn", "isCorrect": true },
+        { "label": "Microsoft Excel", "isCorrect": false }
+      ],
+      "explanation": "Facebook, Twitter, and LinkedIn are social media platforms for connecting and sharing with others. Microsoft Excel is a spreadsheet application.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["social-media", "platforms", "digital-communication"]
+    },
+    {
+      "stem": "What should you do if you receive a suspicious email asking for personal information?",
+      "options": [
+        { "label": "Reply with the requested information", "isCorrect": false },
+        {
+          "label": "Delete the email and report it as spam",
+          "isCorrect": true
+        },
+        { "label": "Forward it to all your contacts", "isCorrect": false },
+        { "label": "Click on all the links to investigate", "isCorrect": false }
+      ],
+      "explanation": "Suspicious emails asking for personal information are likely phishing attempts. Delete them and mark as spam. Never provide personal information via email.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["email-security", "phishing-prevention", "internet-safety"]
+    }
+  ]
+}

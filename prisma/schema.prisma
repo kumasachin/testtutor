@@ -1,6 +1,3 @@
-// Database schema for ExamKit
-// PostgreSQL with Prisma ORM
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,38 +8,34 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  role      UserRole @default(USER)
-  avatar    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  role          UserRole       @default(USER)
+  avatar        String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  domainAccess  DomainAccess[]
+  testAttempts  TestAttempt[]
+  createdTests  Test[]         @relation("TestCreator")
+  reviewedTests Test[]         @relation("TestReviewer")
 
-  // User relationships
-  createdTests     Test[]           @relation("TestCreator")
-  testAttempts     TestAttempt[]
-  reviewedTests    Test[]           @relation("TestReviewer")
-  domainAccess     DomainAccess[]
-  
   @@map("users")
 }
 
 model Domain {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  displayName String
-  description String?
-  icon        String?
-  config      Json     // Test configuration defaults
-  isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  // Relations
-  tests        Test[]
+  id           String         @id @default(cuid())
+  name         String         @unique
+  displayName  String
+  description  String?
+  icon         String?
+  config       Json
+  isActive     Boolean        @default(true)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
   domainAccess DomainAccess[]
-  
+  tests        Test[]
+
   @@map("domains")
 }
 
@@ -51,107 +44,92 @@ model DomainAccess {
   userId   String
   domainId String
   role     DomainRole @default(VIEWER)
-
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  domain Domain @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  domain   Domain     @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, domainId])
   @@map("domain_access")
 }
 
 model Test {
-  id               String     @id @default(cuid())
+  id               String        @id @default(cuid())
   title            String
   description      String?
   domainId         String
   creatorId        String
-  status           TestStatus @default(DRAFT)
-  config           Json       // Test-specific configuration
-  passPercentage   Int        @default(75)
-  timeLimit        Int?       // in minutes
-  shuffleQuestions Boolean    @default(true)
-  shuffleAnswers   Boolean    @default(true)
-  isPublic         Boolean    @default(false)
-  
-  // Approval workflow
+  status           TestStatus    @default(DRAFT)
+  config           Json
+  passPercentage   Int           @default(75)
+  timeLimit        Int?
+  shuffleQuestions Boolean       @default(true)
+  shuffleAnswers   Boolean       @default(true)
+  isPublic         Boolean       @default(false)
   submissionNote   String?
   reviewNote       String?
   reviewerId       String?
   reviewedAt       DateTime?
   publishedAt      DateTime?
-  
-  createdAt        DateTime   @default(now())
-  updatedAt        DateTime   @updatedAt
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  questions        Question[]
+  attempts         TestAttempt[]
+  creator          User          @relation("TestCreator", fields: [creatorId], references: [id], onDelete: Cascade)
+  domain           Domain        @relation(fields: [domainId], references: [id], onDelete: Cascade)
+  reviewer         User?         @relation("TestReviewer", fields: [reviewerId], references: [id])
 
-  // Relations
-  domain      Domain        @relation(fields: [domainId], references: [id], onDelete: Cascade)
-  creator     User          @relation("TestCreator", fields: [creatorId], references: [id], onDelete: Cascade)
-  reviewer    User?         @relation("TestReviewer", fields: [reviewerId], references: [id])
-  questions   Question[]
-  attempts    TestAttempt[]
-  
   @@map("tests")
 }
 
 model Question {
   id          String       @id @default(cuid())
   testId      String
-  stem        String       // The question text
-  explanation String?      // Explanation for the correct answer
+  stem        String
+  explanation String?
   type        QuestionType @default(SINGLE_CHOICE)
   order       Int
   points      Int          @default(1)
   difficulty  Difficulty   @default(MEDIUM)
   tags        String[]     @default([])
-  
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
+  options     Option[]
+  test        Test         @relation(fields: [testId], references: [id], onDelete: Cascade)
 
-  // Relations
-  test    Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
-  options Option[]
-  
   @@map("questions")
 }
 
 model Option {
-  id         String  @id @default(cuid())
+  id         String   @id @default(cuid())
   questionId String
   label      String
-  isCorrect  Boolean @default(false)
+  isCorrect  Boolean  @default(false)
   order      Int
-  feedback   String? // Optional feedback for this option
-  
+  feedback   String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
-  // Relations
-  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  
   @@map("options")
 }
 
 model TestAttempt {
-  id          String           @id @default(cuid())
+  id          String        @id @default(cuid())
   testId      String
-  userId      String?          // null for anonymous attempts
-  sessionId   String?          // for anonymous tracking
-  status      AttemptStatus    @default(IN_PROGRESS)
+  userId      String?
+  sessionId   String?
+  status      AttemptStatus @default(IN_PROGRESS)
   score       Int?
   percentage  Float?
-  timeSpent   Int?             // in seconds
-  answers     Json             // User's answers
-  startedAt   DateTime         @default(now())
+  timeSpent   Int?
+  answers     Json
+  startedAt   DateTime      @default(now())
   completedAt DateTime?
-  
-  // Relations
-  test Test  @relation(fields: [testId], references: [id], onDelete: Cascade)
-  user User? @relation(fields: [userId], references: [id])
-  
+  test        Test          @relation(fields: [testId], references: [id], onDelete: Cascade)
+  user        User?         @relation(fields: [userId], references: [id])
+
   @@map("test_attempts")
 }
 
-// Enums
 enum UserRole {
   SUPER_ADMIN
   ADMIN

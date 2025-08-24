@@ -22,7 +22,9 @@ export default function MotorcycleTheoryPage() {
   const fetchMotorcycleTheoryTests = async () => {
     try {
       // Filter tests by motorcycle theory subcategory
-      const response = await fetch("/api/tests?category=driving-theory&subcategory=motorcycle");
+      const response = await fetch(
+        "/api/tests?category=driving-theory&subcategory=motorcycle"
+      );
       const result = await response.json();
       if (result.success) {
         setTests(result.data.tests || []);
@@ -43,7 +45,10 @@ export default function MotorcycleTheoryPage() {
             Home
           </Link>
           <span className="mx-2 text-gray-500">/</span>
-          <Link href="/drivingTheory" className="text-orange-600 hover:text-orange-800">
+          <Link
+            href="/drivingTheory"
+            className="text-orange-600 hover:text-orange-800"
+          >
             Driving Theory
           </Link>
           <span className="mx-2 text-gray-500">/</span>
@@ -59,7 +64,8 @@ export default function MotorcycleTheoryPage() {
             Motorcycle Theory Test Practice
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Master your motorcycle theory test with specialized practice questions and safety guidance
+            Master your motorcycle theory test with specialized practice
+            questions and safety guidance
           </p>
         </div>
 
@@ -97,28 +103,31 @@ export default function MotorcycleTheoryPage() {
         {loading ? (
           <div className="text-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">Loading motorcycle theory tests...</p>
+            <p className="mt-4 text-gray-600">
+              Loading motorcycle theory tests...
+            </p>
           </div>
         ) : (
           <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {tests.map((test) => (
-                <div key={test.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div
+                  key={test.id}
+                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                >
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {test.title}
                   </h3>
-                  
+
                   {test.description && (
-                    <p className="text-gray-600 mb-4">
-                      {test.description}
-                    </p>
+                    <p className="text-gray-600 mb-4">{test.description}</p>
                   )}
-                  
+
                   <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
                     <span>{test.questions} questions</span>
                     <span>{test.attempts} attempts</span>
                   </div>
-                  
+
                   <Link
                     href={`/test/${test.id}`}
                     className="block w-full text-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
@@ -134,7 +143,9 @@ export default function MotorcycleTheoryPage() {
                 <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-gray-400 text-2xl">🏍️</span>
                 </div>
-                <p className="text-gray-600 mb-4">No motorcycle theory tests available yet.</p>
+                <p className="text-gray-600 mb-4">
+                  No motorcycle theory tests available yet.
+                </p>
                 <Link
                   href="/create"
                   className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
@@ -153,7 +164,9 @@ export default function MotorcycleTheoryPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Motorcycle Safety</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Motorcycle Safety
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Protective clothing</li>
                 <li>• Helmet requirements</li>
@@ -162,7 +175,9 @@ export default function MotorcycleTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Vehicle Checks</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Vehicle Checks
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Chain and sprockets</li>
                 <li>• Tyre condition</li>
@@ -171,7 +186,9 @@ export default function MotorcycleTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Road Positioning</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Road Positioning
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Lane positioning</li>
                 <li>• Cornering techniques</li>
@@ -180,7 +197,9 @@ export default function MotorcycleTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibial text-gray-900 mb-3">Risk Awareness</h3>
+              <h3 className="font-semibial text-gray-900 mb-3">
+                Risk Awareness
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Road surface hazards</li>
                 <li>• Weather impacts</li>
@@ -198,9 +217,13 @@ export default function MotorcycleTheoryPage() {
               <span className="text-orange-600 text-lg">⚠️</span>
             </div>
             <div>
-              <h3 className="font-semibold text-orange-900">Motorcycle Safety Reminder</h3>
+              <h3 className="font-semibold text-orange-900">
+                Motorcycle Safety Reminder
+              </h3>
               <p className="text-orange-700 text-sm">
-                Motorcyclists are more vulnerable on the road. Extra focus on safety awareness and defensive riding is essential for passing your test and staying safe.
+                Motorcyclists are more vulnerable on the road. Extra focus on
+                safety awareness and defensive riding is essential for passing
+                your test and staying safe.
               </p>
             </div>
           </div>

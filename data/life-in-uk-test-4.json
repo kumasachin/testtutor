@@ -1,0 +1,318 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Norman Conquest & Medieval Period",
+  "testDescription": "Comprehensive test covering the Norman Conquest of 1066, medieval England, feudal system, and key developments in law, culture, and society.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "In which year did the Norman Conquest take place?",
+      "options": [
+        { "label": "1065", "isCorrect": false },
+        { "label": "1066", "isCorrect": true },
+        { "label": "1067", "isCorrect": false },
+        { "label": "1068", "isCorrect": false }
+      ],
+      "explanation": "The Norman Conquest took place in 1066 when William of Normandy defeated Harold Godwinson at the Battle of Hastings.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["norman-conquest", "1066", "dates"]
+    },
+    {
+      "stem": "Who was William the Conqueror?",
+      "options": [
+        { "label": "Duke of Normandy", "isCorrect": true },
+        { "label": "King of France", "isCorrect": false },
+        { "label": "Anglo-Saxon nobleman", "isCorrect": false },
+        { "label": "Viking chief", "isCorrect": false }
+      ],
+      "explanation": "William the Conqueror was the Duke of Normandy who claimed the English throne and defeated Harold at Hastings.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["william-conqueror", "normandy", "rulers"]
+    },
+    {
+      "stem": "The Battle of Hastings was fought between which armies?",
+      "options": [
+        { "label": "Norman and Anglo-Saxon", "isCorrect": true },
+        { "label": "Norman and Viking", "isCorrect": false },
+        { "label": "Anglo-Saxon and Viking", "isCorrect": false },
+        { "label": "French and English", "isCorrect": false }
+      ],
+      "explanation": "The Battle of Hastings was fought between William's Norman army and Harold Godwinson's Anglo-Saxon forces.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["hastings", "normans", "anglo-saxons"]
+    },
+    {
+      "stem": "Harold Godwinson died at the Battle of Hastings.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Harold Godwinson, the last Anglo-Saxon king, was killed at the Battle of Hastings, ending Anglo-Saxon rule.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["harold-godwinson", "hastings", "death"]
+    },
+    {
+      "stem": "What was the Domesday Book?",
+      "options": [
+        { "label": "A religious text", "isCorrect": false },
+        {
+          "label": "A survey of England's lands and people",
+          "isCorrect": true
+        },
+        { "label": "A book of laws", "isCorrect": false },
+        { "label": "A chronicle of wars", "isCorrect": false }
+      ],
+      "explanation": "The Domesday Book was a comprehensive survey ordered by William I in 1086 to record land ownership and resources for taxation.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["domesday-book", "survey", "taxation"]
+    },
+    {
+      "stem": "The Norman Conquest brought which changes to England?",
+      "options": [
+        { "label": "New architecture", "isCorrect": true },
+        { "label": "French language influence", "isCorrect": true },
+        { "label": "Feudal system", "isCorrect": true },
+        { "label": "Protestant religion", "isCorrect": false }
+      ],
+      "explanation": "Normans brought new architecture, French language influence, and the feudal system. Protestantism came much later in the 16th century.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["norman-conquest", "changes", "culture"]
+    },
+    {
+      "stem": "What was the feudal system?",
+      "options": [
+        {
+          "label": "A system where land was held in exchange for service",
+          "isCorrect": true
+        },
+        { "label": "A type of government", "isCorrect": false },
+        { "label": "A religious organization", "isCorrect": false },
+        { "label": "A trading system", "isCorrect": false }
+      ],
+      "explanation": "The feudal system was a way of organizing society where land was held in exchange for military or other services.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["feudalism", "land", "service"]
+    },
+    {
+      "stem": "Who was at the top of the feudal system?",
+      "options": [
+        { "label": "The Pope", "isCorrect": false },
+        { "label": "The King", "isCorrect": true },
+        { "label": "The nobles", "isCorrect": false },
+        { "label": "The knights", "isCorrect": false }
+      ],
+      "explanation": "The King was at the top of the feudal system, owning all land and granting it to nobles in exchange for loyalty and service.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["feudalism", "hierarchy", "king"]
+    },
+    {
+      "stem": "The Bayeux Tapestry depicts the Norman Conquest.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Bayeux Tapestry is a famous embroidered cloth that tells the story of the Norman Conquest.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["bayeux-tapestry", "norman-conquest", "art"]
+    },
+    {
+      "stem": "What language did the Norman nobles speak?",
+      "options": [
+        { "label": "Latin", "isCorrect": false },
+        { "label": "Norman French", "isCorrect": true },
+        { "label": "English", "isCorrect": false },
+        { "label": "German", "isCorrect": false }
+      ],
+      "explanation": "Norman nobles spoke Norman French, which became the language of the court and government for several centuries.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["normans", "language", "french"]
+    },
+    {
+      "stem": "Which famous buildings were built by the Normans?",
+      "options": [
+        { "label": "Tower of London", "isCorrect": true },
+        { "label": "Durham Cathedral", "isCorrect": true },
+        { "label": "Westminster Abbey", "isCorrect": true },
+        { "label": "St Paul's Cathedral", "isCorrect": false }
+      ],
+      "explanation": "Normans built the Tower of London, Durham Cathedral, and rebuilt Westminster Abbey. St Paul's was built much later by Christopher Wren.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["normans", "architecture", "buildings"]
+    },
+    {
+      "stem": "What was a castle's keep?",
+      "options": [
+        { "label": "The outer wall", "isCorrect": false },
+        { "label": "The central stronghold", "isCorrect": true },
+        { "label": "The drawbridge", "isCorrect": false },
+        { "label": "The moat", "isCorrect": false }
+      ],
+      "explanation": "The keep was the central, strongest part of a castle where the lord lived and which served as the last line of defense.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["castles", "keep", "architecture"]
+    },
+    {
+      "stem": "Henry II established a system of common law.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Henry II (1154-1189) established a system of common law that applied throughout England, replacing local customs.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["henry-ii", "common-law", "legal-system"]
+    },
+    {
+      "stem": "Who was Thomas Becket?",
+      "options": [
+        { "label": "A Norman knight", "isCorrect": false },
+        { "label": "Archbishop of Canterbury", "isCorrect": true },
+        { "label": "A medieval king", "isCorrect": false },
+        { "label": "A Viking leader", "isCorrect": false }
+      ],
+      "explanation": "Thomas Becket was Archbishop of Canterbury who was murdered in 1170 after a dispute with King Henry II.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["thomas-becket", "archbishop", "henry-ii"]
+    },
+    {
+      "stem": "What was the Magna Carta?",
+      "options": [
+        { "label": "A peace treaty", "isCorrect": false },
+        { "label": "A document limiting the king's power", "isCorrect": true },
+        { "label": "A religious charter", "isCorrect": false },
+        { "label": "A trade agreement", "isCorrect": false }
+      ],
+      "explanation": "The Magna Carta (1215) was a charter that limited the power of King John and established that even the king was subject to the law.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["magna-carta", "king-john", "rights"]
+    },
+    {
+      "stem": "King John was forced to sign the Magna Carta in 1215.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. King John was forced to sign the Magna Carta by his barons at Runnymede in 1215.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["king-john", "magna-carta", "1215"]
+    },
+    {
+      "stem": "What did the Magna Carta establish?",
+      "options": [
+        { "label": "No one is above the law", "isCorrect": true },
+        { "label": "Right to a fair trial", "isCorrect": true },
+        { "label": "Limits on taxation without consent", "isCorrect": true },
+        { "label": "Universal voting rights", "isCorrect": false }
+      ],
+      "explanation": "Magna Carta established rule of law, fair trial rights, and taxation limits. Universal voting came much later in history.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["magna-carta", "principles", "rights"]
+    },
+    {
+      "stem": "Which king was known as the 'Lionheart'?",
+      "options": [
+        { "label": "Richard I", "isCorrect": true },
+        { "label": "Henry II", "isCorrect": false },
+        { "label": "King John", "isCorrect": false },
+        { "label": "Edward I", "isCorrect": false }
+      ],
+      "explanation": "Richard I (1189-1199) was known as 'the Lionheart' for his role in the Third Crusade.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["richard-lionheart", "crusades", "kings"]
+    },
+    {
+      "stem": "The Crusades were religious wars fought in the Holy Land.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Crusades were a series of religious wars fought between Christians and Muslims for control of the Holy Land.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["crusades", "religion", "holy-land"]
+    },
+    {
+      "stem": "What was a medieval guild?",
+      "options": [
+        { "label": "A religious order", "isCorrect": false },
+        {
+          "label": "An association of craftsmen or merchants",
+          "isCorrect": true
+        },
+        { "label": "A type of castle", "isCorrect": false },
+        { "label": "A form of government", "isCorrect": false }
+      ],
+      "explanation": "A guild was an association of craftsmen or merchants who controlled their trade and maintained standards in medieval towns.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["guilds", "medieval", "trade"]
+    },
+    {
+      "stem": "Medieval society was divided into which main groups?",
+      "options": [
+        { "label": "Those who fight (nobles)", "isCorrect": true },
+        { "label": "Those who pray (clergy)", "isCorrect": true },
+        { "label": "Those who work (peasants)", "isCorrect": true },
+        { "label": "Those who trade (merchants)", "isCorrect": false }
+      ],
+      "explanation": "Medieval society was traditionally divided into three estates: nobles (fighters), clergy (prayers), and peasants (workers). Merchants emerged later.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["medieval-society", "three-estates", "social-structure"]
+    },
+    {
+      "stem": "What was the Black Death?",
+      "options": [
+        { "label": "A war", "isCorrect": false },
+        { "label": "A plague", "isCorrect": true },
+        { "label": "A famine", "isCorrect": false },
+        { "label": "A rebellion", "isCorrect": false }
+      ],
+      "explanation": "The Black Death was a devastating plague that swept through Europe in the 14th century, killing about one-third of the population.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["black-death", "plague", "14th-century"]
+    },
+    {
+      "stem": "The Black Death arrived in Britain in 1348.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Black Death reached Britain in 1348 and caused massive social and economic changes.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["black-death", "1348", "timeline"]
+    },
+    {
+      "stem": "What was the result of the Black Death in England?",
+      "options": [
+        { "label": "Labor shortage", "isCorrect": true },
+        { "label": "Higher wages for workers", "isCorrect": true },
+        { "label": "Social unrest", "isCorrect": true },
+        { "label": "Increased population", "isCorrect": false }
+      ],
+      "explanation": "The Black Death caused labor shortages, leading to higher wages, social changes, and unrest. Population decreased dramatically.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["black-death", "consequences", "social-change"]
+    }
+  ]
+}

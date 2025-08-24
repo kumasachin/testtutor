@@ -1,3 +1,5 @@
+import type { Prisma } from "@prisma/client";
+
 import { prisma } from "./prisma";
 import type {
   CreateTestInput,
@@ -7,7 +9,6 @@ import type {
   DbUser,
 } from "./types";
 import { TestConfigSchema, QuestionSchema } from "./types";
-import type { Prisma } from "@prisma/client";
 
 type TestWithQuestions = {
   id: string;
@@ -120,9 +121,9 @@ export class ExamKitService {
   static async getDomainByName(name: string) {
     try {
       const domain = await prisma.domain.findFirst({
-        where: { 
+        where: {
           name: name,
-          isActive: true 
+          isActive: true,
         },
       });
 

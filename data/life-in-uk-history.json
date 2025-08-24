@@ -1,0 +1,144 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - British History Focus",
+  "testDescription": "Advanced practice test focusing on British historical events, monarchs, and significant periods in UK history.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Which monarch was known as the 'Virgin Queen'?",
+      "options": [
+        { "label": "Queen Victoria", "isCorrect": false },
+        { "label": "Queen Elizabeth I", "isCorrect": true },
+        { "label": "Queen Mary I", "isCorrect": false },
+        { "label": "Queen Anne", "isCorrect": false }
+      ],
+      "explanation": "Queen Elizabeth I (1533-1603) was known as the 'Virgin Queen' because she never married. She ruled England for 45 years during a period of great cultural achievement.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["history", "monarchy", "elizabethan"]
+    },
+    {
+      "stem": "The English Civil War took place during which century?",
+      "options": [
+        { "label": "16th century", "isCorrect": false },
+        { "label": "17th century", "isCorrect": true },
+        { "label": "18th century", "isCorrect": false },
+        { "label": "19th century", "isCorrect": false }
+      ],
+      "explanation": "The English Civil War occurred from 1642 to 1651 in the 17th century, resulting in the execution of King Charles I and the temporary establishment of a republic under Oliver Cromwell.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["history", "civil-war", "17th-century"]
+    },
+    {
+      "stem": "Which of the following were major reforms during the Victorian era?",
+      "options": [
+        {
+          "label": "Factory Acts improving working conditions",
+          "isCorrect": true
+        },
+        {
+          "label": "Education Act making schooling compulsory",
+          "isCorrect": true
+        },
+        {
+          "label": "Abolition of slavery in the British Empire",
+          "isCorrect": true
+        },
+        { "label": "Introduction of the welfare state", "isCorrect": false }
+      ],
+      "explanation": "The Victorian era saw significant social reforms including Factory Acts, compulsory education, and abolition of slavery. The welfare state was introduced much later in the 20th century.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["history", "victorian", "reforms"]
+    },
+    {
+      "stem": "The Great Fire of London occurred in 1666.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "The Great Fire of London occurred from September 2-6, 1666, destroying much of medieval London and leading to major rebuilding efforts including many churches designed by Sir Christopher Wren.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["history", "london", "17th-century"]
+    },
+    {
+      "stem": "Who wrote 'A Christmas Carol'?",
+      "options": [
+        { "label": "William Shakespeare", "isCorrect": false },
+        { "label": "Charles Dickens", "isCorrect": true },
+        { "label": "Jane Austen", "isCorrect": false },
+        { "label": "George Orwell", "isCorrect": false }
+      ],
+      "explanation": "Charles Dickens wrote 'A Christmas Carol' in 1843. This novella helped popularize many Christmas traditions and highlighted social issues of Victorian England.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["literature", "dickens", "victorian"]
+    },
+    {
+      "stem": "Which battle is considered the most famous victory of Admiral Nelson?",
+      "options": [
+        { "label": "Battle of the Nile", "isCorrect": false },
+        { "label": "Battle of Copenhagen", "isCorrect": false },
+        { "label": "Battle of Trafalgar", "isCorrect": true },
+        { "label": "Battle of Waterloo", "isCorrect": false }
+      ],
+      "explanation": "The Battle of Trafalgar (1805) was Admiral Nelson's most famous victory, where the British Navy defeated the combined French and Spanish fleets. Nelson died in this battle but secured British naval supremacy.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["history", "naval", "nelson"]
+    },
+    {
+      "stem": "The Domesday Book was commissioned by which Norman king?",
+      "options": [
+        { "label": "William the Conqueror", "isCorrect": true },
+        { "label": "William II", "isCorrect": false },
+        { "label": "Henry I", "isCorrect": false },
+        { "label": "Stephen", "isCorrect": false }
+      ],
+      "explanation": "The Domesday Book was commissioned by William the Conqueror in 1086 as a comprehensive survey of England for taxation purposes. It remains one of the most important historical documents.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["history", "norman", "medieval"]
+    },
+    {
+      "stem": "Which of these are traditional British festivals?",
+      "options": [
+        { "label": "Guy Fawkes Night", "isCorrect": true },
+        { "label": "St. George's Day", "isCorrect": true },
+        { "label": "Burns Night", "isCorrect": true },
+        { "label": "Oktoberfest", "isCorrect": false }
+      ],
+      "explanation": "Guy Fawkes Night (November 5th), St. George's Day (April 23rd), and Burns Night (January 25th) are traditional British festivals. Oktoberfest is German.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["culture", "festivals", "traditions"]
+    },
+    {
+      "stem": "The Industrial Revolution began in Britain during the 18th century.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "The Industrial Revolution began in Britain in the late 18th century (around 1760-1840), transforming manufacturing from hand production to mechanized factory production.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["history", "industrial-revolution", "18th-century"]
+    },
+    {
+      "stem": "Which city is known as the 'Steel City'?",
+      "options": [
+        { "label": "Birmingham", "isCorrect": false },
+        { "label": "Sheffield", "isCorrect": true },
+        { "label": "Manchester", "isCorrect": false },
+        { "label": "Newcastle", "isCorrect": false }
+      ],
+      "explanation": "Sheffield is known as the 'Steel City' due to its long history of steel production and manufacturing, particularly in cutlery and tools.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["geography", "industry", "cities"]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+
 import { ExamKitService } from "@/lib/examkit-service";
 import { CreateTestSchema } from "@/lib/types";
 import { supabase } from "@/lib/supabase";
@@ -58,31 +60,40 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const domainId = searchParams.get("domainId") || undefined;
+    const domainName = searchParams.get("domainName") || undefined;
     const category = searchParams.get("category") || undefined;
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "20");
 
-    // Handle category filtering by mapping to domain names
-    let categoryDomainId = domainId;
-    if (category && !domainId) {
-      // Look up domain by name for category filtering
+    // Handle domain name filtering
+    let targetDomainId = domainId;
+
+    if (domainName && !domainId) {
+      // Look up domain by name
+      const domainResult = await ExamKitService.getDomainByName(domainName);
+      if (domainResult.success && domainResult.data) {
+        targetDomainId = domainResult.data.id;
+      }
+    } else if (category && !domainId && !domainName) {
+      // Handle category filtering by mapping to domain names
       const categoryMapping: Record<string, string> = {
         "life-in-uk": "life-in-uk",
         "driving-theory": "driving-theory",
       };
-      
-      const domainName = categoryMapping[category];
-      if (domainName) {
+
+      const mappedDomainName = categoryMapping[category];
+      if (mappedDomainName) {
         // Find domain by name to get the ID
-        const domainResult = await ExamKitService.getDomainByName(domainName);
+        const domainResult =
+          await ExamKitService.getDomainByName(mappedDomainName);
         if (domainResult.success && domainResult.data) {
-          categoryDomainId = domainResult.data.id;
+          targetDomainId = domainResult.data.id;
         }
       }
     }
 
     const result = await ExamKitService.getPublishedTests(
-      categoryDomainId,
+      targetDomainId,
       page,
       limit
     );

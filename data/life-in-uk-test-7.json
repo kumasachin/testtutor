@@ -1,0 +1,310 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - 18th Century & Georgian Era",
+  "testDescription": "Comprehensive test covering the Georgian period, Union with Scotland, Jacobite rebellions, agricultural and early industrial developments, and cultural changes.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "In which year did England and Scotland unite to form Great Britain?",
+      "options": [
+        { "label": "1705", "isCorrect": false },
+        { "label": "1706", "isCorrect": false },
+        { "label": "1707", "isCorrect": true },
+        { "label": "1708", "isCorrect": false }
+      ],
+      "explanation": "The Act of Union in 1707 united England and Scotland into the Kingdom of Great Britain, creating a single Parliament in Westminster.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["act-of-union", "1707", "great-britain"]
+    },
+    {
+      "stem": "Who was the first Hanoverian king?",
+      "options": [
+        { "label": "George I", "isCorrect": true },
+        { "label": "George II", "isCorrect": false },
+        { "label": "George III", "isCorrect": false },
+        { "label": "William III", "isCorrect": false }
+      ],
+      "explanation": "George I became king in 1714, beginning the Hanoverian dynasty. He was German and spoke little English.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["george-i", "hanoverians", "dynasty"]
+    },
+    {
+      "stem": "The Jacobites supported which royal line?",
+      "options": [
+        { "label": "The Hanoverians", "isCorrect": false },
+        { "label": "The Stuarts", "isCorrect": true },
+        { "label": "The Tudors", "isCorrect": false },
+        { "label": "The Plantagenets", "isCorrect": false }
+      ],
+      "explanation": "The Jacobites supported the restoration of the Stuart line, particularly James II and his descendants, believing they were the rightful kings.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["jacobites", "stuarts", "succession"]
+    },
+    {
+      "stem": "Bonnie Prince Charlie led the Jacobite rebellion of 1745.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Charles Edward Stuart (Bonnie Prince Charlie) led the 1745 Jacobite rebellion, which ended in defeat at Culloden.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["bonnie-prince-charlie", "1745", "jacobite-rebellion"]
+    },
+    {
+      "stem": "The Battle of Culloden took place in which year?",
+      "options": [
+        { "label": "1745", "isCorrect": false },
+        { "label": "1746", "isCorrect": true },
+        { "label": "1747", "isCorrect": false },
+        { "label": "1748", "isCorrect": false }
+      ],
+      "explanation": "The Battle of Culloden was fought on April 16, 1746, and was the final defeat of the Jacobite cause.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["culloden", "1746", "jacobites"]
+    },
+    {
+      "stem": "What was the result of the Battle of Culloden?",
+      "options": [
+        { "label": "End of the Jacobite cause", "isCorrect": true },
+        { "label": "Suppression of Highland culture", "isCorrect": true },
+        { "label": "Banning of Highland dress", "isCorrect": true },
+        { "label": "Scottish independence", "isCorrect": false }
+      ],
+      "explanation": "Culloden ended the Jacobite cause and led to harsh suppression of Highland culture, including bans on tartan and bagpipes. Scotland remained part of Britain.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["culloden", "highland-culture", "suppression"]
+    },
+    {
+      "stem": "Who was Robert Walpole?",
+      "options": [
+        { "label": "A general", "isCorrect": false },
+        { "label": "The first Prime Minister", "isCorrect": true },
+        { "label": "A famous writer", "isCorrect": false },
+        { "label": "A Scottish leader", "isCorrect": false }
+      ],
+      "explanation": "Robert Walpole is considered Britain's first Prime Minister, serving from 1721-1742 under George I and George II.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["robert-walpole", "prime-minister", "government"]
+    },
+    {
+      "stem": "The Agricultural Revolution occurred before the Industrial Revolution.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Agricultural Revolution of the 18th century increased food production and freed up labor, enabling the Industrial Revolution.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["agricultural-revolution", "industrial-revolution", "sequence"]
+    },
+    {
+      "stem": "What were enclosures?",
+      "options": [
+        { "label": "New types of buildings", "isCorrect": false },
+        { "label": "The fencing of common land", "isCorrect": true },
+        { "label": "Military fortifications", "isCorrect": false },
+        { "label": "Trade agreements", "isCorrect": false }
+      ],
+      "explanation": "Enclosures involved fencing common land and converting it to private ownership, which improved agricultural efficiency but displaced many peasants.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["enclosures", "agriculture", "land-reform"]
+    },
+    {
+      "stem": "Which crops were part of the Agricultural Revolution?",
+      "options": [
+        { "label": "Turnips", "isCorrect": true },
+        { "label": "Clover", "isCorrect": true },
+        { "label": "Potatoes", "isCorrect": true },
+        { "label": "Rice", "isCorrect": false }
+      ],
+      "explanation": "The Agricultural Revolution introduced new crops like turnips, clover, and potatoes, which improved nutrition and agricultural productivity. Rice was not grown in Britain.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["agricultural-revolution", "crops", "innovation"]
+    },
+    {
+      "stem": "Who wrote 'A Dictionary of the English Language'?",
+      "options": [
+        { "label": "Alexander Pope", "isCorrect": false },
+        { "label": "Samuel Johnson", "isCorrect": true },
+        { "label": "Jonathan Swift", "isCorrect": false },
+        { "label": "Daniel Defoe", "isCorrect": false }
+      ],
+      "explanation": "Dr Samuel Johnson published his famous dictionary in 1755, which was the standard English dictionary for over 150 years.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["samuel-johnson", "dictionary", "literature"]
+    },
+    {
+      "stem": "The coffee house was an important social institution in 18th century London.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Coffee houses were centers of social, political, and business life in 18th century London, often called 'penny universities.'",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["coffee-houses", "social-life", "london"]
+    },
+    {
+      "stem": "Which composer wrote 'The Messiah'?",
+      "options": [
+        { "label": "Johann Sebastian Bach", "isCorrect": false },
+        { "label": "George Frideric Handel", "isCorrect": true },
+        { "label": "Henry Purcell", "isCorrect": false },
+        { "label": "Thomas Arne", "isCorrect": false }
+      ],
+      "explanation": "George Frideric Handel, a German composer who settled in London, wrote 'The Messiah' in 1741.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["handel", "messiah", "music"]
+    },
+    {
+      "stem": "What was the South Sea Bubble?",
+      "options": [
+        { "label": "A naval battle", "isCorrect": false },
+        {
+          "label": "A financial speculation that collapsed",
+          "isCorrect": true
+        },
+        { "label": "A type of ship", "isCorrect": false },
+        { "label": "A trade route", "isCorrect": false }
+      ],
+      "explanation": "The South Sea Bubble (1720) was a financial speculation in the South Sea Company that collapsed, ruining many investors.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["south-sea-bubble", "finance", "speculation"]
+    },
+    {
+      "stem": "The War of Jenkins' Ear was fought against which country?",
+      "options": [
+        { "label": "France", "isCorrect": false },
+        { "label": "Spain", "isCorrect": true },
+        { "label": "Netherlands", "isCorrect": false },
+        { "label": "Portugal", "isCorrect": false }
+      ],
+      "explanation": "The War of Jenkins' Ear (1739-1748) was fought between Britain and Spain, named after Captain Robert Jenkins who claimed the Spanish cut off his ear.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["jenkins-ear", "spain", "war"]
+    },
+    {
+      "stem": "General Wolfe died at the Battle of Quebec.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. General James Wolfe died in 1759 at the Battle of Quebec (Plains of Abraham) during the Seven Years' War, but secured British victory.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["wolfe", "quebec", "seven-years-war"]
+    },
+    {
+      "stem": "Who was known as 'The Great Commoner'?",
+      "options": [
+        { "label": "Robert Walpole", "isCorrect": false },
+        { "label": "William Pitt the Elder", "isCorrect": true },
+        { "label": "Edmund Burke", "isCorrect": false },
+        { "label": "Charles James Fox", "isCorrect": false }
+      ],
+      "explanation": "William Pitt the Elder was known as 'The Great Commoner' for his popular policies and refusal of a title until late in life.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["pitt-elder", "great-commoner", "politics"]
+    },
+    {
+      "stem": "What was the name of Captain Cook's ship?",
+      "options": [
+        { "label": "HMS Victory", "isCorrect": false },
+        { "label": "HMS Endeavour", "isCorrect": true },
+        { "label": "HMS Beagle", "isCorrect": false },
+        { "label": "HMS Bounty", "isCorrect": false }
+      ],
+      "explanation": "Captain Cook's first voyage to the Pacific was on HMS Endeavour (1768-1771), during which he mapped New Zealand and eastern Australia.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["captain-cook", "endeavour", "exploration"]
+    },
+    {
+      "stem": "The Methodist movement was founded by John Wesley.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. John Wesley founded the Methodist movement in the 1730s as a revival within the Church of England, emphasizing personal faith and social reform.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["john-wesley", "methodism", "religion"]
+    },
+    {
+      "stem": "Which two political parties dominated 18th century politics?",
+      "options": [
+        { "label": "Whigs and Tories", "isCorrect": true },
+        { "label": "Liberals and Conservatives", "isCorrect": false },
+        { "label": "Labour and Conservative", "isCorrect": false },
+        { "label": "Republicans and Democrats", "isCorrect": false }
+      ],
+      "explanation": "The Whigs and Tories were the two main political parties in 18th century Britain. Modern party names came later.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["whigs", "tories", "political-parties"]
+    },
+    {
+      "stem": "What were the main differences between Whigs and Tories?",
+      "options": [
+        { "label": "Whigs supported Parliamentary power", "isCorrect": true },
+        { "label": "Tories supported royal authority", "isCorrect": true },
+        { "label": "Whigs favored religious tolerance", "isCorrect": true },
+        { "label": "Both parties were identical", "isCorrect": false }
+      ],
+      "explanation": "Whigs generally supported Parliamentary power and religious tolerance, while Tories favored royal authority and the established church.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["whigs", "tories", "political-differences"]
+    },
+    {
+      "stem": "The gin craze was a social problem in 18th century London.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The gin craze (1720s-1750s) led to widespread alcoholism and social problems, immortalized in Hogarth's prints 'Beer Street and Gin Lane.'",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["gin-craze", "social-problems", "hogarth"]
+    },
+    {
+      "stem": "Who painted 'Marriage A-la-Mode'?",
+      "options": [
+        { "label": "Joshua Reynolds", "isCorrect": false },
+        { "label": "William Hogarth", "isCorrect": true },
+        { "label": "Thomas Gainsborough", "isCorrect": false },
+        { "label": "George Romney", "isCorrect": false }
+      ],
+      "explanation": "William Hogarth painted 'Marriage A-la-Mode' (1743), a series of satirical paintings criticizing arranged marriages among the upper classes.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["hogarth", "marriage-a-la-mode", "art"]
+    },
+    {
+      "stem": "The Foundling Hospital was established by Thomas Coram.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Thomas Coram established the Foundling Hospital in 1739 to care for abandoned children, reflecting growing social concern for welfare.",
+      "difficulty": "HARD",
+      "type": "TRUE_FALSE",
+      "tags": ["thomas-coram", "foundling-hospital", "social-reform"]
+    }
+  ]
+}

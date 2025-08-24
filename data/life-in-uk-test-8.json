@@ -1,0 +1,319 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Industrial Revolution",
+  "testDescription": "Comprehensive test covering the Industrial Revolution, technological innovations, social changes, working conditions, and the transformation of British society.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "The Industrial Revolution began in which century?",
+      "options": [
+        { "label": "17th century", "isCorrect": false },
+        { "label": "18th century", "isCorrect": true },
+        { "label": "19th century", "isCorrect": false },
+        { "label": "20th century", "isCorrect": false }
+      ],
+      "explanation": "The Industrial Revolution began in the 18th century (around 1760) in Britain, transforming manufacturing from hand production to mechanized factory production.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["industrial-revolution", "18th-century", "timeline"]
+    },
+    {
+      "stem": "Which invention revolutionized textile production?",
+      "options": [
+        { "label": "The spinning jenny", "isCorrect": true },
+        { "label": "The printing press", "isCorrect": false },
+        { "label": "The steam engine", "isCorrect": false },
+        { "label": "The telegraph", "isCorrect": false }
+      ],
+      "explanation": "The spinning jenny, invented by James Hargreaves in 1764, could spin multiple threads simultaneously, revolutionizing textile production.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["spinning-jenny", "textiles", "hargreaves"]
+    },
+    {
+      "stem": "James Watt improved the steam engine.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. James Watt improved the steam engine in 1769 by adding a separate condenser, making it much more efficient and practical for industrial use.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["james-watt", "steam-engine", "innovation"]
+    },
+    {
+      "stem": "Which industry was the first to be industrialized?",
+      "options": [
+        { "label": "Iron and steel", "isCorrect": false },
+        { "label": "Textiles", "isCorrect": true },
+        { "label": "Transportation", "isCorrect": false },
+        { "label": "Mining", "isCorrect": false }
+      ],
+      "explanation": "The textile industry was the first to be industrialized, with innovations in spinning and weaving leading the way.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["textiles", "industrialization", "first-industry"]
+    },
+    {
+      "stem": "What powered early factories before steam engines?",
+      "options": [
+        { "label": "Water wheels", "isCorrect": true },
+        { "label": "Wind power", "isCorrect": false },
+        { "label": "Animal power", "isCorrect": false },
+        { "label": "Human power", "isCorrect": false }
+      ],
+      "explanation": "Early factories were powered by water wheels, which is why they were often built near rivers and streams.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["water-wheels", "power", "early-factories"]
+    },
+    {
+      "stem": "The first passenger railway ran between which cities?",
+      "options": [
+        { "label": "London and Birmingham", "isCorrect": false },
+        { "label": "Liverpool and Manchester", "isCorrect": true },
+        { "label": "Leeds and Sheffield", "isCorrect": false },
+        { "label": "Newcastle and Durham", "isCorrect": false }
+      ],
+      "explanation": "The Liverpool and Manchester Railway opened in 1830 as the world's first inter-city passenger railway powered entirely by steam locomotives.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["railways", "liverpool-manchester", "1830"]
+    },
+    {
+      "stem": "George Stephenson built 'The Rocket' locomotive.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. George Stephenson built 'The Rocket' which won the Rainhill Trials in 1829 and became the template for future steam locomotives.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["stephenson", "rocket", "locomotive"]
+    },
+    {
+      "stem": "Which developments characterized the Industrial Revolution?",
+      "options": [
+        { "label": "Factory system", "isCorrect": true },
+        { "label": "Division of labor", "isCorrect": true },
+        { "label": "Steam power", "isCorrect": true },
+        { "label": "Agricultural economy", "isCorrect": false }
+      ],
+      "explanation": "The Industrial Revolution was characterized by the factory system, division of labor, and steam power. It moved away from agricultural economy.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["industrial-revolution", "characteristics", "changes"]
+    },
+    {
+      "stem": "What were the working conditions like in early factories?",
+      "options": [
+        { "label": "Long hours", "isCorrect": true },
+        { "label": "Dangerous machinery", "isCorrect": true },
+        { "label": "Child labor", "isCorrect": true },
+        { "label": "High wages", "isCorrect": false }
+      ],
+      "explanation": "Early factories had long hours, dangerous conditions, and employed children. Wages were generally low, not high.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["working-conditions", "factories", "labor"]
+    },
+    {
+      "stem": "The Factory Act of 1833 limited child labor.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Factory Act of 1833 was the first effective factory act, limiting working hours for children and requiring factory inspections.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["factory-act", "1833", "child-labor"]
+    },
+    {
+      "stem": "What did the Factory Act of 1833 establish?",
+      "options": [
+        {
+          "label": "Children under 9 could not work in factories",
+          "isCorrect": true
+        },
+        {
+          "label": "Children aged 9-13 could work maximum 9 hours",
+          "isCorrect": true
+        },
+        { "label": "Factory inspectors", "isCorrect": true },
+        { "label": "Minimum wage", "isCorrect": false }
+      ],
+      "explanation": "The 1833 Act banned work for under-9s, limited hours for 9-13 year olds, and created factory inspectors. Minimum wage came much later.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["factory-act", "1833", "provisions"]
+    },
+    {
+      "stem": "Who were the Luddites?",
+      "options": [
+        { "label": "Factory owners", "isCorrect": false },
+        { "label": "Workers who destroyed machinery", "isCorrect": true },
+        { "label": "Government inspectors", "isCorrect": false },
+        { "label": "Railway engineers", "isCorrect": false }
+      ],
+      "explanation": "The Luddites were textile workers who destroyed machinery between 1811-1816, fearing machines would take their jobs.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["luddites", "machinery", "protest"]
+    },
+    {
+      "stem": "The growth of industrial towns led to overcrowding and poor sanitation.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Rapid industrial growth led to overcrowded towns with poor housing, inadequate sanitation, and frequent disease outbreaks.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["industrial-towns", "overcrowding", "sanitation"]
+    },
+    {
+      "stem": "What was a 'company town'?",
+      "options": [
+        {
+          "label": "A town owned and controlled by a single company",
+          "isCorrect": true
+        },
+        { "label": "A town with many businesses", "isCorrect": false },
+        { "label": "A financial district", "isCorrect": false },
+        { "label": "A government administrative center", "isCorrect": false }
+      ],
+      "explanation": "A company town was owned and controlled by a single company, which provided housing, shops, and services for its workers.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["company-town", "industrial-society", "control"]
+    },
+    {
+      "stem": "Which canal was known as the 'Grand Trunk'?",
+      "options": [
+        { "label": "Suez Canal", "isCorrect": false },
+        { "label": "Trent and Mersey Canal", "isCorrect": true },
+        { "label": "Manchester Ship Canal", "isCorrect": false },
+        { "label": "Caledonian Canal", "isCorrect": false }
+      ],
+      "explanation": "The Trent and Mersey Canal, completed in 1777, was known as the 'Grand Trunk' and connected the rivers Trent and Mersey.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["canals", "trent-mersey", "grand-trunk"]
+    },
+    {
+      "stem": "Who was Josiah Wedgwood?",
+      "options": [
+        { "label": "A railway engineer", "isCorrect": false },
+        { "label": "A pottery manufacturer", "isCorrect": true },
+        { "label": "A textile worker", "isCorrect": false },
+        { "label": "A coal miner", "isCorrect": false }
+      ],
+      "explanation": "Josiah Wedgwood was a famous pottery manufacturer who revolutionized ceramic production and was instrumental in canal building.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["josiah-wedgwood", "pottery", "manufacturing"]
+    },
+    {
+      "stem": "The Industrial Revolution led to the growth of trade unions.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Poor working conditions and low wages led workers to form trade unions to bargain collectively for better conditions.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["trade-unions", "workers", "collective-bargaining"]
+    },
+    {
+      "stem": "What were 'turnpike roads'?",
+      "options": [
+        { "label": "Free public roads", "isCorrect": false },
+        {
+          "label": "Toll roads maintained by private companies",
+          "isCorrect": true
+        },
+        { "label": "Military roads", "isCorrect": false },
+        { "label": "Railway tracks", "isCorrect": false }
+      ],
+      "explanation": "Turnpike roads were toll roads maintained by private companies, which improved road quality for faster travel and goods transport.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["turnpike-roads", "transportation", "tolls"]
+    },
+    {
+      "stem": "Which innovator developed the process for mass-producing steel?",
+      "options": [
+        { "label": "Henry Bessemer", "isCorrect": true },
+        { "label": "Abraham Darby", "isCorrect": false },
+        { "label": "Henry Cort", "isCorrect": false },
+        { "label": "John Wilkinson", "isCorrect": false }
+      ],
+      "explanation": "Henry Bessemer developed the Bessemer process in 1856, which made mass production of steel economically viable.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["henry-bessemer", "steel", "mass-production"]
+    },
+    {
+      "stem": "Abraham Darby first used coke instead of charcoal in iron production.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Abraham Darby first successfully used coke (processed coal) instead of charcoal for iron smelting around 1709, revolutionizing iron production.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["abraham-darby", "coke", "iron-production"]
+    },
+    {
+      "stem": "What social changes resulted from industrialization?",
+      "options": [
+        { "label": "Growth of middle class", "isCorrect": true },
+        { "label": "Urbanization", "isCorrect": true },
+        { "label": "Class consciousness", "isCorrect": true },
+        { "label": "Return to rural life", "isCorrect": false }
+      ],
+      "explanation": "Industrialization led to a growing middle class, urbanization, and increased class consciousness. It moved people away from rural life.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["social-changes", "middle-class", "urbanization"]
+    },
+    {
+      "stem": "The Great Exhibition was held in which year?",
+      "options": [
+        { "label": "1850", "isCorrect": false },
+        { "label": "1851", "isCorrect": true },
+        { "label": "1852", "isCorrect": false },
+        { "label": "1853", "isCorrect": false }
+      ],
+      "explanation": "The Great Exhibition was held in 1851 in the Crystal Palace, showcasing industrial achievements from around the world.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["great-exhibition", "1851", "crystal-palace"]
+    },
+    {
+      "stem": "The Crystal Palace was made of iron and glass.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Crystal Palace was a revolutionary building made of iron and glass, designed by Joseph Paxton for the Great Exhibition.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["crystal-palace", "iron", "glass"]
+    },
+    {
+      "stem": "What was the impact of railways on society?",
+      "options": [
+        { "label": "Faster travel and communication", "isCorrect": true },
+        { "label": "Growth of seaside resorts", "isCorrect": true },
+        { "label": "Standardization of time", "isCorrect": true },
+        { "label": "Decline in trade", "isCorrect": false }
+      ],
+      "explanation": "Railways enabled faster travel, created seaside tourism, and led to standardized time zones. They increased rather than decreased trade.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["railways", "social-impact", "modernization"]
+    }
+  ]
+}

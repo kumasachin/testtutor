@@ -5,24 +5,28 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
 ## 🌟 Features
 
 ### For Test Creators
+
 - **Intuitive Test Builder**: Create comprehensive exams with multiple-choice questions
 - **Rich Question Editor**: Add explanations, set point values, and configure multiple correct answers
 - **Category Organization**: Organize tests by domain (Life in UK, Driving Theory, etc.)
 - **Real-time Preview**: See how your test will look to students as you build it
 
 ### For Administrators
+
 - **Approval Workflow**: Review and approve user-generated content before publication
 - **Admin Dashboard**: Comprehensive oversight with stats, user management, and content control
 - **Domain Management**: Configure test categories and their specific requirements
 - **User Role Management**: Control access levels and permissions
 
 ### For Test Takers
+
 - **Category-Specific Routes**: Dedicated pages for different test types
 - **Progress Tracking**: Monitor your performance across different test categories
 - **Responsive Design**: Take tests on any device with a seamless experience
 - **Detailed Results**: Get comprehensive feedback with explanations
 
 ### Technical Features
+
 - **Multi-tenant Architecture**: Support for multiple domains and organizations
 - **Row Level Security**: Database-level security with Supabase RLS
 - **Type-safe Database**: Prisma ORM with full TypeScript integration
@@ -32,6 +36,7 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+
 - PostgreSQL database (or Supabase account)
 - npm or yarn
@@ -39,6 +44,7 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
 ### Installation
 
 1. **Clone and setup**:
+
    ```bash
    git clone <repository-url>
    cd examkit-next
@@ -47,6 +53,7 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
 
 2. **Configure environment**:
    Update `.env.local` with your database credentials:
+
    ```env
    DATABASE_URL="postgresql://username:password@localhost:5432/examkit"
    NEXT_PUBLIC_SUPABASE_URL="your-supabase-url"
@@ -54,6 +61,7 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
    ```
 
 3. **Setup database**:
+
    ```bash
    npx prisma migrate dev
    npx tsx scripts/seed-domains.ts  # Optional: seed default domains
@@ -90,12 +98,14 @@ src/
 ## 🎯 Test Categories
 
 ### Life in UK Tests
+
 - British citizenship preparation
 - Official test format with 24 questions
 - 45-minute time limit
 - 75% passing score
 
 ### Driving Theory Tests
+
 - **Car Theory**: DVSA-approved questions for car drivers
 - **Motorcycle Theory**: Specialized questions for motorcycle riders
 - 50 questions, 57-minute time limit
@@ -114,6 +124,7 @@ src/
 ### Category Filtering
 
 Tests can be filtered by category using query parameters:
+
 ```
 /api/tests?category=life-in-uk
 /api/tests?category=driving-theory
@@ -155,12 +166,13 @@ npx prisma generate
 ### Adding New Test Categories
 
 1. Create domain in database:
+
    ```typescript
    await ExamKitService.createDomain({
-     name: 'new-category',
-     displayName: 'New Category',
-     description: 'Description of new category',
-     config: { passingScore: 80, timeLimit: 60 }
+     name: "new-category",
+     displayName: "New Category",
+     description: "Description of new category",
+     config: { passingScore: 80, timeLimit: 60 },
    });
    ```
 
@@ -171,6 +183,7 @@ npx prisma generate
 ### Theming
 
 ExamKit uses Tailwind CSS with category-specific color schemes:
+
 - Life in UK: Green theme (`green-*` classes)
 - Driving Theory: Blue theme (`blue-*` classes)
 - Motorcycle: Orange theme (`orange-*` classes)
@@ -178,6 +191,7 @@ ExamKit uses Tailwind CSS with category-specific color schemes:
 ## 📊 Monitoring & Analytics
 
 The admin dashboard provides insights into:
+
 - Total tests created and published
 - User registration and activity
 - Test attempt statistics
@@ -198,6 +212,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For support and questions:
+
 - Check the documentation above
 - Open an issue on GitHub
 - Review the API documentation in the code

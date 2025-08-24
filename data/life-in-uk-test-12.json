@@ -1,0 +1,299 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Modern Britain & Government",
+  "testDescription": "Comprehensive test covering British government system, democracy, rights and responsibilities, legal system, and civic participation in modern UK.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "The UK is a constitutional monarchy.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The UK is a constitutional monarchy where the monarch is the head of state but power is exercised by elected politicians.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["constitutional-monarchy", "government", "democracy"]
+    },
+    {
+      "stem": "Who is the head of state in the UK?",
+      "options": [
+        { "label": "The Prime Minister", "isCorrect": false },
+        { "label": "The monarch", "isCorrect": true },
+        { "label": "The Speaker of the House", "isCorrect": false },
+        { "label": "The Lord Chancellor", "isCorrect": false }
+      ],
+      "explanation": "The monarch is the head of state in the UK, while the Prime Minister is the head of government.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["head-of-state", "monarch", "government"]
+    },
+    {
+      "stem": "The UK Parliament has how many houses?",
+      "options": [
+        { "label": "One", "isCorrect": false },
+        { "label": "Two", "isCorrect": true },
+        { "label": "Three", "isCorrect": false },
+        { "label": "Four", "isCorrect": false }
+      ],
+      "explanation": "The UK Parliament has two houses: the House of Commons (elected) and the House of Lords (appointed and hereditary).",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["parliament", "houses", "commons-lords"]
+    },
+    {
+      "stem": "Which house of Parliament is elected?",
+      "options": [
+        { "label": "House of Lords", "isCorrect": false },
+        { "label": "House of Commons", "isCorrect": true },
+        { "label": "House of Representatives", "isCorrect": false },
+        { "label": "Senate", "isCorrect": false }
+      ],
+      "explanation": "The House of Commons is elected by the people. The House of Lords is largely appointed, with some hereditary peers.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["house-of-commons", "elections", "democracy"]
+    },
+    {
+      "stem": "How often must general elections be held?",
+      "options": [
+        { "label": "Every 3 years", "isCorrect": false },
+        { "label": "Every 4 years", "isCorrect": false },
+        { "label": "At least every 5 years", "isCorrect": true },
+        { "label": "Every 6 years", "isCorrect": false }
+      ],
+      "explanation": "General elections must be held at least every 5 years, though they can be called earlier by the Prime Minister.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["general-elections", "5-years", "voting"]
+    },
+    {
+      "stem": "Who can vote in general elections?",
+      "options": [
+        { "label": "UK citizens aged 18+", "isCorrect": true },
+        {
+          "label": "Commonwealth citizens with leave to remain",
+          "isCorrect": true
+        },
+        { "label": "Irish citizens resident in UK", "isCorrect": true },
+        { "label": "EU citizens", "isCorrect": false }
+      ],
+      "explanation": "UK, Commonwealth, and Irish citizens aged 18+ can vote in general elections. Most EU citizens cannot vote in general elections.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["voting-rights", "elections", "citizenship"]
+    },
+    {
+      "stem": "Voting in the UK is by secret ballot.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Voting is by secret ballot to ensure people can vote freely without pressure or coercion.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["secret-ballot", "voting", "democracy"]
+    },
+    {
+      "stem": "The electoral system used for general elections is:",
+      "options": [
+        { "label": "Proportional representation", "isCorrect": false },
+        { "label": "First past the post", "isCorrect": true },
+        { "label": "Single transferable vote", "isCorrect": false },
+        { "label": "Alternative vote", "isCorrect": false }
+      ],
+      "explanation": "General elections use the 'first past the post' system where the candidate with the most votes in each constituency wins.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["first-past-post", "electoral-system", "constituencies"]
+    },
+    {
+      "stem": "How many constituencies are there in the UK?",
+      "options": [
+        { "label": "600", "isCorrect": false },
+        { "label": "650", "isCorrect": true },
+        { "label": "700", "isCorrect": false },
+        { "label": "750", "isCorrect": false }
+      ],
+      "explanation": "There are 650 constituencies in the UK, each electing one Member of Parliament (MP) to the House of Commons.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["constituencies", "650", "mps"]
+    },
+    {
+      "stem": "The Prime Minister is the leader of the largest party in the House of Commons.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Prime Minister is typically the leader of the political party with the most seats in the House of Commons.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["prime-minister", "party-leader", "commons"]
+    },
+    {
+      "stem": "What is the Cabinet?",
+      "options": [
+        { "label": "Senior government ministers", "isCorrect": true },
+        { "label": "All Members of Parliament", "isCorrect": false },
+        { "label": "The House of Lords", "isCorrect": false },
+        { "label": "Civil servants", "isCorrect": false }
+      ],
+      "explanation": "The Cabinet consists of about 20 senior government ministers, chosen by the Prime Minister to run government departments.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["cabinet", "ministers", "government"]
+    },
+    {
+      "stem": "The Opposition is led by the second largest party in Parliament.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The official Opposition is led by the largest party not in government, providing scrutiny and alternative policies.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["opposition", "second-largest-party", "scrutiny"]
+    },
+    {
+      "stem": "Which of these are devolved administrations?",
+      "options": [
+        { "label": "Scottish Parliament", "isCorrect": true },
+        { "label": "Welsh Parliament", "isCorrect": true },
+        { "label": "Northern Ireland Assembly", "isCorrect": true },
+        { "label": "London Assembly", "isCorrect": false }
+      ],
+      "explanation": "Scotland, Wales, and Northern Ireland have devolved parliaments/assemblies. London Assembly is not a devolved administration.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["devolution", "scotland", "wales", "northern-ireland"]
+    },
+    {
+      "stem": "Devolution means transferring power from central government to regional administrations.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Devolution transfers certain powers from Westminster to Scotland, Wales, and Northern Ireland to make local decisions.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["devolution", "power-transfer", "local-decisions"]
+    },
+    {
+      "stem": "The highest court in the UK is:",
+      "options": [
+        { "label": "Court of Appeal", "isCorrect": false },
+        { "label": "High Court", "isCorrect": false },
+        { "label": "Supreme Court", "isCorrect": true },
+        { "label": "Crown Court", "isCorrect": false }
+      ],
+      "explanation": "The UK Supreme Court is the highest court, established in 2009 to replace the House of Lords as the final court of appeal.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["supreme-court", "highest-court", "appeals"]
+    },
+    {
+      "stem": "Judges in the UK are independent of government.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Judicial independence means judges make decisions based on evidence and law, not political pressure.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["judicial-independence", "judges", "law"]
+    },
+    {
+      "stem": "What is the role of juries?",
+      "options": [
+        { "label": "Decide guilt in criminal cases", "isCorrect": true },
+        { "label": "Decide liability in civil cases", "isCorrect": true },
+        { "label": "Represent ordinary citizens", "isCorrect": true },
+        { "label": "Make laws", "isCorrect": false }
+      ],
+      "explanation": "Juries decide guilt in criminal cases and liability in civil cases, representing ordinary citizens. Parliament makes laws.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["juries", "criminal-cases", "civil-cases"]
+    },
+    {
+      "stem": "Civil cases deal with disputes between individuals.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Civil cases involve disputes between individuals, organizations, or government bodies over rights and obligations.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["civil-cases", "disputes", "individuals"]
+    },
+    {
+      "stem": "What are the fundamental principles of British law?",
+      "options": [
+        { "label": "Everyone is equal before the law", "isCorrect": true },
+        {
+          "label": "Everyone has the right to a fair trial",
+          "isCorrect": true
+        },
+        {
+          "label": "Everyone is innocent until proven guilty",
+          "isCorrect": true
+        },
+        { "label": "Everyone must represent themselves", "isCorrect": false }
+      ],
+      "explanation": "British law is based on equality, fair trials, and presumption of innocence. People have the right to legal representation.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["legal-principles", "equality", "fair-trial"]
+    },
+    {
+      "stem": "The police can arrest someone without a warrant in certain circumstances.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Police can arrest without warrant if they suspect someone of committing, has committed, or is about to commit a crime.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["police-powers", "arrest", "warrant"]
+    },
+    {
+      "stem": "What rights do people have when arrested?",
+      "options": [
+        { "label": "Right to remain silent", "isCorrect": true },
+        { "label": "Right to legal advice", "isCorrect": true },
+        { "label": "Right to inform someone of arrest", "isCorrect": true },
+        { "label": "Right to immediate release", "isCorrect": false }
+      ],
+      "explanation": "When arrested, people have rights to silence, legal advice, and to inform someone. There's no automatic right to immediate release.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["arrest-rights", "legal-advice", "silence"]
+    },
+    {
+      "stem": "Human rights in the UK are protected by the Human Rights Act 1998.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Human Rights Act 1998 incorporates the European Convention on Human Rights into UK law.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["human-rights-act", "1998", "echr"]
+    },
+    {
+      "stem": "Which are examples of human rights?",
+      "options": [
+        { "label": "Right to life", "isCorrect": true },
+        { "label": "Freedom of expression", "isCorrect": true },
+        { "label": "Right to privacy", "isCorrect": true },
+        { "label": "Right to free housing", "isCorrect": false }
+      ],
+      "explanation": "Human rights include life, expression, and privacy. There's no absolute right to free housing, though housing assistance exists.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["human-rights", "life", "expression", "privacy"]
+    }
+  ]
+}

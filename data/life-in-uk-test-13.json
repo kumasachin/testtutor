@@ -1,0 +1,303 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Culture, Sports & Traditions",
+  "testDescription": "Comprehensive test covering British culture, sports, traditions, holidays, arts, literature, and cultural contributions to world heritage.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Which sport is considered to have originated in England?",
+      "options": [
+        { "label": "Football (soccer)", "isCorrect": true },
+        { "label": "Cricket", "isCorrect": true },
+        { "label": "Rugby", "isCorrect": true },
+        { "label": "Basketball", "isCorrect": false }
+      ],
+      "explanation": "Football, cricket, and rugby all originated in England and spread worldwide. Basketball was invented in America.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["sports", "football", "cricket", "rugby"]
+    },
+    {
+      "stem": "The FA Cup is the world's oldest football competition.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The FA Cup, established in 1871, is the world's oldest national football competition.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["fa-cup", "football", "oldest-competition"]
+    },
+    {
+      "stem": "Wimbledon is famous for which sport?",
+      "options": [
+        { "label": "Football", "isCorrect": false },
+        { "label": "Tennis", "isCorrect": true },
+        { "label": "Cricket", "isCorrect": false },
+        { "label": "Golf", "isCorrect": false }
+      ],
+      "explanation": "Wimbledon is the world's oldest tennis tournament and one of the four Grand Slam tournaments.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["wimbledon", "tennis", "grand-slam"]
+    },
+    {
+      "stem": "What is traditionally eaten at Wimbledon?",
+      "options": [
+        { "label": "Fish and chips", "isCorrect": false },
+        { "label": "Strawberries and cream", "isCorrect": true },
+        { "label": "Roast beef", "isCorrect": false },
+        { "label": "Cucumber sandwiches", "isCorrect": false }
+      ],
+      "explanation": "Strawberries and cream is the traditional food associated with Wimbledon tennis championships.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["wimbledon", "strawberries-cream", "tradition"]
+    },
+    {
+      "stem": "The Open Championship is a major tournament in which sport?",
+      "options": [
+        { "label": "Tennis", "isCorrect": false },
+        { "label": "Golf", "isCorrect": true },
+        { "label": "Cricket", "isCorrect": false },
+        { "label": "Snooker", "isCorrect": false }
+      ],
+      "explanation": "The Open Championship (often called The Open) is one of golf's four major championships and the oldest golf tournament.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["open-championship", "golf", "major"]
+    },
+    {
+      "stem": "Horse racing takes place at which famous venues?",
+      "options": [
+        { "label": "Royal Ascot", "isCorrect": true },
+        { "label": "Cheltenham", "isCorrect": true },
+        { "label": "Aintree (Grand National)", "isCorrect": true },
+        { "label": "Lords", "isCorrect": false }
+      ],
+      "explanation": "Royal Ascot, Cheltenham, and Aintree are famous horse racing venues. Lords is a cricket ground.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["horse-racing", "ascot", "cheltenham", "aintree"]
+    },
+    {
+      "stem": "Which playwright is often called England's greatest writer?",
+      "options": [
+        { "label": "Charles Dickens", "isCorrect": false },
+        { "label": "William Shakespeare", "isCorrect": true },
+        { "label": "Jane Austen", "isCorrect": false },
+        { "label": "George Orwell", "isCorrect": false }
+      ],
+      "explanation": "William Shakespeare is widely regarded as the greatest writer in the English language and the world's greatest dramatist.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["shakespeare", "playwright", "greatest-writer"]
+    },
+    {
+      "stem": "Shakespeare wrote both plays and sonnets.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Shakespeare wrote approximately 37 plays and 154 sonnets, covering tragedies, comedies, and histories.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["shakespeare", "plays", "sonnets"]
+    },
+    {
+      "stem": "Which are famous works by Shakespeare?",
+      "options": [
+        { "label": "Romeo and Juliet", "isCorrect": true },
+        { "label": "Hamlet", "isCorrect": true },
+        { "label": "Macbeth", "isCorrect": true },
+        { "label": "Pride and Prejudice", "isCorrect": false }
+      ],
+      "explanation": "Romeo and Juliet, Hamlet, and Macbeth are Shakespeare's works. Pride and Prejudice was written by Jane Austen.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["shakespeare", "romeo-juliet", "hamlet", "macbeth"]
+    },
+    {
+      "stem": "The Globe Theatre is associated with Shakespeare.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Globe Theatre in London was where many of Shakespeare's plays were performed. A reconstruction exists today.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["globe-theatre", "shakespeare", "london"]
+    },
+    {
+      "stem": "Which authors wrote classic British novels?",
+      "options": [
+        { "label": "Jane Austen", "isCorrect": true },
+        { "label": "Charles Dickens", "isCorrect": true },
+        { "label": "Charlotte Brontë", "isCorrect": true },
+        { "label": "Mark Twain", "isCorrect": false }
+      ],
+      "explanation": "Austen, Dickens, and Brontë were British authors. Mark Twain was American.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["british-authors", "austen", "dickens", "bronte"]
+    },
+    {
+      "stem": "Burns Night celebrates which poet?",
+      "options": [
+        { "label": "William Wordsworth", "isCorrect": false },
+        { "label": "Robert Burns", "isCorrect": true },
+        { "label": "Lord Byron", "isCorrect": false },
+        { "label": "William Blake", "isCorrect": false }
+      ],
+      "explanation": "Burns Night (January 25) celebrates Robert Burns, Scotland's national poet, with traditional Scottish food and poetry.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["burns-night", "robert-burns", "scottish-poet"]
+    },
+    {
+      "stem": "What is traditionally eaten on Burns Night?",
+      "options": [
+        { "label": "Haggis", "isCorrect": true },
+        { "label": "Fish and chips", "isCorrect": false },
+        { "label": "Roast turkey", "isCorrect": false },
+        { "label": "Christmas pudding", "isCorrect": false }
+      ],
+      "explanation": "Haggis is traditionally eaten on Burns Night, often accompanied by 'neeps and tatties' (turnips and potatoes).",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["burns-night", "haggis", "scottish-food"]
+    },
+    {
+      "stem": "St. David's Day is celebrated in Wales on March 1st.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. St. David's Day on March 1st celebrates the patron saint of Wales, often marked by wearing daffodils or leeks.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["st-davids-day", "wales", "march-1"]
+    },
+    {
+      "stem": "What are the symbols of Wales?",
+      "options": [
+        { "label": "Daffodil", "isCorrect": true },
+        { "label": "Leek", "isCorrect": true },
+        { "label": "Red Dragon", "isCorrect": true },
+        { "label": "Thistle", "isCorrect": false }
+      ],
+      "explanation": "Wales' symbols include the daffodil, leek, and red dragon. The thistle is Scotland's symbol.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["welsh-symbols", "daffodil", "leek", "red-dragon"]
+    },
+    {
+      "stem": "St. Patrick's Day celebrates the patron saint of Ireland.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. St. Patrick's Day on March 17th celebrates Ireland's patron saint, often marked by wearing shamrock.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["st-patricks-day", "ireland", "march-17"]
+    },
+    {
+      "stem": "Halloween originated from which ancient festival?",
+      "options": [
+        { "label": "Samhain", "isCorrect": true },
+        { "label": "Beltane", "isCorrect": false },
+        { "label": "Lughnasadh", "isCorrect": false },
+        { "label": "Imbolc", "isCorrect": false }
+      ],
+      "explanation": "Halloween originated from the ancient Celtic festival of Samhain, marking the end of the harvest season.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["halloween", "samhain", "celtic"]
+    },
+    {
+      "stem": "Bonfire Night commemorates which historical event?",
+      "options": [
+        { "label": "The Great Fire of London", "isCorrect": false },
+        { "label": "The Gunpowder Plot", "isCorrect": true },
+        { "label": "The Battle of Trafalgar", "isCorrect": false },
+        { "label": "The Fire of London", "isCorrect": false }
+      ],
+      "explanation": "Bonfire Night (November 5th) commemorates the failure of the Gunpowder Plot of 1605 to blow up Parliament.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["bonfire-night", "gunpowder-plot", "november-5"]
+    },
+    {
+      "stem": "Christmas traditions in Britain include Christmas crackers.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Christmas crackers, containing paper hats, jokes, and small gifts, are a traditional part of British Christmas dinner.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["christmas", "crackers", "tradition"]
+    },
+    {
+      "stem": "What is Boxing Day?",
+      "options": [
+        { "label": "The day after Christmas", "isCorrect": true },
+        { "label": "A day for boxing matches", "isCorrect": false },
+        { "label": "The day before Christmas", "isCorrect": false },
+        { "label": "New Year's Day", "isCorrect": false }
+      ],
+      "explanation": "Boxing Day is December 26th, the day after Christmas, traditionally when gifts were given to servants and tradespeople.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["boxing-day", "december-26", "tradition"]
+    },
+    {
+      "stem": "The BBC Proms is a series of classical music concerts.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The BBC Proms is an annual series of classical music concerts held at the Royal Albert Hall in London.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["bbc-proms", "classical-music", "royal-albert-hall"]
+    },
+    {
+      "stem": "Which are famous British films?",
+      "options": [
+        { "label": "Four Weddings and a Funeral", "isCorrect": true },
+        { "label": "The Full Monty", "isCorrect": true },
+        { "label": "Trainspotting", "isCorrect": true },
+        { "label": "Casablanca", "isCorrect": false }
+      ],
+      "explanation": "Four Weddings and a Funeral, The Full Monty, and Trainspotting are famous British films. Casablanca is American.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["british-films", "four-weddings", "full-monty", "trainspotting"]
+    },
+    {
+      "stem": "The Edinburgh Festival is held annually in Scotland.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Edinburgh Festival is the world's largest arts festival, held annually in August in Scotland's capital.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["edinburgh-festival", "scotland", "arts"]
+    },
+    {
+      "stem": "Fish and chips is considered a traditional British dish.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Fish and chips is one of the most iconic British dishes, traditionally served wrapped in newspaper.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["fish-and-chips", "traditional-food", "british-dish"]
+    }
+  ]
+}

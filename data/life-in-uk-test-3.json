@@ -1,0 +1,312 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Anglo-Saxons & Vikings",
+  "testDescription": "Comprehensive test covering the Anglo-Saxon period, Viking invasions, and early medieval Britain including key figures, battles, and cultural developments.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "When did the Anglo-Saxons come to Britain?",
+      "options": [
+        { "label": "After the Romans left in 410 AD", "isCorrect": true },
+        { "label": "Before the Romans arrived", "isCorrect": false },
+        { "label": "During Roman rule", "isCorrect": false },
+        { "label": "After the Norman Conquest", "isCorrect": false }
+      ],
+      "explanation": "The Anglo-Saxons came to Britain after the Romans left around 410 AD, settling mainly in what is now England.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["anglo-saxons", "timeline", "migration"]
+    },
+    {
+      "stem": "The Anglo-Saxons came from which regions?",
+      "options": [
+        { "label": "Germany", "isCorrect": true },
+        { "label": "Denmark", "isCorrect": true },
+        { "label": "Netherlands", "isCorrect": true },
+        { "label": "France", "isCorrect": false }
+      ],
+      "explanation": "The Anglo-Saxons came from present-day Germany, Denmark, and the Netherlands. They were made up of Angles, Saxons, and Jutes.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["anglo-saxons", "origins", "migration"]
+    },
+    {
+      "stem": "What language did the Anglo-Saxons speak?",
+      "options": [
+        { "label": "Latin", "isCorrect": false },
+        { "label": "Celtic", "isCorrect": false },
+        { "label": "Anglo-Saxon (Old English)", "isCorrect": true },
+        { "label": "Norman French", "isCorrect": false }
+      ],
+      "explanation": "The Anglo-Saxons spoke Anglo-Saxon, also known as Old English, which is the basis of modern English.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["anglo-saxons", "language", "old-english"]
+    },
+    {
+      "stem": "The Anglo-Saxons were initially pagans but later converted to Christianity.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Anglo-Saxons were initially pagan but gradually converted to Christianity through missionary work.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["anglo-saxons", "christianity", "conversion"]
+    },
+    {
+      "stem": "Who was St Augustine?",
+      "options": [
+        { "label": "A Viking leader", "isCorrect": false },
+        {
+          "label": "A missionary sent to convert the Anglo-Saxons",
+          "isCorrect": true
+        },
+        { "label": "An Anglo-Saxon king", "isCorrect": false },
+        { "label": "A Roman general", "isCorrect": false }
+      ],
+      "explanation": "St Augustine was a missionary sent by Pope Gregory the Great to convert the Anglo-Saxons to Christianity in 597 AD.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["st-augustine", "christianity", "missionary"]
+    },
+    {
+      "stem": "What were Anglo-Saxon kingdoms called?",
+      "options": [
+        { "label": "Counties", "isCorrect": false },
+        { "label": "Shires", "isCorrect": false },
+        { "label": "Kingdoms", "isCorrect": true },
+        { "label": "Duchies", "isCorrect": false }
+      ],
+      "explanation": "Anglo-Saxon England was divided into kingdoms such as Wessex, Mercia, and Northumbria.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["anglo-saxons", "kingdoms", "government"]
+    },
+    {
+      "stem": "When did the Vikings first raid Britain?",
+      "options": [
+        { "label": "787 AD", "isCorrect": false },
+        { "label": "793 AD", "isCorrect": true },
+        { "label": "800 AD", "isCorrect": false },
+        { "label": "820 AD", "isCorrect": false }
+      ],
+      "explanation": "The Vikings first raided Britain in 793 AD when they attacked the monastery at Lindisfarne.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["vikings", "raids", "lindisfarne"]
+    },
+    {
+      "stem": "Where did the Vikings come from?",
+      "options": [
+        { "label": "Norway", "isCorrect": true },
+        { "label": "Sweden", "isCorrect": true },
+        { "label": "Denmark", "isCorrect": true },
+        { "label": "Finland", "isCorrect": false }
+      ],
+      "explanation": "Vikings came from Norway, Sweden, and Denmark. They were also known as Norsemen or Northmen.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["vikings", "origins", "scandinavia"]
+    },
+    {
+      "stem": "What was the Danelaw?",
+      "options": [
+        { "label": "Viking law code", "isCorrect": false },
+        { "label": "Area of England under Viking control", "isCorrect": true },
+        { "label": "A Viking ship", "isCorrect": false },
+        { "label": "A type of Viking weapon", "isCorrect": false }
+      ],
+      "explanation": "The Danelaw was the area of England under Viking control, roughly covering the north and east of England.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["danelaw", "vikings", "territory"]
+    },
+    {
+      "stem": "King Alfred was known as 'Alfred the Great.'",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. King Alfred of Wessex (871-899 AD) was the only English king to be called 'the Great' due to his military successes and reforms.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["alfred-the-great", "wessex", "kings"]
+    },
+    {
+      "stem": "What did King Alfred achieve?",
+      "options": [
+        { "label": "Defeated the Vikings in many battles", "isCorrect": true },
+        { "label": "Established schools", "isCorrect": true },
+        { "label": "Created a legal code", "isCorrect": true },
+        { "label": "Built the Tower of London", "isCorrect": false }
+      ],
+      "explanation": "Alfred defeated Vikings, established schools, created legal codes, and promoted learning. The Tower of London was built much later by the Normans.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["alfred-the-great", "achievements", "education"]
+    },
+    {
+      "stem": "What type of ships did the Vikings use?",
+      "options": [
+        { "label": "Galleys", "isCorrect": false },
+        { "label": "Longships", "isCorrect": true },
+        { "label": "Caravels", "isCorrect": false },
+        { "label": "Galleons", "isCorrect": false }
+      ],
+      "explanation": "Vikings used longships, which were fast, shallow-draft vessels perfect for raids and river navigation.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["vikings", "longships", "naval"]
+    },
+    {
+      "stem": "Where did Vikings establish settlements outside Britain?",
+      "options": [
+        { "label": "Iceland", "isCorrect": true },
+        { "label": "Greenland", "isCorrect": true },
+        { "label": "Parts of North America", "isCorrect": true },
+        { "label": "Australia", "isCorrect": false }
+      ],
+      "explanation": "Vikings established settlements in Iceland, Greenland, and even reached North America (Vinland). They never reached Australia.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["vikings", "exploration", "settlements"]
+    },
+    {
+      "stem": "What was the Anglo-Saxon Chronicle?",
+      "options": [
+        { "label": "A collection of poems", "isCorrect": false },
+        { "label": "A historical record", "isCorrect": true },
+        { "label": "A legal document", "isCorrect": false },
+        { "label": "A religious text", "isCorrect": false }
+      ],
+      "explanation": "The Anglo-Saxon Chronicle was a collection of annals recording the history of the Anglo-Saxons.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["anglo-saxon-chronicle", "history", "records"]
+    },
+    {
+      "stem": "Beowulf is an Anglo-Saxon epic poem.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Beowulf is the most famous Anglo-Saxon epic poem, telling the story of a Scandinavian hero.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["beowulf", "literature", "epic-poetry"]
+    },
+    {
+      "stem": "What was a 'thing' in Viking society?",
+      "options": [
+        { "label": "A weapon", "isCorrect": false },
+        { "label": "An assembly or court", "isCorrect": true },
+        { "label": "A type of ship", "isCorrect": false },
+        { "label": "A religious ceremony", "isCorrect": false }
+      ],
+      "explanation": "A 'thing' was a Viking assembly where free men could discuss issues and settle disputes.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["vikings", "thing", "governance"]
+    },
+    {
+      "stem": "Who was Canute (Cnut)?",
+      "options": [
+        { "label": "An Anglo-Saxon king", "isCorrect": false },
+        { "label": "A Viking king who ruled England", "isCorrect": true },
+        { "label": "A Norman duke", "isCorrect": false },
+        { "label": "A Celtic chief", "isCorrect": false }
+      ],
+      "explanation": "Canute (Cnut) was a Viking king who ruled England from 1016-1035 and created a North Sea empire.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["canute", "vikings", "kings"]
+    },
+    {
+      "stem": "The Vikings only came to Britain as raiders.",
+      "options": [
+        { "label": "True", "isCorrect": false },
+        { "label": "False", "isCorrect": true }
+      ],
+      "explanation": "False. While Vikings initially came as raiders, many later settled and became farmers, traders, and craftsmen.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["vikings", "settlement", "occupation"]
+    },
+    {
+      "stem": "What was wergild in Anglo-Saxon law?",
+      "options": [
+        { "label": "A type of tax", "isCorrect": false },
+        { "label": "Compensation paid for killing someone", "isCorrect": true },
+        { "label": "A court fine", "isCorrect": false },
+        { "label": "Payment to the church", "isCorrect": false }
+      ],
+      "explanation": "Wergild was the compensation paid to the family of a murder victim instead of seeking revenge.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["anglo-saxons", "wergild", "law"]
+    },
+    {
+      "stem": "Anglo-Saxon society was divided into which groups?",
+      "options": [
+        { "label": "Nobles (earls)", "isCorrect": true },
+        { "label": "Ordinary freemen (churls)", "isCorrect": true },
+        { "label": "Slaves", "isCorrect": true },
+        { "label": "Priests only", "isCorrect": false }
+      ],
+      "explanation": "Anglo-Saxon society had nobles (earls), ordinary freemen (churls), and slaves. Priests were part of the church hierarchy.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["anglo-saxons", "social-structure", "classes"]
+    },
+    {
+      "stem": "What was the Sutton Hoo burial?",
+      "options": [
+        { "label": "A Viking tomb", "isCorrect": false },
+        { "label": "An Anglo-Saxon ship burial", "isCorrect": true },
+        { "label": "A Roman cemetery", "isCorrect": false },
+        { "label": "A Celtic grave", "isCorrect": false }
+      ],
+      "explanation": "Sutton Hoo was an Anglo-Saxon ship burial site dating from the early 7th century, possibly of King Raedwald.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["sutton-hoo", "burial", "archaeology"]
+    },
+    {
+      "stem": "Vikings were skilled metalworkers and traders.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Vikings were skilled craftsmen, metalworkers, and long-distance traders who reached as far as Constantinople and North America.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["vikings", "crafts", "trade"]
+    },
+    {
+      "stem": "What was the name for a Viking warrior who fought in a frenzy?",
+      "options": [
+        { "label": "Huscarl", "isCorrect": false },
+        { "label": "Berserker", "isCorrect": true },
+        { "label": "Thane", "isCorrect": false },
+        { "label": "Jarl", "isCorrect": false }
+      ],
+      "explanation": "Berserkers were Viking warriors who fought in a trance-like fury, often wearing bear or wolf skins.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["vikings", "berserkers", "warriors"]
+    },
+    {
+      "stem": "Edward the Confessor was the last Anglo-Saxon king before the Norman Conquest.",
+      "options": [
+        { "label": "True", "isCorrect": false },
+        { "label": "False", "isCorrect": true }
+      ],
+      "explanation": "False. Harold Godwinson was the last Anglo-Saxon king. Edward the Confessor died in 1066, and Harold succeeded him before being killed at Hastings.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["edward-confessor", "harold", "succession"]
+    }
+  ]
+}

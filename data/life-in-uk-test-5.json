@@ -1,0 +1,317 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Tudors & Renaissance",
+  "testDescription": "Comprehensive test covering the Tudor dynasty, Henry VIII, Elizabeth I, religious changes, exploration, and the English Renaissance period.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Who was the first Tudor monarch?",
+      "options": [
+        { "label": "Henry VII", "isCorrect": true },
+        { "label": "Henry VIII", "isCorrect": false },
+        { "label": "Edward VI", "isCorrect": false },
+        { "label": "Mary I", "isCorrect": false }
+      ],
+      "explanation": "Henry VII was the first Tudor monarch, who won the throne at the Battle of Bosworth in 1485, ending the Wars of the Roses.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["tudors", "henry-vii", "bosworth"]
+    },
+    {
+      "stem": "The Wars of the Roses were fought between which houses?",
+      "options": [
+        { "label": "Lancaster and York", "isCorrect": true },
+        { "label": "Tudor and Stuart", "isCorrect": false },
+        { "label": "Plantagenet and Tudor", "isCorrect": false },
+        { "label": "Norman and Saxon", "isCorrect": false }
+      ],
+      "explanation": "The Wars of the Roses (1455-1485) were fought between the Houses of Lancaster (red rose) and York (white rose).",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["wars-roses", "lancaster", "york"]
+    },
+    {
+      "stem": "How many wives did Henry VIII have?",
+      "options": [
+        { "label": "Four", "isCorrect": false },
+        { "label": "Five", "isCorrect": false },
+        { "label": "Six", "isCorrect": true },
+        { "label": "Seven", "isCorrect": false }
+      ],
+      "explanation": "Henry VIII had six wives: Catherine of Aragon, Anne Boleyn, Jane Seymore, Anne of Cleves, Catherine Howard, and Catherine Parr.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["henry-viii", "wives", "marriages"]
+    },
+    {
+      "stem": "Henry VIII broke with Rome to become head of the Church of England.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Henry VIII broke with the Roman Catholic Church and declared himself Supreme Head of the Church of England in 1534.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["henry-viii", "reformation", "church-england"]
+    },
+    {
+      "stem": "Why did Henry VIII want to divorce Catherine of Aragon?",
+      "options": [
+        { "label": "She had not given him a male heir", "isCorrect": true },
+        { "label": "She was unfaithful", "isCorrect": false },
+        { "label": "She was too old", "isCorrect": false },
+        { "label": "She was foreign", "isCorrect": false }
+      ],
+      "explanation": "Henry wanted to divorce Catherine because she had not given him a male heir, which he believed was necessary for the succession.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["henry-viii", "catherine-aragon", "succession"]
+    },
+    {
+      "stem": "Which of Henry VIII's wives were executed?",
+      "options": [
+        { "label": "Anne Boleyn", "isCorrect": true },
+        { "label": "Catherine Howard", "isCorrect": true },
+        { "label": "Jane Seymore", "isCorrect": false },
+        { "label": "Catherine Parr", "isCorrect": false }
+      ],
+      "explanation": "Anne Boleyn and Catherine Howard were both executed on charges of adultery and treason. Jane Seymore died in childbirth, Catherine Parr survived Henry.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["henry-viii", "executions", "wives"]
+    },
+    {
+      "stem": "Who was Mary I also known as?",
+      "options": [
+        { "label": "Bloody Mary", "isCorrect": true },
+        { "label": "The Virgin Queen", "isCorrect": false },
+        { "label": "Good Queen Bess", "isCorrect": false },
+        { "label": "The Nine Days Queen", "isCorrect": false }
+      ],
+      "explanation": "Mary I was known as 'Bloody Mary' because she burned around 300 Protestants at the stake during her attempts to restore Catholicism.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["mary-i", "bloody-mary", "persecution"]
+    },
+    {
+      "stem": "Elizabeth I was known as the 'Virgin Queen.'",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Elizabeth I was called the 'Virgin Queen' because she never married, claiming to be 'married to England.'",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["elizabeth-i", "virgin-queen", "marriage"]
+    },
+    {
+      "stem": "In which year was the Spanish Armada defeated?",
+      "options": [
+        { "label": "1587", "isCorrect": false },
+        { "label": "1588", "isCorrect": true },
+        { "label": "1589", "isCorrect": false },
+        { "label": "1590", "isCorrect": false }
+      ],
+      "explanation": "The Spanish Armada was defeated in 1588, marking a major victory for Elizabeth I's England over Philip II of Spain.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["spanish-armada", "1588", "elizabeth-i"]
+    },
+    {
+      "stem": "Who was the famous sea captain who helped defeat the Spanish Armada?",
+      "options": [
+        { "label": "Sir Walter Raleigh", "isCorrect": false },
+        { "label": "Sir Francis Drake", "isCorrect": true },
+        { "label": "Sir John Hawkins", "isCorrect": false },
+        { "label": "Sir Richard Grenville", "isCorrect": false }
+      ],
+      "explanation": "Sir Francis Drake was one of the key English naval commanders who helped defeat the Spanish Armada, and was famous for 'singeing the King of Spain's beard.'",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["francis-drake", "spanish-armada", "naval"]
+    },
+    {
+      "stem": "What were privateers?",
+      "options": [
+        { "label": "Private soldiers", "isCorrect": false },
+        {
+          "label": "Sailors licensed to attack enemy ships",
+          "isCorrect": true
+        },
+        { "label": "Court officials", "isCorrect": false },
+        { "label": "Religious reformers", "isCorrect": false }
+      ],
+      "explanation": "Privateers were private ship owners licensed by the government to attack and capture enemy merchant ships, essentially legal pirates.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["privateers", "naval", "piracy"]
+    },
+    {
+      "stem": "The Elizabethan era was famous for which achievements?",
+      "options": [
+        { "label": "Literature and theatre", "isCorrect": true },
+        { "label": "Exploration and trade", "isCorrect": true },
+        { "label": "Music and art", "isCorrect": true },
+        { "label": "Industrial development", "isCorrect": false }
+      ],
+      "explanation": "The Elizabethan era was renowned for literature (Shakespeare), exploration (Drake), and cultural achievements. Industrial development came much later.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["elizabethan-era", "culture", "achievements"]
+    },
+    {
+      "stem": "Who wrote 'Romeo and Juliet'?",
+      "options": [
+        { "label": "Christopher Marlowe", "isCorrect": false },
+        { "label": "William Shakespeare", "isCorrect": true },
+        { "label": "Ben Jonson", "isCorrect": false },
+        { "label": "Edmund Spenser", "isCorrect": false }
+      ],
+      "explanation": "William Shakespeare wrote 'Romeo and Juliet,' one of his most famous tragedies, during the Elizabethan period.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["shakespeare", "romeo-juliet", "literature"]
+    },
+    {
+      "stem": "The Globe Theatre was associated with William Shakespeare.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Globe Theatre in London was where many of Shakespeare's plays were performed, and he was a shareholder in the theatre.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["globe-theatre", "shakespeare", "theatre"]
+    },
+    {
+      "stem": "What was the Reformation?",
+      "options": [
+        { "label": "A political revolution", "isCorrect": false },
+        {
+          "label": "A religious movement that broke from Rome",
+          "isCorrect": true
+        },
+        { "label": "An economic policy", "isCorrect": false },
+        { "label": "A military campaign", "isCorrect": false }
+      ],
+      "explanation": "The Reformation was a religious movement that challenged the authority of the Roman Catholic Church and led to the establishment of Protestant churches.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["reformation", "protestantism", "religion"]
+    },
+    {
+      "stem": "Which book did William Tyndale translate?",
+      "options": [
+        { "label": "The Bible", "isCorrect": true },
+        { "label": "The Canterbury Tales", "isCorrect": false },
+        { "label": "Morte d'Arthur", "isCorrect": false },
+        { "label": "The Faerie Queene", "isCorrect": false }
+      ],
+      "explanation": "William Tyndale translated the Bible into English, making it accessible to ordinary people for the first time.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["tyndale", "bible", "translation"]
+    },
+    {
+      "stem": "The dissolution of the monasteries occurred during which reign?",
+      "options": [
+        { "label": "Henry VII", "isCorrect": false },
+        { "label": "Henry VIII", "isCorrect": true },
+        { "label": "Edward VI", "isCorrect": false },
+        { "label": "Mary I", "isCorrect": false }
+      ],
+      "explanation": "Henry VIII dissolved the monasteries between 1536-1541, seizing their wealth and lands for the Crown.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["henry-viii", "dissolution", "monasteries"]
+    },
+    {
+      "stem": "Sir Walter Raleigh was famous for introducing which crop to England?",
+      "options": [
+        { "label": "Potatoes", "isCorrect": true },
+        { "label": "Tomatoes", "isCorrect": false },
+        { "label": "Tobacco", "isCorrect": false },
+        { "label": "Sugar", "isCorrect": false }
+      ],
+      "explanation": "Sir Walter Raleigh is credited with introducing potatoes to England from the Americas, though he also brought tobacco.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["walter-raleigh", "potatoes", "exploration"]
+    },
+    {
+      "stem": "The first English colony in America was called:",
+      "options": [
+        { "label": "Jamestown", "isCorrect": false },
+        { "label": "Roanoke", "isCorrect": true },
+        { "label": "Plymouth", "isCorrect": false },
+        { "label": "Virginia", "isCorrect": false }
+      ],
+      "explanation": "Roanoke was the first attempted English colony in America (1585), though it failed. It was also known as the 'Lost Colony.'",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["roanoke", "colonies", "america"]
+    },
+    {
+      "stem": "The Tudor rose combined the symbols of Lancaster and York.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Tudor rose combined the red rose of Lancaster and the white rose of York, symbolizing the union of the two houses.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["tudor-rose", "lancaster", "york"]
+    },
+    {
+      "stem": "Which musical instrument was popular in Tudor times?",
+      "options": [
+        { "label": "Piano", "isCorrect": false },
+        { "label": "Lute", "isCorrect": true },
+        { "label": "Violin", "isCorrect": false },
+        { "label": "Guitar", "isCorrect": false }
+      ],
+      "explanation": "The lute was the most popular musical instrument in Tudor times, used for both solo performance and accompanying songs.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["tudors", "music", "lute"]
+    },
+    {
+      "stem": "Elizabeth I's court was known for its:",
+      "options": [
+        { "label": "Elaborate dress and jewelry", "isCorrect": true },
+        { "label": "Poetry and music", "isCorrect": true },
+        { "label": "Dancing and entertainment", "isCorrect": true },
+        { "label": "Simple lifestyle", "isCorrect": false }
+      ],
+      "explanation": "Elizabeth I's court was famous for its magnificence, elaborate fashions, cultural achievements, and entertainment. It was anything but simple.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["elizabeth-i", "court", "culture"]
+    },
+    {
+      "stem": "The Babington Plot was an attempt to:",
+      "options": [
+        { "label": "Assassinate Elizabeth I", "isCorrect": true },
+        { "label": "Invade Scotland", "isCorrect": false },
+        { "label": "Restore monasteries", "isCorrect": false },
+        { "label": "Colonize America", "isCorrect": false }
+      ],
+      "explanation": "The Babington Plot (1586) was a plan to assassinate Elizabeth I and put Mary Queen of Scots on the throne.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["babington-plot", "elizabeth-i", "mary-scots"]
+    },
+    {
+      "stem": "Mary Queen of Scots was executed in 1587.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Mary Queen of Scots was executed in 1587 after being implicated in plots against Elizabeth I.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["mary-scots", "execution", "1587"]
+    }
+  ]
+}

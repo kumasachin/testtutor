@@ -1,0 +1,301 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - World Wars & 20th Century",
+  "testDescription": "Comprehensive test covering World War I, World War II, social changes, political developments, and major events of the early to mid-20th century in Britain.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "World War I began in which year?",
+      "options": [
+        { "label": "1913", "isCorrect": false },
+        { "label": "1914", "isCorrect": true },
+        { "label": "1915", "isCorrect": false },
+        { "label": "1916", "isCorrect": false }
+      ],
+      "explanation": "World War I began in 1914 when Britain declared war on Germany following the invasion of Belgium.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["world-war-1", "1914", "start"]
+    },
+    {
+      "stem": "Who was the British Prime Minister at the start of World War I?",
+      "options": [
+        { "label": "David Lloyd George", "isCorrect": false },
+        { "label": "H.H. Asquith", "isCorrect": true },
+        { "label": "Winston Churchill", "isCorrect": false },
+        { "label": "Neville Chamberlain", "isCorrect": false }
+      ],
+      "explanation": "H.H. Asquith was Prime Minister when Britain entered World War I in 1914. Lloyd George took over in 1916.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["asquith", "prime-minister", "ww1"]
+    },
+    {
+      "stem": "The Battle of the Somme occurred in 1916.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Battle of the Somme (1916) was one of the bloodiest battles of WWI, with enormous casualties on the first day.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["battle-of-somme", "1916", "casualties"]
+    },
+    {
+      "stem": "Which new weapons were used in World War I?",
+      "options": [
+        { "label": "Poison gas", "isCorrect": true },
+        { "label": "Tanks", "isCorrect": true },
+        { "label": "Aircraft", "isCorrect": true },
+        { "label": "Nuclear weapons", "isCorrect": false }
+      ],
+      "explanation": "WWI saw the introduction of poison gas, tanks, and military aircraft. Nuclear weapons were developed later in WWII.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["ww1-weapons", "technology", "warfare"]
+    },
+    {
+      "stem": "When did World War I end?",
+      "options": [
+        { "label": "November 11, 1918", "isCorrect": true },
+        { "label": "December 25, 1918", "isCorrect": false },
+        { "label": "January 1, 1919", "isCorrect": false },
+        { "label": "June 28, 1919", "isCorrect": false }
+      ],
+      "explanation": "World War I ended with the Armistice on November 11, 1918, at 11 AM. This is now remembered as Remembrance Day.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["armistice", "november-11", "remembrance-day"]
+    },
+    {
+      "stem": "Women gained the right to vote during World War I.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Representation of the People Act 1918 gave women over 30 the right to vote, largely in recognition of their war effort.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["womens-suffrage", "1918", "voting-rights"]
+    },
+    {
+      "stem": "Who led the suffragette movement?",
+      "options": [
+        { "label": "Emmeline Pankhurst", "isCorrect": true },
+        { "label": "Emily Davison", "isCorrect": false },
+        { "label": "Millicent Fawcett", "isCorrect": false },
+        { "label": "Flora Drummond", "isCorrect": false }
+      ],
+      "explanation": "Emmeline Pankhurst founded and led the Women's Social and Political Union (WSPU), the most famous suffragette organization.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["emmeline-pankhurst", "suffragettes", "wspu"]
+    },
+    {
+      "stem": "The Irish War of Independence took place from 1919-1921.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Irish War of Independence (1919-1921) led to the partition of Ireland and the creation of the Irish Free State.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["irish-war-independence", "1919-1921", "partition"]
+    },
+    {
+      "stem": "When was the Irish Free State created?",
+      "options": [
+        { "label": "1920", "isCorrect": false },
+        { "label": "1921", "isCorrect": true },
+        { "label": "1922", "isCorrect": false },
+        { "label": "1923", "isCorrect": false }
+      ],
+      "explanation": "The Irish Free State was created in 1921 following the Government of Ireland Act 1920 and the Anglo-Irish Treaty.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["irish-free-state", "1921", "treaty"]
+    },
+    {
+      "stem": "The General Strike occurred in which year?",
+      "options": [
+        { "label": "1925", "isCorrect": false },
+        { "label": "1926", "isCorrect": true },
+        { "label": "1927", "isCorrect": false },
+        { "label": "1928", "isCorrect": false }
+      ],
+      "explanation": "The General Strike occurred in 1926, lasting 9 days and involving millions of workers supporting coal miners.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["general-strike", "1926", "miners"]
+    },
+    {
+      "stem": "The BBC began radio broadcasts in the 1920s.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The BBC began regular radio broadcasts in 1922, revolutionizing communication and entertainment in Britain.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["bbc", "radio", "1920s"]
+    },
+    {
+      "stem": "What caused the economic depression of the 1930s?",
+      "options": [
+        { "label": "Stock market crash", "isCorrect": true },
+        { "label": "Bank failures", "isCorrect": true },
+        { "label": "International trade collapse", "isCorrect": true },
+        { "label": "World War II", "isCorrect": false }
+      ],
+      "explanation": "The Great Depression was caused by the 1929 stock market crash, bank failures, and collapse of international trade. WWII came later.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["great-depression", "1930s", "economic-crisis"]
+    },
+    {
+      "stem": "Who was Prime Minister during most of the 1930s?",
+      "options": [
+        { "label": "Ramsay MacDonald", "isCorrect": false },
+        { "label": "Stanley Baldwin", "isCorrect": true },
+        { "label": "Neville Chamberlain", "isCorrect": false },
+        { "label": "Winston Churchill", "isCorrect": false }
+      ],
+      "explanation": "Stanley Baldwin was Prime Minister for most of the 1930s (1935-1937), with Chamberlain taking over until 1940.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["stanley-baldwin", "1930s", "prime-minister"]
+    },
+    {
+      "stem": "World War II began when Germany invaded Poland.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Britain declared war on Germany on September 3, 1939, two days after Germany invaded Poland.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["ww2-start", "poland", "september-1939"]
+    },
+    {
+      "stem": "Who became Prime Minister in 1940?",
+      "options": [
+        { "label": "Neville Chamberlain", "isCorrect": false },
+        { "label": "Winston Churchill", "isCorrect": true },
+        { "label": "Clement Attlee", "isCorrect": false },
+        { "label": "Anthony Eden", "isCorrect": false }
+      ],
+      "explanation": "Winston Churchill became Prime Minister in May 1940, replacing Neville Chamberlain during the crisis of WWII.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["winston-churchill", "1940", "prime-minister"]
+    },
+    {
+      "stem": "The Battle of Britain was fought in the air.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Battle of Britain (1940) was an air campaign where the RAF defended Britain against German bombing attacks.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["battle-of-britain", "raf", "air-warfare"]
+    },
+    {
+      "stem": "What was the Blitz?",
+      "options": [
+        { "label": "German bombing campaign", "isCorrect": true },
+        { "label": "British invasion of France", "isCorrect": false },
+        { "label": "Naval battle", "isCorrect": false },
+        { "label": "Evacuation of children", "isCorrect": false }
+      ],
+      "explanation": "The Blitz was the German bombing campaign against British cities, particularly London, from 1940-1941.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["blitz", "bombing", "london"]
+    },
+    {
+      "stem": "D-Day occurred on June 6, 1944.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. D-Day, the Allied invasion of Nazi-occupied France, began on June 6, 1944, in Normandy.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["d-day", "june-6-1944", "normandy"]
+    },
+    {
+      "stem": "Which countries were Britain's main allies in WWII?",
+      "options": [
+        { "label": "United States", "isCorrect": true },
+        { "label": "Soviet Union", "isCorrect": true },
+        { "label": "Free France", "isCorrect": true },
+        { "label": "Nazi Germany", "isCorrect": false }
+      ],
+      "explanation": "Britain's main allies were the US, USSR, and Free France. Nazi Germany was the enemy, not an ally.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["ww2-allies", "usa", "ussr"]
+    },
+    {
+      "stem": "The NHS was established in 1948.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The National Health Service (NHS) was established in 1948 by Aneurin Bevan, providing free healthcare for all.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["nhs", "1948", "aneurin-bevan"]
+    },
+    {
+      "stem": "Who founded the NHS?",
+      "options": [
+        { "label": "Clement Attlee", "isCorrect": false },
+        { "label": "Aneurin Bevan", "isCorrect": true },
+        { "label": "William Beveridge", "isCorrect": false },
+        { "label": "Ernest Bevin", "isCorrect": false }
+      ],
+      "explanation": "Aneurin Bevan, the Health Minister in Attlee's Labour government, founded the NHS in 1948.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["aneurin-bevan", "nhs", "health-minister"]
+    },
+    {
+      "stem": "Rationing continued after World War II ended.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Food and other goods rationing continued into the 1950s due to post-war shortages and economic difficulties.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["rationing", "post-war", "1950s"]
+    },
+    {
+      "stem": "The Festival of Britain was held in which year?",
+      "options": [
+        { "label": "1950", "isCorrect": false },
+        { "label": "1951", "isCorrect": true },
+        { "label": "1952", "isCorrect": false },
+        { "label": "1953", "isCorrect": false }
+      ],
+      "explanation": "The Festival of Britain was held in 1951 to celebrate British achievements and boost morale after the war.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["festival-of-britain", "1951", "celebration"]
+    },
+    {
+      "stem": "India gained independence in 1947.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. India gained independence on August 15, 1947, and was partitioned into India and Pakistan.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["indian-independence", "1947", "partition"]
+    }
+  ]
+}

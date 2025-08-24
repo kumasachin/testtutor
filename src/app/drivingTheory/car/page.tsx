@@ -22,7 +22,9 @@ export default function CarTheoryPage() {
   const fetchCarTheoryTests = async () => {
     try {
       // Filter tests by car theory subcategory
-      const response = await fetch("/api/tests?category=driving-theory&subcategory=car");
+      const response = await fetch(
+        "/api/tests?category=driving-theory&subcategory=car"
+      );
       const result = await response.json();
       if (result.success) {
         setTests(result.data.tests || []);
@@ -43,7 +45,10 @@ export default function CarTheoryPage() {
             Home
           </Link>
           <span className="mx-2 text-gray-500">/</span>
-          <Link href="/drivingTheory" className="text-blue-600 hover:text-blue-800">
+          <Link
+            href="/drivingTheory"
+            className="text-blue-600 hover:text-blue-800"
+          >
             Driving Theory
           </Link>
           <span className="mx-2 text-gray-500">/</span>
@@ -59,7 +64,8 @@ export default function CarTheoryPage() {
             Car Theory Test Practice
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Prepare for your car driving theory test with official DVSA questions and practice exams
+            Prepare for your car driving theory test with official DVSA
+            questions and practice exams
           </p>
         </div>
 
@@ -103,22 +109,23 @@ export default function CarTheoryPage() {
           <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {tests.map((test) => (
-                <div key={test.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div
+                  key={test.id}
+                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                >
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {test.title}
                   </h3>
-                  
+
                   {test.description && (
-                    <p className="text-gray-600 mb-4">
-                      {test.description}
-                    </p>
+                    <p className="text-gray-600 mb-4">{test.description}</p>
                   )}
-                  
+
                   <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
                     <span>{test.questions} questions</span>
                     <span>{test.attempts} attempts</span>
                   </div>
-                  
+
                   <Link
                     href={`/test/${test.id}`}
                     className="block w-full text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -134,7 +141,9 @@ export default function CarTheoryPage() {
                 <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-gray-400 text-2xl">🚗</span>
                 </div>
-                <p className="text-gray-600 mb-4">No car theory tests available yet.</p>
+                <p className="text-gray-600 mb-4">
+                  No car theory tests available yet.
+                </p>
                 <Link
                   href="/create"
                   className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -153,7 +162,9 @@ export default function CarTheoryPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Traffic Signs & Rules</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Traffic Signs & Rules
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Warning signs</li>
                 <li>• Regulatory signs</li>
@@ -162,7 +173,9 @@ export default function CarTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Vehicle Safety</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Vehicle Safety
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Daily vehicle checks</li>
                 <li>• Tyre safety</li>
@@ -171,7 +184,9 @@ export default function CarTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Road Positioning</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Road Positioning
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Lane discipline</li>
                 <li>• Overtaking</li>
@@ -180,7 +195,9 @@ export default function CarTheoryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-3">Vulnerable Users</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">
+                Vulnerable Users
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Pedestrians</li>
                 <li>• Cyclists</li>

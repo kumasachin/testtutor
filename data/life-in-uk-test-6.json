@@ -1,0 +1,322 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Stuarts & Civil War",
+  "testDescription": "Comprehensive test covering the Stuart dynasty, English Civil War, Commonwealth period, and the Restoration including key political and religious developments.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Who was the first Stuart king of England?",
+      "options": [
+        { "label": "James I", "isCorrect": true },
+        { "label": "Charles I", "isCorrect": false },
+        { "label": "Charles II", "isCorrect": false },
+        { "label": "James II", "isCorrect": false }
+      ],
+      "explanation": "James I became the first Stuart king of England in 1603 after Elizabeth I died without children. He was already James VI of Scotland.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["stuarts", "james-i", "succession"]
+    },
+    {
+      "stem": "The Gunpowder Plot took place in which year?",
+      "options": [
+        { "label": "1603", "isCorrect": false },
+        { "label": "1605", "isCorrect": true },
+        { "label": "1607", "isCorrect": false },
+        { "label": "1610", "isCorrect": false }
+      ],
+      "explanation": "The Gunpowder Plot occurred on November 5, 1605, when Guy Fawkes and other conspirators attempted to blow up Parliament.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["gunpowder-plot", "1605", "guy-fawkes"]
+    },
+    {
+      "stem": "Who was the leader of the Gunpowder Plot?",
+      "options": [
+        { "label": "Guy Fawkes", "isCorrect": false },
+        { "label": "Robert Catesby", "isCorrect": true },
+        { "label": "Thomas Percy", "isCorrect": false },
+        { "label": "John Wright", "isCorrect": false }
+      ],
+      "explanation": "Robert Catesby was the leader of the Gunpowder Plot. Guy Fawkes was caught with the gunpowder but was not the leader.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["gunpowder-plot", "robert-catesby", "conspiracy"]
+    },
+    {
+      "stem": "Guy Fawkes Night is celebrated on November 5th.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Guy Fawkes Night (Bonfire Night) is celebrated on November 5th to commemorate the failure of the Gunpowder Plot.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["guy-fawkes-night", "november-5", "celebration"]
+    },
+    {
+      "stem": "What was the main cause of the English Civil War?",
+      "options": [
+        { "label": "Religious differences", "isCorrect": false },
+        {
+          "label": "Disputes over money and power between King and Parliament",
+          "isCorrect": true
+        },
+        { "label": "Foreign invasion", "isCorrect": false },
+        { "label": "Economic crisis", "isCorrect": false }
+      ],
+      "explanation": "The main cause was disputes between Charles I and Parliament over money, taxation, and the extent of royal power.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["civil-war", "causes", "parliament"]
+    },
+    {
+      "stem": "The English Civil War was fought between which two sides?",
+      "options": [
+        {
+          "label": "Royalists (Cavaliers) and Parliamentarians (Roundheads)",
+          "isCorrect": true
+        },
+        { "label": "Catholics and Protestants", "isCorrect": false },
+        { "label": "English and Scots", "isCorrect": false },
+        { "label": "Nobles and Peasants", "isCorrect": false }
+      ],
+      "explanation": "The Civil War was fought between Royalists (Cavaliers) who supported the King and Parliamentarians (Roundheads) who supported Parliament.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["civil-war", "cavaliers", "roundheads"]
+    },
+    {
+      "stem": "Who led the Parliamentary forces in the Civil War?",
+      "options": [
+        { "label": "Thomas Fairfax", "isCorrect": false },
+        { "label": "Oliver Cromwell", "isCorrect": true },
+        { "label": "John Pym", "isCorrect": false },
+        { "label": "William Prynne", "isCorrect": false }
+      ],
+      "explanation": "Oliver Cromwell became the leading Parliamentary general, especially famous for his New Model Army and cavalry tactics.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["civil-war", "oliver-cromwell", "parliamentary"]
+    },
+    {
+      "stem": "Charles I was executed in 1649.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Charles I was executed on January 30, 1649, outside the Banqueting House in Whitehall, London.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["charles-i", "execution", "1649"]
+    },
+    {
+      "stem": "What was the Commonwealth?",
+      "options": [
+        { "label": "A period of republican government", "isCorrect": true },
+        { "label": "A type of parliament", "isCorrect": false },
+        { "label": "A religious movement", "isCorrect": false },
+        { "label": "A trade association", "isCorrect": false }
+      ],
+      "explanation": "The Commonwealth (1649-1660) was the period when England was a republic without a monarch, ruled by Parliament and later by Cromwell.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["commonwealth", "republic", "cromwell"]
+    },
+    {
+      "stem": "What was Oliver Cromwell's title when he ruled England?",
+      "options": [
+        { "label": "King", "isCorrect": false },
+        { "label": "Lord Protector", "isCorrect": true },
+        { "label": "President", "isCorrect": false },
+        { "label": "Chancellor", "isCorrect": false }
+      ],
+      "explanation": "Oliver Cromwell ruled as Lord Protector from 1653 until his death in 1658, refusing the title of King.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["cromwell", "lord-protector", "commonwealth"]
+    },
+    {
+      "stem": "Which activities did the Puritans ban during the Commonwealth?",
+      "options": [
+        { "label": "Theatre", "isCorrect": true },
+        { "label": "Christmas celebrations", "isCorrect": true },
+        { "label": "Dancing", "isCorrect": true },
+        { "label": "Reading", "isCorrect": false }
+      ],
+      "explanation": "Puritans banned many forms of entertainment including theatre, elaborate Christmas celebrations, and dancing. They valued education and reading.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["puritans", "commonwealth", "bans"]
+    },
+    {
+      "stem": "When was the monarchy restored?",
+      "options": [
+        { "label": "1659", "isCorrect": false },
+        { "label": "1660", "isCorrect": true },
+        { "label": "1661", "isCorrect": false },
+        { "label": "1662", "isCorrect": false }
+      ],
+      "explanation": "The monarchy was restored in 1660 when Charles II returned from exile, beginning the period known as the Restoration.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["restoration", "1660", "charles-ii"]
+    },
+    {
+      "stem": "Charles II was known as the 'Merry Monarch.'",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Charles II was called the 'Merry Monarch' because he brought back entertainment, theatre, and a more relaxed atmosphere after the stern Puritan rule.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["charles-ii", "merry-monarch", "restoration"]
+    },
+    {
+      "stem": "The Great Fire of London occurred in which year?",
+      "options": [
+        { "label": "1665", "isCorrect": false },
+        { "label": "1666", "isCorrect": true },
+        { "label": "1667", "isCorrect": false },
+        { "label": "1668", "isCorrect": false }
+      ],
+      "explanation": "The Great Fire of London occurred in September 1666, destroying much of medieval London including 13,200 houses and 87 churches.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["great-fire", "1666", "london"]
+    },
+    {
+      "stem": "Who designed many churches after the Great Fire of London?",
+      "options": [
+        { "label": "Inigo Jones", "isCorrect": false },
+        { "label": "Sir Christopher Wren", "isCorrect": true },
+        { "label": "Nicholas Hawksmoor", "isCorrect": false },
+        { "label": "John Vanbrugh", "isCorrect": false }
+      ],
+      "explanation": "Sir Christopher Wren designed 51 new churches in London after the Great Fire, including the new St Paul's Cathedral.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["christopher-wren", "great-fire", "churches"]
+    },
+    {
+      "stem": "The Great Plague of London occurred in 1665.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Great Plague of 1665 killed about 100,000 people in London, roughly a quarter of the population.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["great-plague", "1665", "london"]
+    },
+    {
+      "stem": "What was the Test Act?",
+      "options": [
+        { "label": "An educational requirement", "isCorrect": false },
+        {
+          "label": "A law excluding Catholics from public office",
+          "isCorrect": true
+        },
+        { "label": "A military service law", "isCorrect": false },
+        { "label": "A trade regulation", "isCorrect": false }
+      ],
+      "explanation": "The Test Act (1673) required people to take an oath denying Catholic beliefs before holding public office, effectively excluding Catholics.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["test-act", "catholics", "discrimination"]
+    },
+    {
+      "stem": "James II was a Catholic king.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. James II was openly Catholic, which caused great concern among the Protestant English parliament and people.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["james-ii", "catholic", "religion"]
+    },
+    {
+      "stem": "What was the Glorious Revolution?",
+      "options": [
+        { "label": "A violent uprising", "isCorrect": false },
+        { "label": "A peaceful change of monarch", "isCorrect": true },
+        { "label": "A religious war", "isCorrect": false },
+        { "label": "An economic revolution", "isCorrect": false }
+      ],
+      "explanation": "The Glorious Revolution (1688) was the peaceful overthrow of James II and his replacement by William and Mary.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["glorious-revolution", "1688", "peaceful"]
+    },
+    {
+      "stem": "Who replaced James II after the Glorious Revolution?",
+      "options": [
+        { "label": "William and Mary", "isCorrect": true },
+        { "label": "Anne", "isCorrect": false },
+        { "label": "George I", "isCorrect": false },
+        { "label": "Charles III", "isCorrect": false }
+      ],
+      "explanation": "William of Orange and his wife Mary (James II's daughter) were invited to rule jointly after James II fled to France.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["william-mary", "glorious-revolution", "joint-rule"]
+    },
+    {
+      "stem": "The Bill of Rights was passed in which year?",
+      "options": [
+        { "label": "1688", "isCorrect": false },
+        { "label": "1689", "isCorrect": true },
+        { "label": "1690", "isCorrect": false },
+        { "label": "1691", "isCorrect": false }
+      ],
+      "explanation": "The Bill of Rights was passed in 1689, establishing the rights of Parliament and limiting the power of the monarch.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["bill-of-rights", "1689", "parliament"]
+    },
+    {
+      "stem": "The Bill of Rights established that:",
+      "options": [
+        { "label": "The monarch could not suspend laws", "isCorrect": true },
+        { "label": "Parliament controlled taxation", "isCorrect": true },
+        { "label": "There would be regular elections", "isCorrect": true },
+        { "label": "The monarch had absolute power", "isCorrect": false }
+      ],
+      "explanation": "The Bill of Rights limited royal power, established Parliamentary control over taxes, and guaranteed regular elections. It ended absolute monarchy.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": [
+        "bill-of-rights",
+        "parliamentary-power",
+        "constitutional-monarchy"
+      ]
+    },
+    {
+      "stem": "Habeas Corpus protects people from unlawful imprisonment.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Habeas Corpus (established 1679) means 'you must have the body' and protects against unlawful detention without trial.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["habeas-corpus", "legal-rights", "imprisonment"]
+    },
+    {
+      "stem": "What was the New Model Army?",
+      "options": [
+        { "label": "The King's personal guard", "isCorrect": false },
+        { "label": "A professional Parliamentary army", "isCorrect": true },
+        { "label": "A Scottish army", "isCorrect": false },
+        { "label": "A foreign mercenary force", "isCorrect": false }
+      ],
+      "explanation": "The New Model Army was the professional army created by Parliament during the Civil War, known for its discipline and effectiveness.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["new-model-army", "civil-war", "military"]
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Victorian Era & Empire",
+  "testDescription": "Comprehensive test covering Queen Victoria's reign, British Empire expansion, social reforms, cultural developments, and technological advances of the 19th century.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Queen Victoria reigned for how many years?",
+      "options": [
+        { "label": "60 years", "isCorrect": false },
+        { "label": "63 years", "isCorrect": true },
+        { "label": "65 years", "isCorrect": false },
+        { "label": "70 years", "isCorrect": false }
+      ],
+      "explanation": "Queen Victoria reigned for 63 years (1837-1901), making her the longest-reigning British monarch until Elizabeth II.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["queen-victoria", "reign", "duration"]
+    },
+    {
+      "stem": "Victoria became queen at what age?",
+      "options": [
+        { "label": "16", "isCorrect": false },
+        { "label": "18", "isCorrect": true },
+        { "label": "21", "isCorrect": false },
+        { "label": "25", "isCorrect": false }
+      ],
+      "explanation": "Victoria became queen in 1837 at the age of 18, following the death of her uncle, King William IV.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["queen-victoria", "accession", "age"]
+    },
+    {
+      "stem": "Who was Prince Albert?",
+      "options": [
+        { "label": "Victoria's cousin and husband", "isCorrect": true },
+        { "label": "Victoria's brother", "isCorrect": false },
+        { "label": "Victoria's son", "isCorrect": false },
+        { "label": "Victoria's prime minister", "isCorrect": false }
+      ],
+      "explanation": "Prince Albert was Victoria's German cousin whom she married in 1840. He became Prince Consort and had great influence on British culture.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["prince-albert", "marriage", "consort"]
+    },
+    {
+      "stem": "The British Empire reached its largest extent during the Victorian era.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The British Empire reached its peak during the Victorian era, covering about 25% of the world's land surface and population.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["british-empire", "victorian-era", "expansion"]
+    },
+    {
+      "stem": "Which countries were part of the British Empire during Victoria's reign?",
+      "options": [
+        { "label": "India", "isCorrect": true },
+        { "label": "Australia", "isCorrect": true },
+        { "label": "Canada", "isCorrect": true },
+        { "label": "United States", "isCorrect": false }
+      ],
+      "explanation": "India, Australia, and Canada were major parts of the British Empire. The United States had gained independence in 1783.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["british-empire", "colonies", "territories"]
+    },
+    {
+      "stem": "The Indian Rebellion occurred in which year?",
+      "options": [
+        { "label": "1856", "isCorrect": false },
+        { "label": "1857", "isCorrect": true },
+        { "label": "1858", "isCorrect": false },
+        { "label": "1859", "isCorrect": false }
+      ],
+      "explanation": "The Indian Rebellion (also called the Indian Mutiny) began in 1857 and led to the end of East India Company rule.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["indian-rebellion", "1857", "mutiny"]
+    },
+    {
+      "stem": "After the Indian Rebellion, India was ruled directly by the British government.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. After 1858, India was ruled directly by the British government through a Viceroy, ending East India Company rule.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["india", "british-rule", "viceroy"]
+    },
+    {
+      "stem": "Who was the first Viceroy of India?",
+      "options": [
+        { "label": "Lord Canning", "isCorrect": true },
+        { "label": "Lord Curzon", "isCorrect": false },
+        { "label": "Lord Mountbatten", "isCorrect": false },
+        { "label": "Lord Cornwallis", "isCorrect": false }
+      ],
+      "explanation": "Lord Canning became the first Viceroy of India in 1858, having previously been the last Governor-General under Company rule.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["lord-canning", "viceroy", "india"]
+    },
+    {
+      "stem": "The Crimean War was fought against which country?",
+      "options": [
+        { "label": "France", "isCorrect": false },
+        { "label": "Russia", "isCorrect": true },
+        { "label": "Germany", "isCorrect": false },
+        { "label": "Austria", "isCorrect": false }
+      ],
+      "explanation": "The Crimean War (1853-1856) was fought by Britain, France, and the Ottoman Empire against Russia.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["crimean-war", "russia", "conflict"]
+    },
+    {
+      "stem": "Florence Nightingale became famous during the Crimean War.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Florence Nightingale became the 'Lady with the Lamp' for her nursing work during the Crimean War, revolutionizing hospital care.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["florence-nightingale", "crimean-war", "nursing"]
+    },
+    {
+      "stem": "Which social reforms occurred during the Victorian era?",
+      "options": [
+        { "label": "Abolition of slavery", "isCorrect": true },
+        { "label": "Education for all children", "isCorrect": true },
+        { "label": "Improved working conditions", "isCorrect": true },
+        { "label": "Universal adult suffrage", "isCorrect": false }
+      ],
+      "explanation": "The Victorians abolished slavery (1833), introduced compulsory education, and improved working conditions. Universal suffrage came later.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["social-reforms", "victorian-era", "progress"]
+    },
+    {
+      "stem": "When was slavery abolished in the British Empire?",
+      "options": [
+        { "label": "1833", "isCorrect": true },
+        { "label": "1838", "isCorrect": false },
+        { "label": "1843", "isCorrect": false },
+        { "label": "1848", "isCorrect": false }
+      ],
+      "explanation": "Slavery was abolished throughout the British Empire in 1833, though it was phased out gradually until 1838.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["slavery", "abolition", "1833"]
+    },
+    {
+      "stem": "The Great Reform Act was passed in 1832.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Great Reform Act of 1832 was the first major reform of the electoral system, extending voting rights and redistributing seats.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["great-reform-act", "1832", "electoral-reform"]
+    },
+    {
+      "stem": "What did the Great Reform Act achieve?",
+      "options": [
+        {
+          "label": "Extended voting rights to middle class men",
+          "isCorrect": true
+        },
+        { "label": "Redistributed parliamentary seats", "isCorrect": true },
+        { "label": "Eliminated some 'rotten boroughs'", "isCorrect": true },
+        { "label": "Gave women the vote", "isCorrect": false }
+      ],
+      "explanation": "The 1832 Act extended voting to middle class men, redistributed seats, and eliminated some rotten boroughs. Women's suffrage came much later.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["great-reform-act", "voting-rights", "representation"]
+    },
+    {
+      "stem": "Who wrote 'A Christmas Carol'?",
+      "options": [
+        { "label": "Charles Dickens", "isCorrect": true },
+        { "label": "George Eliot", "isCorrect": false },
+        { "label": "Thomas Hardy", "isCorrect": false },
+        { "label": "Anthony Trollope", "isCorrect": false }
+      ],
+      "explanation": "Charles Dickens wrote 'A Christmas Carol' in 1843, which became one of the most popular Christmas stories of all time.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["charles-dickens", "christmas-carol", "literature"]
+    },
+    {
+      "stem": "Dickens' novels often highlighted social problems.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Dickens used his novels to expose social problems like poverty, child labor, and poor working conditions in Victorian society.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["dickens", "social-problems", "literature"]
+    },
+    {
+      "stem": "Which scientific theory was proposed by Charles Darwin?",
+      "options": [
+        { "label": "Theory of relativity", "isCorrect": false },
+        { "label": "Theory of evolution", "isCorrect": true },
+        { "label": "Atomic theory", "isCorrect": false },
+        { "label": "Germ theory", "isCorrect": false }
+      ],
+      "explanation": "Charles Darwin proposed the theory of evolution by natural selection in 'On the Origin of Species' (1859).",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["charles-darwin", "evolution", "science"]
+    },
+    {
+      "stem": "The Suez Canal opened during Victoria's reign.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Suez Canal opened in 1869, creating a vital shipping route between Europe and Asia that Britain later controlled.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["suez-canal", "1869", "shipping"]
+    },
+    {
+      "stem": "Who built the Clifton Suspension Bridge?",
+      "options": [
+        { "label": "Thomas Telford", "isCorrect": false },
+        { "label": "Isambard Kingdom Brunel", "isCorrect": true },
+        { "label": "George Stephenson", "isCorrect": false },
+        { "label": "Joseph Bazalgette", "isCorrect": false }
+      ],
+      "explanation": "Isambard Kingdom Brunel designed the Clifton Suspension Bridge in Bristol, completed in 1864 after his death.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["brunel", "clifton-suspension-bridge", "engineering"]
+    },
+    {
+      "stem": "The penny post was introduced in 1840.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Rowland Hill introduced the penny post in 1840, making postal services affordable for ordinary people and introducing the first postage stamp.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["penny-post", "1840", "rowland-hill"]
+    },
+    {
+      "stem": "What was the first postage stamp called?",
+      "options": [
+        { "label": "The Penny Black", "isCorrect": true },
+        { "label": "The Penny Red", "isCorrect": false },
+        { "label": "The Victoria Stamp", "isCorrect": false },
+        { "label": "The Royal Mail", "isCorrect": false }
+      ],
+      "explanation": "The first postage stamp was the Penny Black, issued in 1840 featuring Queen Victoria's profile.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["penny-black", "postage-stamp", "1840"]
+    },
+    {
+      "stem": "Which exhibitions showcased Victorian achievements?",
+      "options": [
+        { "label": "Great Exhibition of 1851", "isCorrect": true },
+        { "label": "Colonial and Indian Exhibition", "isCorrect": true },
+        { "label": "Empire Exhibition", "isCorrect": true },
+        { "label": "World's Fair in Paris", "isCorrect": false }
+      ],
+      "explanation": "Britain hosted the Great Exhibition (1851), Colonial and Indian Exhibition (1886), and various Empire exhibitions. Paris hosted its own World's Fair.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["exhibitions", "victorian-achievements", "display"]
+    },
+    {
+      "stem": "The Metropolitan Police was established by Robert Peel.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Robert Peel established the Metropolitan Police in 1829, and police officers were nicknamed 'Peelers' or 'Bobbies' after him.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["robert-peel", "metropolitan-police", "bobbies"]
+    },
+    {
+      "stem": "What were workhouses?",
+      "options": [
+        { "label": "Factories for manufacturing", "isCorrect": false },
+        { "label": "Institutions for the poor", "isCorrect": true },
+        { "label": "Schools for working children", "isCorrect": false },
+        { "label": "Housing for workers", "isCorrect": false }
+      ],
+      "explanation": "Workhouses were institutions where the poor could receive food and shelter in return for work, often under harsh conditions.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["workhouses", "poor-law", "social-welfare"]
+    }
+  ]
+}

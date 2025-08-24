@@ -1,0 +1,176 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Government & Law",
+  "testDescription": "Advanced test covering UK government structure, legal system, democratic processes, and citizenship responsibilities.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "How often must a General Election be held in the UK?",
+      "options": [
+        { "label": "Every 3 years", "isCorrect": false },
+        { "label": "Every 4 years", "isCorrect": false },
+        { "label": "At least every 5 years", "isCorrect": true },
+        { "label": "Every 6 years", "isCorrect": false }
+      ],
+      "explanation": "Under the Fixed-term Parliaments Act 2011, General Elections must be held at least every 5 years, though they can be called earlier under certain circumstances.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["government", "elections", "democracy"]
+    },
+    {
+      "stem": "Which of these are duties of a UK citizen?",
+      "options": [
+        { "label": "Obeying the law", "isCorrect": true },
+        { "label": "Paying taxes", "isCorrect": true },
+        { "label": "Serving on a jury when called", "isCorrect": true },
+        { "label": "Voting in every election", "isCorrect": false }
+      ],
+      "explanation": "UK citizens have legal duties to obey the law, pay taxes, and serve on juries when called. Voting is a right, not a legal duty.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["citizenship", "duties", "legal-obligations"]
+    },
+    {
+      "stem": "The UK has a written constitution.",
+      "options": [
+        { "label": "True", "isCorrect": false },
+        { "label": "False", "isCorrect": true }
+      ],
+      "explanation": "The UK has an unwritten constitution. Its constitutional arrangements are based on a combination of laws, conventions, and traditions rather than a single written document.",
+      "difficulty": "HARD",
+      "type": "TRUE_FALSE",
+      "tags": ["constitution", "government", "law"]
+    },
+    {
+      "stem": "Who is the Head of State in the UK?",
+      "options": [
+        { "label": "The Prime Minister", "isCorrect": false },
+        { "label": "The King or Queen", "isCorrect": true },
+        { "label": "The Speaker of the House of Commons", "isCorrect": false },
+        { "label": "The Lord Chancellor", "isCorrect": false }
+      ],
+      "explanation": "The monarch (currently King Charles III) is the Head of State. The Prime Minister is the Head of Government. These are separate roles in the UK's constitutional monarchy.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["monarchy", "government", "constitution"]
+    },
+    {
+      "stem": "What is the House of Lords?",
+      "options": [
+        { "label": "The lower house of Parliament", "isCorrect": false },
+        { "label": "The upper house of Parliament", "isCorrect": true },
+        { "label": "The Scottish Parliament", "isCorrect": false },
+        { "label": "A court of law", "isCorrect": false }
+      ],
+      "explanation": "The House of Lords is the upper house of the UK Parliament. The House of Commons is the lower house. Together they make up the bicameral Parliament.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["parliament", "government", "house-of-lords"]
+    },
+    {
+      "stem": "At what age can you legally buy alcohol in a pub in the UK?",
+      "options": [
+        { "label": "16", "isCorrect": false },
+        { "label": "17", "isCorrect": false },
+        { "label": "18", "isCorrect": true },
+        { "label": "21", "isCorrect": false }
+      ],
+      "explanation": "The legal age to buy and consume alcohol in pubs, bars, and shops in the UK is 18. However, 16-17 year olds can drink beer, wine, or cider with a meal in licensed premises when accompanied by an adult.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["law", "age-limits", "alcohol"]
+    },
+    {
+      "stem": "Which courts deal with serious criminal cases in England and Wales?",
+      "options": [
+        { "label": "Magistrates' Courts", "isCorrect": false },
+        { "label": "Crown Courts", "isCorrect": true },
+        { "label": "County Courts", "isCorrect": false },
+        { "label": "Family Courts", "isCorrect": false }
+      ],
+      "explanation": "Crown Courts deal with serious criminal cases in England and Wales. Magistrates' Courts handle less serious offences, while County Courts deal with civil matters.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["legal-system", "courts", "criminal-law"]
+    },
+    {
+      "stem": "What does 'devolution' mean in the UK context?",
+      "options": [
+        {
+          "label": "The evolution of democratic institutions",
+          "isCorrect": false
+        },
+        {
+          "label": "The transfer of power from central to regional governments",
+          "isCorrect": true
+        },
+        {
+          "label": "The process of leaving the European Union",
+          "isCorrect": false
+        },
+        { "label": "The abolition of the monarchy", "isCorrect": false }
+      ],
+      "explanation": "Devolution refers to the transfer of certain powers from the UK Parliament to the Scottish Parliament, Welsh Parliament, and Northern Ireland Assembly.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["devolution", "government", "regional-powers"]
+    },
+    {
+      "stem": "Members of Parliament (MPs) represent everyone in their constituency.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "MPs have a duty to represent all constituents in their area, regardless of how they voted or their political affiliation. This is a fundamental principle of UK democracy.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["democracy", "representation", "mps"]
+    },
+    {
+      "stem": "Which of these are principles of the UK legal system?",
+      "options": [
+        { "label": "Everyone is equal under the law", "isCorrect": true },
+        {
+          "label": "Everyone has the right to a fair trial",
+          "isCorrect": true
+        },
+        { "label": "You are innocent until proven guilty", "isCorrect": true },
+        {
+          "label": "The judge decides guilt or innocence in all cases",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Key principles include equality before the law, right to fair trial, and presumption of innocence. In serious criminal cases, a jury decides guilt, not the judge.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["legal-principles", "justice", "fair-trial"]
+    },
+    {
+      "stem": "What is the role of the Prime Minister?",
+      "options": [
+        { "label": "Head of the Government", "isCorrect": true },
+        { "label": "Head of State", "isCorrect": false },
+        { "label": "Chief Justice", "isCorrect": false },
+        { "label": "Speaker of Parliament", "isCorrect": false }
+      ],
+      "explanation": "The Prime Minister is the Head of Government and leads the political party with the most seats in the House of Commons. The monarch is the Head of State.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["government", "prime-minister", "leadership"]
+    },
+    {
+      "stem": "Council Tax is paid to:",
+      "options": [
+        { "label": "The national government", "isCorrect": false },
+        { "label": "Local councils", "isCorrect": true },
+        { "label": "The European Union", "isCorrect": false },
+        { "label": "Regional assemblies", "isCorrect": false }
+      ],
+      "explanation": "Council Tax is paid to local councils (local authorities) to fund local services such as schools, social services, waste collection, and libraries.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["local-government", "taxation", "council-tax"]
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Contemporary Britain & Citizens",
+  "testDescription": "Comprehensive test covering modern British society, citizenship responsibilities, community participation, employment, housing, and contemporary issues.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "At what age do people become adults in the UK?",
+      "options": [
+        { "label": "16", "isCorrect": false },
+        { "label": "17", "isCorrect": false },
+        { "label": "18", "isCorrect": true },
+        { "label": "21", "isCorrect": false }
+      ],
+      "explanation": "People become legal adults at age 18 in the UK, gaining full voting rights and legal responsibilities.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["adulthood", "age-18", "legal-age"]
+    },
+    {
+      "stem": "Young people can get married at 16 with parental consent.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. In England, Wales, and Northern Ireland, people can marry at 16 with parental consent. In Scotland, no consent is needed at 16.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["marriage-age", "16", "parental-consent"]
+    },
+    {
+      "stem": "What is the minimum school leaving age in England?",
+      "options": [
+        { "label": "15", "isCorrect": false },
+        { "label": "16", "isCorrect": true },
+        { "label": "17", "isCorrect": false },
+        { "label": "18", "isCorrect": false }
+      ],
+      "explanation": "The minimum school leaving age in England is 16, though young people must continue in education or training until 18.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["school-leaving-age", "16", "education"]
+    },
+    {
+      "stem": "National Insurance contributions fund which services?",
+      "options": [
+        { "label": "State pension", "isCorrect": true },
+        { "label": "NHS", "isCorrect": true },
+        { "label": "Unemployment benefits", "isCorrect": true },
+        { "label": "Local council services", "isCorrect": false }
+      ],
+      "explanation": "National Insurance funds state pensions, NHS, and unemployment benefits. Local council services are funded by council tax.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["national-insurance", "pensions", "nhs", "benefits"]
+    },
+    {
+      "stem": "Council tax pays for local services.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Council tax funds local services like refuse collection, libraries, schools, and local road maintenance.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["council-tax", "local-services", "local-government"]
+    },
+    {
+      "stem": "Which are examples of local government services?",
+      "options": [
+        { "label": "Schools", "isCorrect": true },
+        { "label": "Libraries", "isCorrect": true },
+        { "label": "Refuse collection", "isCorrect": true },
+        { "label": "Foreign policy", "isCorrect": false }
+      ],
+      "explanation": "Local government provides schools, libraries, and refuse collection. Foreign policy is handled by central government.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["local-government", "schools", "libraries", "refuse"]
+    },
+    {
+      "stem": "The minimum wage applies to all workers in the UK.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The National Minimum Wage applies to almost all workers, with different rates for different age groups.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["minimum-wage", "workers", "employment"]
+    },
+    {
+      "stem": "What are workers' rights in the UK?",
+      "options": [
+        { "label": "Paid holidays", "isCorrect": true },
+        { "label": "Safe working conditions", "isCorrect": true },
+        { "label": "Protection from discrimination", "isCorrect": true },
+        { "label": "Guaranteed promotion", "isCorrect": false }
+      ],
+      "explanation": "Workers have rights to paid holidays, safe conditions, and protection from discrimination. Promotion is not guaranteed.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["workers-rights", "holidays", "safety", "discrimination"]
+    },
+    {
+      "stem": "Sexual discrimination in the workplace is illegal.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Equality Act 2010 makes discrimination based on sex, race, religion, sexual orientation, and other characteristics illegal.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["discrimination", "equality-act", "workplace"]
+    },
+    {
+      "stem": "What types of discrimination are illegal in the UK?",
+      "options": [
+        { "label": "Race discrimination", "isCorrect": true },
+        { "label": "Sex discrimination", "isCorrect": true },
+        { "label": "Age discrimination", "isCorrect": true },
+        { "label": "Preference discrimination", "isCorrect": false }
+      ],
+      "explanation": "Race, sex, and age discrimination are illegal under the Equality Act. 'Preference discrimination' is not a legal category.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["discrimination-types", "race", "sex", "age"]
+    },
+    {
+      "stem": "Trade unions represent workers' interests.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Trade unions represent workers in negotiations with employers about pay, conditions, and workplace rights.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["trade-unions", "workers", "representation"]
+    },
+    {
+      "stem": "Child benefit is paid to families with children.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Child benefit is paid to families to help with the costs of raising children, subject to certain income limits.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["child-benefit", "families", "children"]
+    },
+    {
+      "stem": "Which benefits might unemployed people receive?",
+      "options": [
+        { "label": "Job Seeker's Allowance", "isCorrect": true },
+        { "label": "Universal Credit", "isCorrect": true },
+        { "label": "Housing benefit", "isCorrect": true },
+        { "label": "State pension", "isCorrect": false }
+      ],
+      "explanation": "Unemployed people may receive Job Seeker's Allowance, Universal Credit, and housing benefit. State pension is for older people.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": [
+        "unemployment-benefits",
+        "jsa",
+        "universal-credit",
+        "housing-benefit"
+      ]
+    },
+    {
+      "stem": "Social housing is provided by local councils and housing associations.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Social housing is provided by local councils and housing associations for people who cannot afford private housing.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["social-housing", "councils", "housing-associations"]
+    },
+    {
+      "stem": "Domestic violence is a criminal offense.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Domestic violence is a serious criminal offense, and victims can get help from police and support organizations.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["domestic-violence", "criminal-offense", "support"]
+    },
+    {
+      "stem": "What should you do if you witness a crime?",
+      "options": [
+        { "label": "Call 999 for emergencies", "isCorrect": true },
+        { "label": "Call 101 for non-emergencies", "isCorrect": true },
+        { "label": "Report to Crimestoppers anonymously", "isCorrect": true },
+        { "label": "Ignore it completely", "isCorrect": false }
+      ],
+      "explanation": "You should call 999 for emergencies, 101 for non-urgent crimes, or report anonymously to Crimestoppers. Ignoring crime is not advised.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["witness-crime", "999", "101", "crimestoppers"]
+    },
+    {
+      "stem": "Jury service is a civic duty for eligible citizens.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Jury service is a civic duty for citizens aged 18-70 who are called randomly from the electoral register.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["jury-service", "civic-duty", "18-70"]
+    },
+    {
+      "stem": "What are ways to participate in the community?",
+      "options": [
+        { "label": "Volunteering", "isCorrect": true },
+        { "label": "Joining local groups", "isCorrect": true },
+        { "label": "Standing for election", "isCorrect": true },
+        { "label": "Avoiding all involvement", "isCorrect": false }
+      ],
+      "explanation": "Community participation includes volunteering, joining groups, and standing for election. Avoiding involvement doesn't help the community.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": [
+        "community-participation",
+        "volunteering",
+        "local-groups",
+        "elections"
+      ]
+    },
+    {
+      "stem": "School governors help run local schools.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. School governors are volunteers who help make important decisions about how schools are run and managed.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["school-governors", "volunteers", "education"]
+    },
+    {
+      "stem": "Which emergency number should you call for police, fire, or ambulance?",
+      "options": [
+        { "label": "101", "isCorrect": false },
+        { "label": "111", "isCorrect": false },
+        { "label": "999", "isCorrect": true },
+        { "label": "911", "isCorrect": false }
+      ],
+      "explanation": "999 is the emergency number for police, fire, ambulance, and other emergency services in the UK.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["emergency-number", "999", "police", "fire", "ambulance"]
+    },
+    {
+      "stem": "111 is the number for non-emergency medical advice.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. NHS 111 provides 24-hour non-emergency medical advice when you need help but it's not an emergency.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["111", "nhs", "non-emergency", "medical-advice"]
+    },
+    {
+      "stem": "Which documents prove your right to work in the UK?",
+      "options": [
+        { "label": "UK passport", "isCorrect": true },
+        {
+          "label": "Birth certificate and National Insurance number",
+          "isCorrect": true
+        },
+        { "label": "Work visa", "isCorrect": true },
+        { "label": "Driving license only", "isCorrect": false }
+      ],
+      "explanation": "UK passport, birth certificate with NI number, and work visas prove right to work. A driving license alone is not sufficient.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["right-to-work", "passport", "birth-certificate", "visa"]
+    },
+    {
+      "stem": "Employers must check employees' right to work before employing them.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Employers are legally required to check and copy documents proving an employee's right to work in the UK.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["right-to-work", "employers", "legal-requirement"]
+    },
+    {
+      "stem": "Citizens have both rights and responsibilities.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Citizenship involves both enjoying rights (like voting) and fulfilling responsibilities (like obeying laws and paying taxes).",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["citizenship", "rights", "responsibilities"]
+    }
+  ]
+}

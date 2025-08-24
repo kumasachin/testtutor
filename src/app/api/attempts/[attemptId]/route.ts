@@ -1,4 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+
 import { ExamKitService } from "@/lib/examkit-service";
 
 export async function PUT(

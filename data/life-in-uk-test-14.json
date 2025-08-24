@@ -1,0 +1,305 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Geography & Regions",
+  "testDescription": "Comprehensive test covering UK geography, countries, regions, cities, landmarks, and physical features of the British Isles.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "How many countries make up the United Kingdom?",
+      "options": [
+        { "label": "Three", "isCorrect": false },
+        { "label": "Four", "isCorrect": true },
+        { "label": "Five", "isCorrect": false },
+        { "label": "Six", "isCorrect": false }
+      ],
+      "explanation": "The United Kingdom consists of four countries: England, Scotland, Wales, and Northern Ireland.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["uk-countries", "four-countries", "basic-geography"]
+    },
+    {
+      "stem": "Which countries are part of Great Britain?",
+      "options": [
+        { "label": "England", "isCorrect": true },
+        { "label": "Scotland", "isCorrect": true },
+        { "label": "Wales", "isCorrect": true },
+        { "label": "Northern Ireland", "isCorrect": false }
+      ],
+      "explanation": "Great Britain comprises England, Scotland, and Wales. Northern Ireland is part of the UK but not Great Britain.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["great-britain", "england", "scotland", "wales"]
+    },
+    {
+      "stem": "What is the capital of Scotland?",
+      "options": [
+        { "label": "Glasgow", "isCorrect": false },
+        { "label": "Edinburgh", "isCorrect": true },
+        { "label": "Aberdeen", "isCorrect": false },
+        { "label": "Dundee", "isCorrect": false }
+      ],
+      "explanation": "Edinburgh is the capital of Scotland, while Glasgow is its largest city.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["scotland", "edinburgh", "capital"]
+    },
+    {
+      "stem": "What is the capital of Wales?",
+      "options": [
+        { "label": "Swansea", "isCorrect": false },
+        { "label": "Cardiff", "isCorrect": true },
+        { "label": "Newport", "isCorrect": false },
+        { "label": "Wrexham", "isCorrect": false }
+      ],
+      "explanation": "Cardiff is the capital and largest city of Wales, located in the south of the country.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["wales", "cardiff", "capital"]
+    },
+    {
+      "stem": "What is the capital of Northern Ireland?",
+      "options": [
+        { "label": "Derry/Londonderry", "isCorrect": false },
+        { "label": "Belfast", "isCorrect": true },
+        { "label": "Armagh", "isCorrect": false },
+        { "label": "Newry", "isCorrect": false }
+      ],
+      "explanation": "Belfast is the capital and largest city of Northern Ireland.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["northern-ireland", "belfast", "capital"]
+    },
+    {
+      "stem": "London is the capital of both England and the United Kingdom.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. London serves as the capital city for both England and the entire United Kingdom.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["london", "capital", "england", "uk"]
+    },
+    {
+      "stem": "Which are major cities in England?",
+      "options": [
+        { "label": "Birmingham", "isCorrect": true },
+        { "label": "Manchester", "isCorrect": true },
+        { "label": "Liverpool", "isCorrect": true },
+        { "label": "Glasgow", "isCorrect": false }
+      ],
+      "explanation": "Birmingham, Manchester, and Liverpool are major English cities. Glasgow is in Scotland.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["english-cities", "birmingham", "manchester", "liverpool"]
+    },
+    {
+      "stem": "The River Thames flows through London.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The River Thames flows through central London and is the longest river entirely in England.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["river-thames", "london", "rivers"]
+    },
+    {
+      "stem": "Which rivers are important in the UK?",
+      "options": [
+        { "label": "River Thames", "isCorrect": true },
+        { "label": "River Severn", "isCorrect": true },
+        { "label": "River Clyde", "isCorrect": true },
+        { "label": "River Seine", "isCorrect": false }
+      ],
+      "explanation": "The Thames, Severn, and Clyde are major UK rivers. The Seine flows through France.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["uk-rivers", "thames", "severn", "clyde"]
+    },
+    {
+      "stem": "What is the highest mountain in the UK?",
+      "options": [
+        { "label": "Snowdon", "isCorrect": false },
+        { "label": "Ben Nevis", "isCorrect": true },
+        { "label": "Scafell Pike", "isCorrect": false },
+        { "label": "Helvellyn", "isCorrect": false }
+      ],
+      "explanation": "Ben Nevis in Scotland is the UK's highest mountain at 1,345 meters (4,413 feet).",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["ben-nevis", "highest-mountain", "scotland"]
+    },
+    {
+      "stem": "Snowdon is the highest mountain in Wales.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Snowdon (Yr Wyddfa in Welsh) is Wales' highest mountain at 1,085 meters.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["snowdon", "wales", "highest-mountain"]
+    },
+    {
+      "stem": "Which mountain ranges are found in the UK?",
+      "options": [
+        { "label": "The Pennines", "isCorrect": true },
+        { "label": "The Lake District", "isCorrect": true },
+        { "label": "The Highlands", "isCorrect": true },
+        { "label": "The Alps", "isCorrect": false }
+      ],
+      "explanation": "The Pennines, Lake District, and Scottish Highlands are UK mountain ranges. The Alps are in continental Europe.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["mountain-ranges", "pennines", "lake-district", "highlands"]
+    },
+    {
+      "stem": "The Lake District is located in which country?",
+      "options": [
+        { "label": "Scotland", "isCorrect": false },
+        { "label": "England", "isCorrect": true },
+        { "label": "Wales", "isCorrect": false },
+        { "label": "Northern Ireland", "isCorrect": false }
+      ],
+      "explanation": "The Lake District is in north-west England (Cumbria) and is famous for its lakes, mountains, and literary associations.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["lake-district", "england", "cumbria"]
+    },
+    {
+      "stem": "Loch Ness is famous for its alleged monster.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Loch Ness in Scotland is famous for alleged sightings of the Loch Ness Monster (Nessie).",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["loch-ness", "monster", "scotland"]
+    },
+    {
+      "stem": "Which are counties in England?",
+      "options": [
+        { "label": "Yorkshire", "isCorrect": true },
+        { "label": "Cornwall", "isCorrect": true },
+        { "label": "Kent", "isCorrect": true },
+        { "label": "Glamorgan", "isCorrect": false }
+      ],
+      "explanation": "Yorkshire, Cornwall, and Kent are English counties. Glamorgan is a historical county in Wales.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["english-counties", "yorkshire", "cornwall", "kent"]
+    },
+    {
+      "stem": "The Cotswolds are known for their natural beauty.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Cotswolds is an Area of Outstanding Natural Beauty known for honey-colored stone villages and rolling hills.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["cotswolds", "natural-beauty", "aonb"]
+    },
+    {
+      "stem": "Hadrian's Wall was built by which ancient people?",
+      "options": [
+        { "label": "Celts", "isCorrect": false },
+        { "label": "Romans", "isCorrect": true },
+        { "label": "Anglo-Saxons", "isCorrect": false },
+        { "label": "Vikings", "isCorrect": false }
+      ],
+      "explanation": "Hadrian's Wall was built by the Romans around 122 AD to defend against Scottish tribes.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["hadrians-wall", "romans", "defense"]
+    },
+    {
+      "stem": "Stonehenge is located in which English county?",
+      "options": [
+        { "label": "Devon", "isCorrect": false },
+        { "label": "Wiltshire", "isCorrect": true },
+        { "label": "Dorset", "isCorrect": false },
+        { "label": "Somerset", "isCorrect": false }
+      ],
+      "explanation": "Stonehenge, the famous prehistoric monument, is located on Salisbury Plain in Wiltshire, England.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["stonehenge", "wiltshire", "prehistoric"]
+    },
+    {
+      "stem": "The Giant's Causeway is located in Northern Ireland.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Giant's Causeway on the Antrim coast is Northern Ireland's only UNESCO World Heritage Site.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["giants-causeway", "northern-ireland", "unesco"]
+    },
+    {
+      "stem": "Which islands are part of the British Isles?",
+      "options": [
+        { "label": "Isle of Wight", "isCorrect": true },
+        { "label": "Isle of Man", "isCorrect": true },
+        { "label": "Shetland Islands", "isCorrect": true },
+        { "label": "Canary Islands", "isCorrect": false }
+      ],
+      "explanation": "Isle of Wight, Isle of Man, and Shetland Islands are part of the British Isles. Canary Islands belong to Spain.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["british-isles", "isle-of-wight", "isle-of-man", "shetland"]
+    },
+    {
+      "stem": "The Channel Islands are Crown Dependencies.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Channel Islands (Jersey and Guernsey) are Crown Dependencies, not part of the UK but under British sovereignty.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["channel-islands", "crown-dependencies", "jersey-guernsey"]
+    },
+    {
+      "stem": "Which cities are university towns?",
+      "options": [
+        { "label": "Oxford", "isCorrect": true },
+        { "label": "Cambridge", "isCorrect": true },
+        { "label": "St Andrews", "isCorrect": true },
+        { "label": "Blackpool", "isCorrect": false }
+      ],
+      "explanation": "Oxford, Cambridge, and St Andrews are famous university cities. Blackpool is a seaside resort town.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["university-towns", "oxford", "cambridge", "st-andrews"]
+    },
+    {
+      "stem": "The Pennines are sometimes called the 'backbone of England'.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Pennines mountain range runs down the center of northern England and is often called England's backbone.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["pennines", "backbone-of-england", "mountain-range"]
+    },
+    {
+      "stem": "Which are seaside resorts in the UK?",
+      "options": [
+        { "label": "Brighton", "isCorrect": true },
+        { "label": "Blackpool", "isCorrect": true },
+        { "label": "Bournemouth", "isCorrect": true },
+        { "label": "Birmingham", "isCorrect": false }
+      ],
+      "explanation": "Brighton, Blackpool, and Bournemouth are popular seaside resorts. Birmingham is an inland industrial city.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["seaside-resorts", "brighton", "blackpool", "bournemouth"]
+    }
+  ]
+}

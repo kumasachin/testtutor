@@ -1,0 +1,185 @@
+{
+  "domainName": "Driving Theory",
+  "testTitle": "Driving Theory Test - Hazard Perception Focus",
+  "testDescription": "Advanced driving theory test focusing on hazard perception, road safety, and defensive driving techniques.",
+  "passPercentage": 86,
+  "timeLimit": 50,
+  "questions": [
+    {
+      "stem": "When approaching a roundabout, you should:",
+      "options": [
+        {
+          "label": "Always give way to traffic from the right",
+          "isCorrect": true
+        },
+        {
+          "label": "Always give way to traffic from the left",
+          "isCorrect": false
+        },
+        { "label": "Have right of way over all traffic", "isCorrect": false },
+        { "label": "Only give way to larger vehicles", "isCorrect": false }
+      ],
+      "explanation": "At roundabouts in the UK, you must give way to traffic approaching from your right, unless road markings or signs indicate otherwise.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["roundabouts", "right-of-way", "traffic-rules"]
+    },
+    {
+      "stem": "What is the minimum stopping distance for a car traveling at 70 mph in good, dry conditions?",
+      "options": [
+        { "label": "96 meters (315 feet)", "isCorrect": true },
+        { "label": "73 meters (240 feet)", "isCorrect": false },
+        { "label": "53 meters (175 feet)", "isCorrect": false },
+        { "label": "120 meters (394 feet)", "isCorrect": false }
+      ],
+      "explanation": "At 70 mph, the total stopping distance is 96 meters (315 feet), which includes thinking distance (21m) plus braking distance (75m) in dry conditions.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["stopping-distance", "speed", "safety"]
+    },
+    {
+      "stem": "Which of these situations require you to use headlights during daylight hours?",
+      "options": [
+        { "label": "In tunnels", "isCorrect": true },
+        { "label": "During heavy rain", "isCorrect": true },
+        {
+          "label": "In fog with visibility below 100 meters",
+          "isCorrect": true
+        },
+        {
+          "label": "When driving through residential areas",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "Headlights must be used in tunnels, during poor weather conditions like heavy rain, and in fog when visibility is seriously reduced.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["headlights", "visibility", "weather-conditions"]
+    },
+    {
+      "stem": "You should use the left-hand lane of a dual carriageway unless overtaking.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "On dual carriageways and motorways, you should normally use the left-hand lane and only use other lanes for overtaking or when directed by signs.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["lane-discipline", "dual-carriageway", "overtaking"]
+    },
+    {
+      "stem": "What does a red triangle warning sign typically indicate?",
+      "options": [
+        { "label": "A hazard ahead", "isCorrect": true },
+        { "label": "A mandatory instruction", "isCorrect": false },
+        { "label": "Information about services", "isCorrect": false },
+        { "label": "A prohibition", "isCorrect": false }
+      ],
+      "explanation": "Red triangle warning signs alert drivers to hazards ahead such as bends, hills, level crossings, or other potential dangers.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["road-signs", "warnings", "hazards"]
+    },
+    {
+      "stem": "When should you check your mirrors while driving?",
+      "options": [
+        { "label": "Before signaling", "isCorrect": true },
+        { "label": "Before changing lanes", "isCorrect": true },
+        { "label": "Before braking", "isCorrect": true },
+        { "label": "Only when reversing", "isCorrect": false }
+      ],
+      "explanation": "You should regularly check mirrors - before signaling, changing lanes, slowing down, or stopping. This helps maintain awareness of traffic around you.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["mirrors", "observation", "safety-checks"]
+    },
+    {
+      "stem": "The speed limit in a built-up area is typically:",
+      "options": [
+        { "label": "20 mph", "isCorrect": false },
+        { "label": "30 mph", "isCorrect": true },
+        { "label": "40 mph", "isCorrect": false },
+        { "label": "50 mph", "isCorrect": false }
+      ],
+      "explanation": "The default speed limit in built-up areas (areas with street lighting) is 30 mph, unless signs indicate otherwise. Some areas may have 20 mph limits.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["speed-limits", "built-up-areas", "traffic-law"]
+    },
+    {
+      "stem": "You may use fog lights:",
+      "options": [
+        { "label": "When visibility is seriously reduced", "isCorrect": true },
+        { "label": "At night to see better", "isCorrect": false },
+        { "label": "In light rain", "isCorrect": false },
+        { "label": "When other drivers are using them", "isCorrect": false }
+      ],
+      "explanation": "Fog lights should only be used when visibility is seriously reduced (typically less than 100 meters). They must be switched off when conditions improve to avoid dazzling other drivers.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["fog-lights", "visibility", "weather-driving"]
+    },
+    {
+      "stem": "Catalytic converters help reduce harmful emissions from vehicle exhausts.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "Catalytic converters are devices that reduce harmful pollutants in exhaust gases, converting toxic compounds into less harmful emissions.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["environment", "emissions", "vehicle-technology"]
+    },
+    {
+      "stem": "What should you do if your vehicle breaks down on a motorway?",
+      "options": [
+        {
+          "label": "Pull onto the hard shoulder if possible",
+          "isCorrect": true
+        },
+        { "label": "Switch on hazard warning lights", "isCorrect": true },
+        {
+          "label": "Exit the vehicle from the side away from traffic",
+          "isCorrect": true
+        },
+        {
+          "label": "Stand behind your vehicle to warn other drivers",
+          "isCorrect": false
+        }
+      ],
+      "explanation": "If you break down on a motorway: use the hard shoulder, put on hazard lights, exit away from traffic, and wait in a safe place. Never stand behind your vehicle.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["breakdown", "motorway", "emergency-procedures"]
+    },
+    {
+      "stem": "When joining a motorway, you should:",
+      "options": [
+        {
+          "label": "Use the acceleration lane to build up speed",
+          "isCorrect": true
+        },
+        { "label": "Join at any convenient speed", "isCorrect": false },
+        { "label": "Stop at the end of the slip road", "isCorrect": false },
+        { "label": "Force your way into the traffic", "isCorrect": false }
+      ],
+      "explanation": "Use the acceleration lane (slip road) to build up to the speed of traffic on the motorway, then merge safely when there's a suitable gap.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["motorway", "merging", "acceleration-lane"]
+    },
+    {
+      "stem": "What is tailgating?",
+      "options": [
+        { "label": "Following another vehicle too closely", "isCorrect": true },
+        { "label": "Overtaking on the inside lane", "isCorrect": false },
+        { "label": "Blocking someone from overtaking", "isCorrect": false },
+        { "label": "Driving in the wrong lane", "isCorrect": false }
+      ],
+      "explanation": "Tailgating means following the vehicle in front too closely, which reduces your stopping distance and increases the risk of rear-end collisions.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["following-distance", "safety", "aggressive-driving"]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Practice Set 1",
+  "testDescription": "Official practice questions for the Life in the UK citizenship test covering British history, culture, and government.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "In which year did the Battle of Hastings take place?",
+      "options": [
+        { "label": "1066", "isCorrect": true },
+        { "label": "1067", "isCorrect": false },
+        { "label": "1068", "isCorrect": false },
+        { "label": "1070", "isCorrect": false }
+      ],
+      "explanation": "The Battle of Hastings took place in 1066, when William the Conqueror defeated King Harold II, leading to the Norman conquest of England.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["history", "medieval", "battles"]
+    },
+    {
+      "stem": "What is the official currency of the United Kingdom?",
+      "options": [
+        { "label": "Euro", "isCorrect": false },
+        { "label": "Pound Sterling", "isCorrect": true },
+        { "label": "Dollar", "isCorrect": false },
+        { "label": "Franc", "isCorrect": false }
+      ],
+      "explanation": "The official currency of the UK is the Pound Sterling (£), also known simply as the pound.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["economy", "currency", "basic"]
+    },
+    {
+      "stem": "Which of the following are official languages of Wales?",
+      "options": [
+        { "label": "English", "isCorrect": true },
+        { "label": "Welsh", "isCorrect": true },
+        { "label": "Scottish Gaelic", "isCorrect": false },
+        { "label": "Irish", "isCorrect": false }
+      ],
+      "explanation": "Both English and Welsh are official languages in Wales. Welsh is a Celtic language that has been spoken in Wales for over 1,400 years.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["languages", "wales", "culture"]
+    },
+    {
+      "stem": "The UK Parliament consists of the House of Commons and the House of Lords.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "The UK Parliament is bicameral, consisting of two houses: the House of Commons (elected) and the House of Lords (appointed and hereditary peers).",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["government", "parliament", "politics"]
+    },
+    {
+      "stem": "Who wrote the famous novel 'Pride and Prejudice'?",
+      "options": [
+        { "label": "Charlotte Brontë", "isCorrect": false },
+        { "label": "Jane Austen", "isCorrect": true },
+        { "label": "Emily Dickinson", "isCorrect": false },
+        { "label": "Virginia Woolf", "isCorrect": false }
+      ],
+      "explanation": "Jane Austen wrote 'Pride and Prejudice', published in 1813. It is one of the most famous works of English literature.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["literature", "authors", "culture"]
+    },
+    {
+      "stem": "What is the minimum age to vote in UK general elections?",
+      "options": [
+        { "label": "16", "isCorrect": false },
+        { "label": "17", "isCorrect": false },
+        { "label": "18", "isCorrect": true },
+        { "label": "21", "isCorrect": false }
+      ],
+      "explanation": "The minimum voting age for UK general elections is 18 years old. You must also be registered to vote and be a British, Irish, or Commonwealth citizen.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["voting", "democracy", "citizenship"]
+    },
+    {
+      "stem": "Which of these cities is the capital of Scotland?",
+      "options": [
+        { "label": "Glasgow", "isCorrect": false },
+        { "label": "Aberdeen", "isCorrect": false },
+        { "label": "Edinburgh", "isCorrect": true },
+        { "label": "Dundee", "isCorrect": false }
+      ],
+      "explanation": "Edinburgh is the capital city of Scotland and the seat of the Scottish Parliament. Glasgow is Scotland's largest city, but not the capital.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["geography", "scotland", "capitals"]
+    },
+    {
+      "stem": "The NHS (National Health Service) was established in which year?",
+      "options": [
+        { "label": "1945", "isCorrect": false },
+        { "label": "1948", "isCorrect": true },
+        { "label": "1950", "isCorrect": false },
+        { "label": "1952", "isCorrect": false }
+      ],
+      "explanation": "The NHS was established on 5 July 1948, providing healthcare free at the point of use for all UK residents. It was founded by Health Secretary Aneurin Bevan.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["healthcare", "nhs", "history"]
+    }
+  ]
+}

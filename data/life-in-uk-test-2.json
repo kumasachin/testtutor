@@ -1,0 +1,314 @@
+{
+  "domainName": "Life in UK",
+  "testTitle": "Life in the UK Test - Early Britain & Roman Era",
+  "testDescription": "Comprehensive test covering Stone Age, Bronze Age, Iron Age, and Roman Britain periods including key events, people, and cultural developments.",
+  "passPercentage": 75,
+  "timeLimit": 45,
+  "questions": [
+    {
+      "stem": "Who were the first people to arrive in Britain?",
+      "options": [
+        { "label": "Hunter-gatherers in the Stone Age", "isCorrect": true },
+        { "label": "Bronze Age farmers", "isCorrect": false },
+        { "label": "Celtic tribes", "isCorrect": false },
+        { "label": "Roman soldiers", "isCorrect": false }
+      ],
+      "explanation": "The first people to arrive in Britain were hunter-gatherers during the Stone Age, around 10,000 years ago.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["prehistory", "stone-age", "early-britain"]
+    },
+    {
+      "stem": "Stonehenge was built during which period?",
+      "options": [
+        { "label": "Stone Age", "isCorrect": true },
+        { "label": "Bronze Age", "isCorrect": false },
+        { "label": "Iron Age", "isCorrect": false },
+        { "label": "Roman period", "isCorrect": false }
+      ],
+      "explanation": "Stonehenge was built during the Stone Age, around 5,000 years ago. It's one of the most famous prehistoric monuments in the world.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["stonehenge", "stone-age", "monuments"]
+    },
+    {
+      "stem": "The Bronze Age people were the first to work with metal.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Bronze Age people (around 4,000 years ago) were the first to work with metals, particularly bronze made from copper and tin.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["bronze-age", "metalworking", "technology"]
+    },
+    {
+      "stem": "What did Iron Age people build for protection?",
+      "options": [
+        { "label": "Stone circles", "isCorrect": false },
+        { "label": "Hill forts", "isCorrect": true },
+        { "label": "Roman roads", "isCorrect": false },
+        { "label": "Wooden bridges", "isCorrect": false }
+      ],
+      "explanation": "Iron Age people built hill forts for protection. These were fortified settlements built on high ground, often surrounded by ditches and walls.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["iron-age", "hill-forts", "settlements"]
+    },
+    {
+      "stem": "Which language did the Celts speak?",
+      "options": [
+        { "label": "Latin", "isCorrect": false },
+        { "label": "Germanic", "isCorrect": false },
+        { "label": "Celtic", "isCorrect": true },
+        { "label": "Anglo-Saxon", "isCorrect": false }
+      ],
+      "explanation": "The Celts spoke Celtic languages. Parts of these languages still survive today in Welsh, Scottish Gaelic, and Irish Gaelic.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["celts", "languages", "culture"]
+    },
+    {
+      "stem": "In which year did the Romans first invade Britain?",
+      "options": [
+        { "label": "55 BC", "isCorrect": true },
+        { "label": "43 AD", "isCorrect": false },
+        { "label": "61 AD", "isCorrect": false },
+        { "label": "410 AD", "isCorrect": false }
+      ],
+      "explanation": "Julius Caesar first invaded Britain in 55 BC, though the successful Roman conquest began in 43 AD under Emperor Claudius.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "invasion", "caesar"]
+    },
+    {
+      "stem": "Who led the successful Roman invasion of Britain in 43 AD?",
+      "options": [
+        { "label": "Julius Caesar", "isCorrect": false },
+        { "label": "Emperor Claudius", "isCorrect": true },
+        { "label": "Emperor Hadrian", "isCorrect": false },
+        { "label": "Emperor Augustus", "isCorrect": false }
+      ],
+      "explanation": "Emperor Claudius led the successful Roman invasion of Britain in 43 AD, establishing Roman rule that lasted nearly 400 years.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "claudius", "conquest"]
+    },
+    {
+      "stem": "What was Boudicca famous for?",
+      "options": [
+        { "label": "Building Stonehenge", "isCorrect": false },
+        {
+          "label": "Leading a rebellion against the Romans",
+          "isCorrect": true
+        },
+        { "label": "Creating the first laws", "isCorrect": false },
+        { "label": "Establishing trade routes", "isCorrect": false }
+      ],
+      "explanation": "Boudicca was the queen of the Iceni tribe who led a major uprising against Roman rule in 60-61 AD.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["boudicca", "rebellion", "iceni"]
+    },
+    {
+      "stem": "Which of these were built by the Romans in Britain?",
+      "options": [
+        { "label": "Roads", "isCorrect": true },
+        { "label": "Baths", "isCorrect": true },
+        { "label": "Walls", "isCorrect": true },
+        { "label": "Stone circles", "isCorrect": false }
+      ],
+      "explanation": "Romans built extensive road networks, public baths, and defensive walls (like Hadrian's Wall). Stone circles were built much earlier by prehistoric peoples.",
+      "difficulty": "EASY",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["romans", "construction", "infrastructure"]
+    },
+    {
+      "stem": "Hadrian's Wall was built to keep out which people?",
+      "options": [
+        { "label": "Celts", "isCorrect": false },
+        { "label": "Picts", "isCorrect": true },
+        { "label": "Anglo-Saxons", "isCorrect": false },
+        { "label": "Vikings", "isCorrect": false }
+      ],
+      "explanation": "Hadrian's Wall was built around 122 AD to keep out the Picts and other tribes from Scotland.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["hadrians-wall", "picts", "defence"]
+    },
+    {
+      "stem": "The Romans remained in Britain for about 400 years.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. The Romans occupied Britain from 43 AD to around 410 AD, approximately 400 years.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["romans", "occupation", "timeline"]
+    },
+    {
+      "stem": "What did the Romans introduce to Britain?",
+      "options": [
+        { "label": "New plants and animals", "isCorrect": true },
+        { "label": "The calendar", "isCorrect": true },
+        { "label": "Coins", "isCorrect": true },
+        { "label": "The English language", "isCorrect": false }
+      ],
+      "explanation": "Romans introduced new plants and animals, the calendar system, and coins. The English language developed later from Anglo-Saxon.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["romans", "innovations", "culture"]
+    },
+    {
+      "stem": "Where can you see Roman remains today?",
+      "options": [
+        { "label": "Bath", "isCorrect": true },
+        { "label": "St Albans", "isCorrect": false },
+        { "label": "Chester", "isCorrect": false },
+        { "label": "York", "isCorrect": false }
+      ],
+      "explanation": "You can see Roman remains in many places including Bath (Roman baths), St Albans, Chester, and York.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "remains", "heritage"]
+    },
+    {
+      "stem": "When did the Romans leave Britain?",
+      "options": [
+        { "label": "350 AD", "isCorrect": false },
+        { "label": "410 AD", "isCorrect": true },
+        { "label": "450 AD", "isCorrect": false },
+        { "label": "500 AD", "isCorrect": false }
+      ],
+      "explanation": "The Romans left Britain around 410 AD when they withdrew their armies to defend other parts of the Empire.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "departure", "timeline"]
+    },
+    {
+      "stem": "The Romans brought Christianity to Britain.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Christianity came to Britain during the Roman period, though it became more widespread after the Romans left.",
+      "difficulty": "MEDIUM",
+      "type": "TRUE_FALSE",
+      "tags": ["romans", "christianity", "religion"]
+    },
+    {
+      "stem": "What was the Roman name for London?",
+      "options": [
+        { "label": "Londinium", "isCorrect": true },
+        { "label": "Londonius", "isCorrect": false },
+        { "label": "Londonia", "isCorrect": false },
+        { "label": "Londineum", "isCorrect": false }
+      ],
+      "explanation": "The Roman name for London was Londinium, which became an important trading centre.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "london", "place-names"]
+    },
+    {
+      "stem": "The Celts were skilled in which activities?",
+      "options": [
+        { "label": "Metalworking", "isCorrect": true },
+        { "label": "Making cloth", "isCorrect": true },
+        { "label": "Pottery", "isCorrect": true },
+        { "label": "Building roads", "isCorrect": false }
+      ],
+      "explanation": "Celts were skilled metalworkers, cloth makers, and pottery makers. Road building was a Roman specialty.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["celts", "skills", "crafts"]
+    },
+    {
+      "stem": "Skara Brae is located in which part of the UK?",
+      "options": [
+        { "label": "England", "isCorrect": false },
+        { "label": "Wales", "isCorrect": false },
+        { "label": "Scotland", "isCorrect": true },
+        { "label": "Northern Ireland", "isCorrect": false }
+      ],
+      "explanation": "Skara Brae is a well-preserved Stone Age village in Orkney, Scotland, dating from around 5,000 years ago.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["skara-brae", "scotland", "stone-age"]
+    },
+    {
+      "stem": "The Druids were Celtic priests and teachers.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. Druids were Celtic priests who also acted as teachers, judges, and doctors in Celtic society.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["druids", "celts", "religion"]
+    },
+    {
+      "stem": "What was woad used for by the ancient Britons?",
+      "options": [
+        { "label": "Making weapons", "isCorrect": false },
+        { "label": "Body paint", "isCorrect": true },
+        { "label": "Building houses", "isCorrect": false },
+        { "label": "Making clothes", "isCorrect": false }
+      ],
+      "explanation": "Woad was a blue dye used by ancient Britons to paint their bodies, particularly during battles.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["woad", "ancient-britons", "body-paint"]
+    },
+    {
+      "stem": "Roman soldiers were organized into units called:",
+      "options": [
+        { "label": "Centuries", "isCorrect": false },
+        { "label": "Legions", "isCorrect": true },
+        { "label": "Cohorts", "isCorrect": false },
+        { "label": "Maniples", "isCorrect": false }
+      ],
+      "explanation": "Roman soldiers were organized into legions, each containing about 5,000-6,000 men.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["romans", "legions", "military"]
+    },
+    {
+      "stem": "The Romans built the first towns in Britain.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "True. While there were settlements before, the Romans built the first proper towns with planned streets, public buildings, and amenities.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["romans", "towns", "urban-planning"]
+    },
+    {
+      "stem": "Which metals did Bronze Age people mix to make bronze?",
+      "options": [
+        { "label": "Iron and tin", "isCorrect": false },
+        { "label": "Copper and tin", "isCorrect": true },
+        { "label": "Copper and iron", "isCorrect": false },
+        { "label": "Tin and lead", "isCorrect": false }
+      ],
+      "explanation": "Bronze is made by mixing copper and tin. This was a major technological advancement of the Bronze Age.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["bronze-age", "metals", "technology"]
+    },
+    {
+      "stem": "Maiden Castle is an example of what type of prehistoric structure?",
+      "options": [
+        { "label": "Stone circle", "isCorrect": false },
+        { "label": "Hill fort", "isCorrect": true },
+        { "label": "Roman villa", "isCorrect": false },
+        { "label": "Celtic temple", "isCorrect": false }
+      ],
+      "explanation": "Maiden Castle in Dorset is one of the largest and most complex Iron Age hill forts in Europe.",
+      "difficulty": "HARD",
+      "type": "SINGLE_CHOICE",
+      "tags": ["maiden-castle", "hill-fort", "iron-age"]
+    }
+  ]
+}

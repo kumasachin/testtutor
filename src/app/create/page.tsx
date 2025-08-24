@@ -85,7 +85,10 @@ export default function CreateTestPage() {
     }));
   };
 
-  const handleQuestionChange = (field: keyof Question, value: string | number | string[] | number[]) => {
+  const handleQuestionChange = (
+    field: keyof Question,
+    value: string | number | string[] | number[]
+  ) => {
     setCurrentQuestion((prev) => ({
       ...prev,
       [field]: value,
@@ -106,7 +109,7 @@ export default function CreateTestPage() {
     const newAnswers = currentAnswers.includes(index)
       ? currentAnswers.filter((i) => i !== index)
       : [...currentAnswers, index];
-    
+
     setCurrentQuestion((prev) => ({
       ...prev,
       correctAnswers: newAnswers,
@@ -114,7 +117,10 @@ export default function CreateTestPage() {
   };
 
   const addQuestion = () => {
-    if (!currentQuestion.question || !currentQuestion.options?.some(opt => opt.trim())) {
+    if (
+      !currentQuestion.question ||
+      !currentQuestion.options?.some((opt) => opt.trim())
+    ) {
       alert("Please fill in the question and at least one option");
       return;
     }
@@ -156,7 +162,11 @@ export default function CreateTestPage() {
   };
 
   const submitTest = async () => {
-    if (!formData.title || !formData.domainId || formData.questions.length === 0) {
+    if (
+      !formData.title ||
+      !formData.domainId ||
+      formData.questions.length === 0
+    ) {
       alert("Please fill in all required fields and add at least one question");
       return;
     }
@@ -165,12 +175,14 @@ export default function CreateTestPage() {
     try {
       // In a real app, this would submit to an API
       console.log("Submitting test:", formData);
-      
+
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      
-      alert("Test created successfully! It will be reviewed before publication.");
-      
+
+      alert(
+        "Test created successfully! It will be reviewed before publication."
+      );
+
       // Reset form
       setFormData({
         title: "",
@@ -235,8 +247,10 @@ export default function CreateTestPage() {
 
         {/* Test Information Form */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">Test Information</h3>
-          
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            Test Information
+          </h3>
+
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -276,7 +290,9 @@ export default function CreateTestPage() {
               <input
                 type="number"
                 value={formData.timeLimit}
-                onChange={(e) => handleFormChange("timeLimit", parseInt(e.target.value))}
+                onChange={(e) =>
+                  handleFormChange("timeLimit", parseInt(e.target.value))
+                }
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 min="1"
               />
@@ -289,7 +305,9 @@ export default function CreateTestPage() {
               <input
                 type="number"
                 value={formData.passingScore}
-                onChange={(e) => handleFormChange("passingScore", parseInt(e.target.value))}
+                onChange={(e) =>
+                  handleFormChange("passingScore", parseInt(e.target.value))
+                }
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 min="1"
                 max="100"
@@ -326,8 +344,10 @@ export default function CreateTestPage() {
 
         {/* Add Question Form */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">Add Question</h3>
-          
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            Add Question
+          </h3>
+
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -335,7 +355,9 @@ export default function CreateTestPage() {
               </label>
               <textarea
                 value={currentQuestion.question}
-                onChange={(e) => handleQuestionChange("question", e.target.value)}
+                onChange={(e) =>
+                  handleQuestionChange("question", e.target.value)
+                }
                 rows={3}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your question"
@@ -350,7 +372,9 @@ export default function CreateTestPage() {
                 <div key={index} className="flex items-center space-x-3 mb-3">
                   <input
                     type="checkbox"
-                    checked={currentQuestion.correctAnswers?.includes(index) || false}
+                    checked={
+                      currentQuestion.correctAnswers?.includes(index) || false
+                    }
                     onChange={() => toggleCorrectAnswer(index)}
                     className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
@@ -376,7 +400,9 @@ export default function CreateTestPage() {
                 <input
                   type="number"
                   value={currentQuestion.points}
-                  onChange={(e) => handleQuestionChange("points", parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleQuestionChange("points", parseInt(e.target.value))
+                  }
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   min="1"
                 />
@@ -389,7 +415,9 @@ export default function CreateTestPage() {
               </label>
               <textarea
                 value={currentQuestion.explanation}
-                onChange={(e) => handleQuestionChange("explanation", e.target.value)}
+                onChange={(e) =>
+                  handleQuestionChange("explanation", e.target.value)
+                }
                 rows={2}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Explain the correct answer"
@@ -411,10 +439,13 @@ export default function CreateTestPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
               Questions ({formData.questions.length})
             </h3>
-            
+
             <div className="space-y-4">
               {formData.questions.map((question, index) => (
-                <div key={question.id} className="border border-gray-200 rounded-lg p-4">
+                <div
+                  key={question.id}
+                  className="border border-gray-200 rounded-lg p-4"
+                >
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="font-medium text-gray-900">
                       {index + 1}. {question.question}
@@ -426,7 +457,7 @@ export default function CreateTestPage() {
                       Remove
                     </button>
                   </div>
-                  
+
                   <div className="space-y-1">
                     {question.options.map((option, optIndex) => (
                       <div
@@ -441,7 +472,7 @@ export default function CreateTestPage() {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="mt-2 text-xs text-gray-500">
                     Points: {question.points}
                     {question.explanation && (
@@ -463,7 +494,7 @@ export default function CreateTestPage() {
           >
             {saving ? "Creating Test..." : "Create Test"}
           </button>
-          
+
           {formData.questions.length === 0 && (
             <p className="text-sm text-gray-500 mt-2">
               Add at least one question to create the test

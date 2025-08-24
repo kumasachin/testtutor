@@ -1,0 +1,161 @@
+{
+  "domainName": "General Knowledge",
+  "testTitle": "UK General Knowledge - Geography & Culture",
+  "testDescription": "Comprehensive test covering UK geography, cultural landmarks, famous personalities, and general knowledge essential for UK residents.",
+  "passPercentage": 70,
+  "timeLimit": 40,
+  "questions": [
+    {
+      "stem": "Which is the longest river in the UK?",
+      "options": [
+        { "label": "River Thames", "isCorrect": false },
+        { "label": "River Severn", "isCorrect": true },
+        { "label": "River Trent", "isCorrect": false },
+        { "label": "River Mersey", "isCorrect": false }
+      ],
+      "explanation": "The River Severn is the longest river in the UK at 354 kilometers (220 miles), flowing through Wales and England before reaching the Bristol Channel.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["geography", "rivers", "uk-landmarks"]
+    },
+    {
+      "stem": "Edinburgh is the capital of which UK country?",
+      "options": [
+        { "label": "England", "isCorrect": false },
+        { "label": "Wales", "isCorrect": false },
+        { "label": "Scotland", "isCorrect": true },
+        { "label": "Northern Ireland", "isCorrect": false }
+      ],
+      "explanation": "Edinburgh is the capital city of Scotland and home to the Scottish Parliament. It's famous for its historic castle and annual festival.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["geography", "capitals", "scotland"]
+    },
+    {
+      "stem": "Which of these are UNESCO World Heritage Sites in the UK?",
+      "options": [
+        { "label": "Stonehenge", "isCorrect": true },
+        { "label": "Tower of London", "isCorrect": true },
+        { "label": "Giant's Causeway", "isCorrect": true },
+        { "label": "London Eye", "isCorrect": false }
+      ],
+      "explanation": "Stonehenge, Tower of London, and Giant's Causeway are all UNESCO World Heritage Sites. The London Eye, while iconic, is not a World Heritage Site.",
+      "difficulty": "HARD",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["heritage", "unesco", "landmarks"]
+    },
+    {
+      "stem": "The UK consists of four countries.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "The United Kingdom consists of four countries: England, Scotland, Wales, and Northern Ireland. Great Britain refers to the island containing England, Scotland, and Wales.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["geography", "uk-structure", "countries"]
+    },
+    {
+      "stem": "Which scientist is famous for developing the theory of evolution?",
+      "options": [
+        { "label": "Isaac Newton", "isCorrect": false },
+        { "label": "Charles Darwin", "isCorrect": true },
+        { "label": "Stephen Hawking", "isCorrect": false },
+        { "label": "Alexander Fleming", "isCorrect": false }
+      ],
+      "explanation": "Charles Darwin developed the theory of evolution through natural selection, published in 'On the Origin of Species' in 1859.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["science", "famous-people", "darwin"]
+    },
+    {
+      "stem": "What is the currency used in the UK?",
+      "options": [
+        { "label": "Euro", "isCorrect": false },
+        { "label": "Dollar", "isCorrect": false },
+        { "label": "Pound Sterling", "isCorrect": true },
+        { "label": "Franc", "isCorrect": false }
+      ],
+      "explanation": "The UK uses Pound Sterling (GBP), often simply called 'pounds'. The symbol is £ and it's divided into 100 pence.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["currency", "economics", "basic-knowledge"]
+    },
+    {
+      "stem": "Which mountain is the highest in the UK?",
+      "options": [
+        { "label": "Snowdon", "isCorrect": false },
+        { "label": "Ben Nevis", "isCorrect": true },
+        { "label": "Scafell Pike", "isCorrect": false },
+        { "label": "Slieve Donard", "isCorrect": false }
+      ],
+      "explanation": "Ben Nevis in Scotland is the highest mountain in the UK at 1,345 meters (4,413 feet). Snowdon is the highest in Wales, and Scafell Pike is the highest in England.",
+      "difficulty": "MEDIUM",
+      "type": "SINGLE_CHOICE",
+      "tags": ["geography", "mountains", "scotland"]
+    },
+    {
+      "stem": "Which of these sports originated in the UK?",
+      "options": [
+        { "label": "Football (Soccer)", "isCorrect": true },
+        { "label": "Rugby", "isCorrect": true },
+        { "label": "Cricket", "isCorrect": true },
+        { "label": "Basketball", "isCorrect": false }
+      ],
+      "explanation": "Football, rugby, and cricket all originated in the UK and were later spread around the world. Basketball was invented in the United States.",
+      "difficulty": "MEDIUM",
+      "type": "MULTIPLE_CHOICE",
+      "tags": ["sports", "history", "british-inventions"]
+    },
+    {
+      "stem": "The BBC stands for British Broadcasting Corporation.",
+      "options": [
+        { "label": "True", "isCorrect": true },
+        { "label": "False", "isCorrect": false }
+      ],
+      "explanation": "The BBC (British Broadcasting Corporation) is the UK's national public service broadcaster, founded in 1922 and funded primarily through television license fees.",
+      "difficulty": "EASY",
+      "type": "TRUE_FALSE",
+      "tags": ["media", "bbc", "acronyms"]
+    },
+    {
+      "stem": "Which city hosted the 2012 Summer Olympics?",
+      "options": [
+        { "label": "Manchester", "isCorrect": false },
+        { "label": "Birmingham", "isCorrect": false },
+        { "label": "London", "isCorrect": true },
+        { "label": "Glasgow", "isCorrect": false }
+      ],
+      "explanation": "London hosted the 2012 Summer Olympics, becoming the first city to host the modern Olympics three times (previously in 1908 and 1948).",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["sports", "olympics", "london"]
+    },
+    {
+      "stem": "What is the national flower of England?",
+      "options": [
+        { "label": "Thistle", "isCorrect": false },
+        { "label": "Rose", "isCorrect": true },
+        { "label": "Daffodil", "isCorrect": false },
+        { "label": "Shamrock", "isCorrect": false }
+      ],
+      "explanation": "The rose is the national flower of England. The thistle represents Scotland, the daffodil represents Wales, and the shamrock represents Ireland.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["national-symbols", "flowers", "england"]
+    },
+    {
+      "stem": "Which author wrote the Harry Potter series?",
+      "options": [
+        { "label": "Roald Dahl", "isCorrect": false },
+        { "label": "J.K. Rowling", "isCorrect": true },
+        { "label": "Enid Blyton", "isCorrect": false },
+        { "label": "Philip Pullman", "isCorrect": false }
+      ],
+      "explanation": "J.K. Rowling wrote the Harry Potter series, which became one of the best-selling book series in history and was adapted into successful films.",
+      "difficulty": "EASY",
+      "type": "SINGLE_CHOICE",
+      "tags": ["literature", "authors", "harry-potter"]
+    }
+  ]
+}
