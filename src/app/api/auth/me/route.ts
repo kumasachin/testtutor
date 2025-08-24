@@ -2,8 +2,24 @@ import jwt from "jsonwebtoken";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
+interface MockUser {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  createdAt: Date;
+  updatedAt: Date;
+  isEmailVerified: boolean;
+}
+
+interface JWTPayload {
+  userId: string;
+  email: string;
+}
+
 // Mock user database (replace with actual database)
-const users: any[] = [];
+const users: MockUser[] = [];
 
 export async function GET(request: NextRequest) {
   try {
@@ -21,7 +37,7 @@ export async function GET(request: NextRequest) {
       const decoded = jwt.verify(
         token,
         process.env.JWT_SECRET || "your-secret-key"
-      ) as any;
+      ) as JWTPayload;
 
       // Find user
       const user = users.find((u) => u.id === decoded.userId);
@@ -33,13 +49,13 @@ export async function GET(request: NextRequest) {
       }
 
       // Return user without password
-      const { password: _, ...userWithoutPassword } = user;
+      const { password: _password, ...userWithoutPassword } = user;
 
       return NextResponse.json({
         success: true,
         user: userWithoutPassword,
       });
-    } catch (jwtError) {
+    } catch {
       return NextResponse.json(
         { success: false, message: "Invalid token" },
         { status: 401 }

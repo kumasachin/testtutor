@@ -1,7 +1,6 @@
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   // In a real app, you might invalidate the token in a blacklist or database
   // For now, we'll just return success since client will remove the token
 

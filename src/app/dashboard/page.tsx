@@ -4,18 +4,24 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
-  LineChart,
-  Line,
-  BarChart,
   Bar,
+  BarChart,
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
 } from "recharts";
 
 import { useAuth } from "@/contexts/AuthContext";
+import {
+  MESSAGES,
+  formatTimeSpent,
+  getScoreMessage,
+  getStreakMessage,
+} from "@/lib/types";
 
 interface UserStats {
   totalTests: number;
@@ -128,12 +134,6 @@ export default function Dashboard() {
     router.push("/");
   };
 
-  const formatTime = (minutes: number) => {
-    const hours = Math.floor(minutes / 60);
-    const mins = minutes % 60;
-    return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
-  };
-
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       month: "short",
@@ -203,11 +203,20 @@ export default function Dashboard() {
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Welcome back, {user.firstName || user.email}!
+            {stats.totalTests === 0
+              ? `${MESSAGES.WELCOME.FIRST_TIME}`
+              : `Welcome back, ${user.firstName || user.email}! 📚`}
           </h1>
           <p className="text-gray-600">
-            Track your progress and continue improving your test scores.
+            {stats.totalTests === 0
+              ? "Your learning journey starts here. Every expert was once a beginner! 🌟"
+              : `${getScoreMessage(stats.averageScore)} Keep up the amazing work! 📈`}
           </p>
+          {stats.streaks.current > 0 && (
+            <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+              🔥 {getStreakMessage(stats.streaks.current)}
+            </div>
+          )}
         </div>
 
         {/* Stats Overview */}
@@ -288,7 +297,7 @@ export default function Dashboard() {
                   Time Studied
                 </p>
                 <p className="text-2xl font-bold text-gray-900">
-                  {formatTime(stats.timeSpent)}
+                  {formatTimeSpent(stats.timeSpent)}
                 </p>
               </div>
             </div>

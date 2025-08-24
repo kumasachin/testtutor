@@ -222,3 +222,95 @@ export const schemas = {
   TestStatus: TestStatusSchema,
   ApiResponse: ApiResponseSchema,
 };
+
+// Humanized messages for better UX
+export const MESSAGES = {
+  WELCOME: {
+    FIRST_TIME:
+      "Welcome to TestTutor! 🎉 Ready to start your learning journey?",
+    RETURNING:
+      "Welcome back! Great to see you continuing your learning journey! 📚",
+    NO_TESTS:
+      "You haven't taken any tests yet. Let's start with your first one! 💪",
+  },
+  ENCOURAGEMENT: {
+    GOOD_SCORE: "Excellent work! You're really mastering this! 🌟",
+    IMPROVING: "You're making great progress! Keep it up! 📈",
+    NEEDS_PRACTICE: "Every expert was once a beginner. Keep practicing! 💪",
+    PERFECT_SCORE: "Perfect score! You're a star! ⭐",
+  },
+  STREAKS: {
+    START: "Start your learning streak today! 🔥",
+    CONTINUE: "Amazing streak! Don't break the chain! 🔗",
+    LOST: "Streak ended, but that's okay! Start a new one today! 🌱",
+    MILESTONE: "Incredible! You've reached a major milestone! 🏆",
+  },
+  ERRORS: {
+    GENERIC: "Oops! Something went wrong. Please try again. 🤔",
+    NETWORK: "Network issue detected. Please check your connection. 📶",
+    AUTH_REQUIRED: "Please log in to access this feature. 🔐",
+    INVALID_CREDENTIALS: "Email or password is incorrect. Please try again. 🚫",
+    EMAIL_EXISTS:
+      "This email is already registered. Try logging in instead! 📧",
+  },
+  LOADING: {
+    TESTS: "Loading your personalized test experience... ⏳",
+    DASHBOARD: "Preparing your learning dashboard... 📊",
+    RESULTS: "Calculating your amazing results... 🎯",
+  },
+} as const;
+
+// User-friendly helper functions
+export const getScoreMessage = (score: number): string => {
+  if (score >= 95) return MESSAGES.ENCOURAGEMENT.PERFECT_SCORE;
+  if (score >= 80) return MESSAGES.ENCOURAGEMENT.GOOD_SCORE;
+  if (score >= 60) return MESSAGES.ENCOURAGEMENT.IMPROVING;
+  return MESSAGES.ENCOURAGEMENT.NEEDS_PRACTICE;
+};
+
+export const getStreakMessage = (streak: number): string => {
+  if (streak === 0) return MESSAGES.STREAKS.START;
+  if (streak >= 30) return MESSAGES.STREAKS.MILESTONE;
+  if (streak >= 7) return MESSAGES.STREAKS.CONTINUE;
+  return MESSAGES.STREAKS.CONTINUE;
+};
+
+export const getWelcomeMessage = (
+  hasTests: boolean,
+  isNewUser: boolean
+): string => {
+  if (isNewUser) return MESSAGES.WELCOME.FIRST_TIME;
+  if (!hasTests) return MESSAGES.WELCOME.NO_TESTS;
+  return MESSAGES.WELCOME.RETURNING;
+};
+
+export const formatTimeSpent = (minutes: number): string => {
+  if (minutes < 1) return "Less than a minute";
+  if (minutes < 60)
+    return `${Math.round(minutes)} minute${minutes === 1 ? "" : "s"}`;
+
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = Math.round(minutes % 60);
+
+  if (remainingMinutes === 0) {
+    return `${hours} hour${hours === 1 ? "" : "s"}`;
+  }
+
+  return `${hours}h ${remainingMinutes}m`;
+};
+
+export const getScoreColor = (score: number): string => {
+  if (score >= 90) return "text-emerald-600";
+  if (score >= 80) return "text-green-600";
+  if (score >= 70) return "text-blue-600";
+  if (score >= 60) return "text-yellow-600";
+  return "text-red-600";
+};
+
+export const getScoreBadgeColor = (score: number): string => {
+  if (score >= 90) return "bg-emerald-100 text-emerald-800";
+  if (score >= 80) return "bg-green-100 text-green-800";
+  if (score >= 70) return "bg-blue-100 text-blue-800";
+  if (score >= 60) return "bg-yellow-100 text-yellow-800";
+  return "bg-red-100 text-red-800";
+};

@@ -5,13 +5,23 @@ import HomePage from "../../app/page";
 
 // Mock next/link
 jest.mock("next/link", () => {
-  return ({ children, href, ...props }: any) => {
+  const MockLink = ({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    [key: string]: unknown;
+  }) => {
     return (
       <a href={href} {...props}>
         {children}
       </a>
     );
   };
+  MockLink.displayName = "MockLink";
+  return MockLink;
 });
 
 // Mock fetch
@@ -20,29 +30,61 @@ global.fetch = jest.fn();
 describe("HomePage", () => {
   beforeEach(() => {
     (fetch as jest.Mock).mockClear();
-    (fetch as jest.Mock).mockResolvedValue({
-      json: async () => ({
-        success: true,
-        data: [
-          {
-            id: "programming",
-            name: "programming",
-            displayName: "Programming",
+
+    // Mock domains API response
+    (fetch as jest.Mock)
+      .mockResolvedValueOnce({
+        json: async () => ({
+          success: true,
+          data: [
+            {
+              id: "1",
+              name: "Life in UK",
+              displayName: "Life in UK Test",
+              description: "British citizenship test",
+            },
+            {
+              id: "2",
+              name: "Driving Theory Test",
+              displayName: "Driving Theory Test",
+              description: "UK driving theory exam",
+            },
+            {
+              id: "3",
+              name: "General Knowledge",
+              displayName: "General Knowledge",
+              description: "General knowledge tests",
+            },
+            {
+              id: "4",
+              name: "English Language",
+              displayName: "English Language",
+              description: "English language assessments",
+            },
+          ],
+        }),
+      })
+      // Mock tests API response
+      .mockResolvedValueOnce({
+        json: async () => ({
+          success: true,
+          data: {
+            tests: [
+              {
+                id: "1",
+                title: "Life in UK Test 1",
+                description: "First practice test",
+                domainId: "1",
+                domain: {
+                  name: "Life in UK",
+                  displayName: "Life in UK Test",
+                },
+                _count: { attempts: 100 },
+              },
+            ],
           },
-          {
-            id: "mathematics",
-            name: "mathematics",
-            displayName: "Mathematics",
-          },
-          { id: "science", name: "science", displayName: "Science" },
-          {
-            id: "language-arts",
-            name: "language-arts",
-            displayName: "Language Arts",
-          },
-        ],
-      }),
-    });
+        }),
+      });
   });
 
   it("renders the main heading", async () => {
@@ -60,9 +102,19 @@ describe("HomePage", () => {
     ).toBeInTheDocument();
   });
 
+  it("renders community message", () => {
+    render(<HomePage />);
+    expect(
+      screen.getByText(/Community Driven & Completely Free/)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/100% Free Forever/)).toBeInTheDocument();
+    expect(screen.getByText(/Community Supported/)).toBeInTheDocument();
+    expect(screen.getByText(/Real Exam Questions/)).toBeInTheDocument();
+  });
+
   it("renders test categories", () => {
     render(<HomePage />);
-    expect(screen.getAllByText("Life in UK Test")).toHaveLength(4); // Multiple instances
+    expect(screen.getAllByText("Life in UK Test")).toHaveLength(2); // Navigation + category card
     expect(screen.getByText("Driving Theory Test")).toBeInTheDocument();
     expect(screen.getByText("Academic Tests")).toBeInTheDocument();
   });
@@ -71,19 +123,21 @@ describe("HomePage", () => {
     render(<HomePage />);
 
     await waitFor(() => {
-      expect(screen.getAllByText("Life in UK Test")).toHaveLength(4); // Multiple instances
+      expect(screen.getAllByText("Life in UK Test")).toHaveLength(2); // Navigation + category card
       expect(screen.getByText("Driving Theory Test")).toBeInTheDocument();
       expect(screen.getByText("Academic Tests")).toBeInTheDocument();
       expect(screen.getByText("Coming Soon")).toBeInTheDocument();
     });
   });
 
-  it("renders feature cards", () => {
+  it("renders test category descriptions", () => {
     render(<HomePage />);
 
-    expect(screen.getByText("Real Questions")).toBeInTheDocument();
-    expect(screen.getByText("Study Anywhere")).toBeInTheDocument();
-    expect(screen.getByText("See Your Progress")).toBeInTheDocument();
+    expect(screen.getByText("15+ Practice Tests")).toBeInTheDocument();
+    expect(screen.getByText("Multiple Categories")).toBeInTheDocument();
+    expect(
+      screen.getByText(/Practice for your British citizenship test/)
+    ).toBeInTheDocument();
   });
 
   it("renders statistics", () => {
@@ -97,41 +151,19 @@ describe("HomePage", () => {
     expect(screen.getByText("Always")).toBeInTheDocument();
   });
 
-  it("renders testimonials", () => {
+  it("renders navigation and footer", () => {
     render(<HomePage />);
 
-    expect(
-      screen.getByText(/Passed my Life in UK test on the second try/)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/The driving theory practice helped me learn/)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/Good practice tests and it's free/)
-    ).toBeInTheDocument();
+    expect(screen.getByText("TestTutor")).toBeInTheDocument();
+    expect(screen.getByText("Contact Us")).toBeInTheDocument();
+    expect(screen.getByText("💝 Donate")).toBeInTheDocument();
+    expect(screen.getByText("Quick Links")).toBeInTheDocument();
+    expect(screen.getByText("Support")).toBeInTheDocument();
   });
 
-  it("renders get started button", () => {
-    render(<HomePage />);
-
-    const getStartedButton = screen.getByText("🇬🇧 Start Life in UK Test →");
-    expect(getStartedButton).toBeInTheDocument();
-  });
-
-  it("renders feature descriptions", () => {
-    render(<HomePage />);
-
-    expect(
-      screen.getByText(/Questions based on official exam patterns/)
-    ).toBeInTheDocument();
-    expect(screen.getByText(/Use on any device, anytime/)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Keep track of your improvement/)
-    ).toBeInTheDocument();
-  });
-
-  it("makes API call to fetch domains", () => {
+  it("makes API calls to fetch domains and tests", () => {
     render(<HomePage />);
     expect(fetch).toHaveBeenCalledWith("/api/domains");
+    expect(fetch).toHaveBeenCalledWith("/api/tests");
   });
 });

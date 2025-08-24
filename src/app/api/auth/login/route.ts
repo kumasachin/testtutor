@@ -4,8 +4,19 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+interface MockUser {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  createdAt: string;
+  updatedAt: string;
+  isEmailVerified: boolean;
+}
+
 // Mock user database (replace with actual database)
-const users: any[] = [];
+const users: MockUser[] = [];
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -43,7 +54,7 @@ export async function POST(request: NextRequest) {
     );
 
     // Return user without password
-    const { password: _, ...userWithoutPassword } = user;
+    const { password: _password, ...userWithoutPassword } = user;
 
     return NextResponse.json({
       success: true,
