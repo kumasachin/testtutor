@@ -1,36 +1,171 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ExamKit
 
-## Getting Started
+A modern exam management platform built with Next.js. Create, manage, and take exams with approval workflows.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Core Functionality
+
+- Multiple question types (multiple choice, text-based)
+- Domain-based organization
+- Guest and authenticated testing
+- Real-time scoring and feedback
+
+### User Management
+
+- Role-based access control
+- Secure authentication via Supabase
+- User profiles and test history
+
+### Approval System
+
+- Admin review process for submitted tests
+- Quality control with approve/reject workflow
+- Status tracking and review comments
+
+### Analytics
+
+- Performance metrics and test analytics
+- User progress tracking
+- Question difficulty analysis
+
+## Tech Stack
+
+- Next.js 14 with TypeScript
+- PostgreSQL with Prisma ORM
+- Supabase for auth and database
+- Tailwind CSS for styling
+- Zod for validation
+
+## Project Structure
+
+```
+examkit-next/
+├── prisma/
+│   └── schema.prisma          # Database schema
+├── src/
+│   ├── app/
+│   │   ├── api/               # API routes
+│   │   │   ├── tests/         # Test management endpoints
+│   │   │   ├── attempts/      # Test attempt endpoints
+│   │   │   ├── admin/         # Admin approval endpoints
+│   │   │   └── domains/       # Domain management endpoints
+│   │   ├── layout.tsx         # Root layout
+## Project Structure
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+examkit-next/
+├── prisma/
+│ └── schema.prisma
+├── src/
+│ ├── app/
+│ │ ├── api/
+│ │ ├── page.tsx
+│ │ └── layout.tsx
+│ └── lib/
+│ ├── prisma.ts
+│ ├── supabase.ts
+│ ├── types.ts
+│ └── examkit-service.ts
+└── package.json
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+### Requirements
+- Node.js 18+
+- PostgreSQL database
+- npm or yarn
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone and install
+   ```bash
+   git clone <your-repo>
+   cd examkit-next
+   npm install
+````
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Configure environment
 
-## Deploy on Vercel
+   ```bash
+   cp .env.example .env.local
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Update `.env.local`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```env
+   DATABASE_URL="postgresql://user:pass@localhost:5432/examkit"
+   NEXT_PUBLIC_SUPABASE_URL="your-supabase-url"
+   NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+   SUPABASE_SERVICE_ROLE_KEY="your-service-key"
+   ```
+
+3. Setup database
+
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
+
+4. Start development
+   ```bash
+   npm run dev
+   ```
+
+## API Routes
+
+### Public
+
+- `GET /api/tests` - List tests
+- `GET /api/tests/[id]` - Test details
+- `POST /api/tests/[id]/attempt` - Start attempt
+- `GET /api/domains` - List domains
+
+### Authenticated
+
+- `POST /api/tests` - Create test
+- `PUT /api/attempts/[id]` - Update attempt
+- `POST /api/attempts/[id]` - Complete attempt
+
+### Admin
+
+- `GET /api/admin/tests/review` - Pending tests
+- `POST /api/admin/tests/[id]/review` - Approve/reject
+
+## Usage
+
+### Creating Tests
+
+1. Register and login
+2. Create test with questions
+3. Submit for admin approval
+4. Get notified of status
+
+### Taking Tests
+
+1. Browse available tests
+2. Start attempt (login optional)
+3. Complete within time limit
+4. View results
+
+### Admin Panel
+
+1. Access admin interface
+2. Review submitted tests
+3. Approve or reject with comments
+
+## Development
+
+Key files:
+
+- `src/lib/types.ts` - Type definitions
+- `src/lib/examkit-service.ts` - Business logic
+- `prisma/schema.prisma` - Database schema
+- `src/app/api/` - API endpoints
+
+## License
+
+MIT
