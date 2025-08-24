@@ -260,14 +260,14 @@ export default function TestTakingInterface({
             <h1 className="text-2xl font-bold text-gray-900">{test.title}</h1>
             <p className="text-sm text-gray-600 mt-1">
               {Object.keys(answers).length === 0
-                ? "🌟 You've got this! Take your time and read each question carefully. Every expert was once a beginner!"
+                ? "🌟 You&apos;ve got this! Take your time and read each question carefully. Every expert was once a beginner!"
                 : Object.keys(answers).length === test.questions.length
-                  ? "🎉 Fantastic! All questions answered! You're doing amazing - ready to submit when you are."
+                  ? "🎉 Fantastic! All questions answered! You&apos;re doing amazing - ready to submit when you are."
                   : Object.keys(answers).length === 1
-                    ? "✨ Great start! You're building momentum - keep it up!"
+                    ? "✨ Great start! You&apos;re building momentum - keep it up!"
                     : Object.keys(answers).length >= test.questions.length * 0.8
-                      ? `� You're on fire! Just ${test.questions.length - Object.keys(answers).length} more question${test.questions.length - Object.keys(answers).length === 1 ? '' : 's'} to go!`
-                      : `💪 Excellent progress! ${test.questions.length - Object.keys(answers).length} more to go - you're doing great!`}
+                      ? `🔥 You&apos;re on fire! Just ${test.questions.length - Object.keys(answers).length} more question${test.questions.length - Object.keys(answers).length === 1 ? "" : "s"} to go!`
+                      : `💪 Excellent progress! ${test.questions.length - Object.keys(answers).length} more to go - you&apos;re doing great!`}
             </p>
           </div>
           {timeRemaining !== null && (
@@ -280,10 +280,22 @@ export default function TestTakingInterface({
                     : "bg-blue-100 text-blue-600"
               }`}
             >
-              <span>{timeRemaining <= 300 ? "⚠️" : timeRemaining <= 600 ? "⏰" : "⏱️"}</span>
+              <span>
+                {timeRemaining <= 300
+                  ? "⚠️"
+                  : timeRemaining <= 600
+                    ? "⏰"
+                    : "⏱️"}
+              </span>
               <span>{formatTime(timeRemaining)}</span>
-              {timeRemaining <= 300 && <span className="text-xs font-bold">Time's running out!</span>}
-              {timeRemaining <= 60 && <span className="text-xs">🏃‍♂️ Final sprint!</span>}
+              {timeRemaining <= 300 && (
+                <span className="text-xs font-bold">
+                  Time&apos;s running out!
+                </span>
+              )}
+              {timeRemaining <= 60 && (
+                <span className="text-xs">🏃‍♂️ Final sprint!</span>
+              )}
             </div>
           )}
         </div>
@@ -299,14 +311,18 @@ export default function TestTakingInterface({
             {Object.keys(answers).length < test.questions.length && (
               <span className="text-gray-500">
                 • {test.questions.length - Object.keys(answers).length}{" "}
-                {test.questions.length - Object.keys(answers).length === 1 ? "question" : "questions"} remaining
+                {test.questions.length - Object.keys(answers).length === 1
+                  ? "question"
+                  : "questions"}{" "}
+                remaining
               </span>
             )}
-            {Object.keys(answers).length > 0 && Object.keys(answers).length < test.questions.length && (
-              <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full animate-bounce">
-                🌟 Keep going!
-              </span>
-            )}
+            {Object.keys(answers).length > 0 &&
+              Object.keys(answers).length < test.questions.length && (
+                <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full animate-bounce">
+                  🌟 Keep going!
+                </span>
+              )}
           </span>
         </div>
 
@@ -347,9 +363,10 @@ export default function TestTakingInterface({
               {Object.keys(answers).length === test.questions.length && (
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-40 animate-pulse"></div>
               )}
-              {Object.keys(answers).length >= test.questions.length * 0.75 && Object.keys(answers).length < test.questions.length && (
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-30 animate-pulse"></div>
-              )}
+              {Object.keys(answers).length >= test.questions.length * 0.75 &&
+                Object.keys(answers).length < test.questions.length && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200 to-transparent opacity-30 animate-pulse"></div>
+                )}
             </div>
           </div>
         </div>
@@ -476,7 +493,7 @@ export default function TestTakingInterface({
                   <div className="text-sm text-gray-600">
                     {result.isCorrect
                       ? `Amazing! You earned ${currentQuestion.points} ${currentQuestion.points === 1 ? "point" : "points"}! 🌟`
-                      : "Don't worry - every mistake is a step closer to mastery! 💪"}
+                      : "Don&apos;t worry - every mistake is a step closer to mastery! 💪"}
                   </div>
                 </div>
               );
@@ -490,7 +507,7 @@ export default function TestTakingInterface({
           currentQuestion.explanation && (
             <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
               <h4 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                💡 Here's the science behind it!
+                💡 Here&apos;s the science behind it!
               </h4>
               <p className="text-blue-800">{currentQuestion.explanation}</p>
             </div>
@@ -511,15 +528,18 @@ export default function TestTakingInterface({
           {/* Progress encouragement */}
           {!showResult && Object.keys(answers).length > 0 && (
             <div className="text-sm text-gray-500 hidden sm:block">
-              🚀 {Math.round(
+              🚀{" "}
+              {Math.round(
                 (Object.keys(answers).length / test.questions.length) * 100
               )}
               % complete!
               {Object.keys(answers).length === test.questions.length - 1 &&
-                " 🏃‍♂️ One more question - you're almost there!"}
-              {Object.keys(answers).length >= test.questions.length * 0.8 && Object.keys(answers).length < test.questions.length - 1 &&
-                " 🔥 You're crushing it!"}
-              {Object.keys(answers).length >= test.questions.length * 0.5 && Object.keys(answers).length < test.questions.length * 0.8 &&
+                " 🏃‍♂️ One more question - you&apos;re almost there!"}
+              {Object.keys(answers).length >= test.questions.length * 0.8 &&
+                Object.keys(answers).length < test.questions.length - 1 &&
+                " 🔥 You&apos;re crushing it!"}
+              {Object.keys(answers).length >= test.questions.length * 0.5 &&
+                Object.keys(answers).length < test.questions.length * 0.8 &&
                 " 💪 Halfway there - keep the momentum going!"}
             </div>
           )}
@@ -572,7 +592,8 @@ export default function TestTakingInterface({
                 Ready to Submit Your Amazing Work?
               </h3>
               <p className="text-sm text-gray-600 mt-1">
-                Take a moment to feel proud - you've put in great effort! 🌟
+                Take a moment to feel proud - you&apos;ve put in great effort!
+                🌟
               </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 mb-6">
@@ -596,13 +617,17 @@ export default function TestTakingInterface({
                 {Object.keys(answers).length < test.questions.length && (
                   <div className="text-amber-600 text-xs mt-2 flex items-center gap-1">
                     <span>⚠️</span>
-                    <span>You have unanswered questions. That's okay though - you can still submit if you're ready!</span>
+                    <span>
+                      You have unanswered questions. That&apos;s okay though -
+                      you can still submit if you&apos;re ready!
+                    </span>
                   </div>
                 )}
               </div>
             </div>
             <p className="text-gray-600 mb-6 text-center">
-              Once submitted, you won't be able to make any changes. Take a deep breath - you've prepared well! 🌟
+              Once submitted, you won&apos;t be able to make any changes. Take a
+              deep breath - you&apos;ve prepared well! 🌟
             </p>
             <div className="flex gap-3">
               <button
