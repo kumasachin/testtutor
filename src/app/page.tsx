@@ -10,15 +10,47 @@ interface Domain {
   description?: string;
 }
 
+interface Test {
+  id: string;
+  title: string;
+  description: string;
+  domainId: string;
+  domain: {
+    name: string;
+    displayName: string;
+  };
+  _count: {
+    attempts: number;
+  };
+}
+
 export default function Home() {
   const [domains, setDomains] = useState<Domain[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // TODO: Replace with actual auth state
+  const [tests, setTests] = useState<Test[]>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showTestsDropdown, setShowTestsDropdown] = useState(false);
+  const [showExamsDropdown, setShowExamsDropdown] = useState(false);
 
   useEffect(() => {
     fetchDomains();
-    // TODO: Check actual authentication status
+    fetchTests();
     checkAuthStatus();
+  }, []);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".dropdown-container")) {
+        setShowTestsDropdown(false);
+        setShowExamsDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const fetchDomains = async () => {
@@ -30,14 +62,22 @@ export default function Home() {
       }
     } catch (error) {
       console.error("Error fetching domains:", error);
-    } finally {
-      setLoading(false);
+    }
+  };
+
+  const fetchTests = async () => {
+    try {
+      const response = await fetch("/api/tests");
+      const result = await response.json();
+      if (result.success) {
+        setTests(result.data.tests || []);
+      }
+    } catch (error) {
+      console.error("Error fetching tests:", error);
     }
   };
 
   const checkAuthStatus = () => {
-    // TODO: Implement actual authentication check
-    // For now, setting as false
     setIsLoggedIn(false);
   };
 
@@ -58,24 +98,171 @@ export default function Home() {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/lifeInUk"
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-              >
-                Life in UK Test
-              </Link>
-              <Link
-                href="/drivingTheory"
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-              >
-                Driving Theory
-              </Link>
-              <Link
-                href="/courses"
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-              >
-                All Courses
-              </Link>
+              {/* Tests Dropdown */}
+              <div className="relative dropdown-container">
+                <button
+                  onClick={() => setShowTestsDropdown(!showTestsDropdown)}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  <span>Tests</span>
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {showTestsDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border py-2 z-50 max-h-96 overflow-y-auto">
+                    <div className="px-4 py-2 border-b bg-gray-50">
+                      <h3 className="font-semibold text-gray-900">
+                        Practice Tests
+                      </h3>
+                    </div>
+                    {tests.length > 0 ? (
+                      <>
+                        {tests.slice(0, 8).map((test) => (
+                          <Link
+                            key={test.id}
+                            href={`/test/${test.id}`}
+                            className="block px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                            onClick={() => setShowTestsDropdown(false)}
+                          >
+                            <div className="flex items-start space-x-3">
+                              <span className="text-lg mt-0.5">📝</span>
+                              <div className="flex-1 min-w-0">
+                                <div className="font-medium text-gray-900 text-sm line-clamp-2 leading-tight">
+                                  {test.title}
+                                </div>
+                                <div className="text-xs text-gray-500 mt-1 flex items-center space-x-3">
+                                  <span>{test.domain.displayName}</span>
+                                  <span>•</span>
+                                  <span>{test._count.attempts} attempts</span>
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
+
+                        {tests.length > 8 && (
+                          <div className="border-t pt-2">
+                            <Link
+                              href="/tests"
+                              className="block px-4 py-2 text-blue-600 hover:bg-blue-50 transition-colors font-medium text-center"
+                              onClick={() => setShowTestsDropdown(false)}
+                            >
+                              View All {tests.length} Tests →
+                            </Link>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="px-4 py-6 text-center">
+                        <p className="text-sm text-gray-500">
+                          No tests available
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Exams Dropdown */}
+              <div className="relative dropdown-container">
+                <button
+                  onClick={() => setShowExamsDropdown(!showExamsDropdown)}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                >
+                  <span>Exams</span>
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                {showExamsDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border py-2 z-50 max-h-96 overflow-y-auto">
+                    <div className="px-4 py-2 border-b bg-gray-50">
+                      <h3 className="font-semibold text-gray-900">
+                        Available Exams
+                      </h3>
+                    </div>
+                    <Link
+                      href="/lifeInUk"
+                      className="block px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                      onClick={() => setShowExamsDropdown(false)}
+                    >
+                      <div className="flex items-start space-x-3">
+                        <span className="text-lg mt-0.5">🇬🇧</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-gray-900 text-sm">
+                            Life in UK Test
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1">
+                            British citizenship exam preparation
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/drivingTheory"
+                      className="block px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                      onClick={() => setShowExamsDropdown(false)}
+                    >
+                      <div className="flex items-start space-x-3">
+                        <span className="text-lg mt-0.5">🚗</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-gray-900 text-sm">
+                            Driving Theory Test
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1">
+                            UK driving theory exam preparation
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                    {domains
+                      .filter(
+                        (d) =>
+                          d.name !== "Life in UK" &&
+                          d.name !== "Driving Theory Test"
+                      )
+                      .map((domain) => (
+                        <Link
+                          key={domain.id}
+                          href={`/domain/${domain.name.toLowerCase().replace(/\s+/g, "-")}`}
+                          className="block px-4 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+                          onClick={() => setShowExamsDropdown(false)}
+                        >
+                          <div className="flex items-start space-x-3">
+                            <span className="text-lg mt-0.5">📚</span>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-medium text-gray-900 text-sm">
+                                {domain.displayName}
+                              </div>
+                              <div className="text-xs text-gray-500 mt-1">
+                                {domain.description}
+                              </div>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/contact"
@@ -166,19 +353,37 @@ export default function Home() {
               Real questions, helpful explanations, completely free.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/lifeInUk"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors text-lg font-medium"
-              >
-                🇬🇧 Start Life in UK Test →
-              </Link>
-              <Link
-                href="/drivingTheory"
-                className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors text-lg font-medium"
-              >
-                🚗 Driving Theory Practice
-              </Link>
+            {/* Community Message */}
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  🌟 Community Driven & Completely Free
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                  This platform is built by the community, for the community.
+                  All practice tests are completely free and designed to help
+                  you succeed in your UK citizenship and driving theory exams.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Join thousands of learners preparing together! No hidden fees,
+                  no subscriptions, just quality practice tests to help you ace
+                  your exams.
+                </p>
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-green-600">✓</span>
+                    <span>100% Free Forever</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-blue-600">✓</span>
+                    <span>Community Supported</span>
+                  </div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-purple-600">✓</span>
+                    <span>Real Exam Questions</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -336,74 +541,6 @@ export default function Home() {
                 Keep track of your improvement with simple stats and feedback on
                 your weak areas
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Success Stories */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              What People Say
-            </h3>
-            <p className="text-xl text-gray-600">
-              Real feedback from people who used TestTutor
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
-              <div className="text-green-600 text-6xl mb-4">&quot;</div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;Passed my Life in UK test on the second try. The practice
-                questions were really helpful for understanding the
-                format.&quot;
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 bg-green-200 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-700 font-bold">S</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Sarah M.</div>
-                  <div className="text-sm text-gray-600">Life in UK Test</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
-              <div className="text-blue-600 text-6xl mb-4">&quot;</div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;The driving theory practice helped me learn the Highway
-                Code better than just reading it.&quot;
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-blue-700 font-bold">M</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Mike T.</div>
-                  <div className="text-sm text-gray-600">Driving Theory</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 border border-purple-100">
-              <div className="text-purple-600 text-6xl mb-4">&quot;</div>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;Good practice tests and it&apos;s free. Used it to prepare
-                for my citizenship test.&quot;
-              </p>
-              <div className="flex items-center">
-                <div className="h-12 w-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-purple-700 font-bold">A</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900">Anna L.</div>
-                  <div className="text-sm text-gray-600">Multiple Tests</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
