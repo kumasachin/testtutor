@@ -1,38 +1,38 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useState, useEffect } from "react";
+import Link from "next/link";
 
 interface Test {
-  id: string
-  title: string
-  description?: string
-  questions: number
-  attempts: number
+  id: string;
+  title: string;
+  description?: string;
+  questions: number;
+  attempts: number;
 }
 
 export default function LifeInUkPage() {
-  const [tests, setTests] = useState<Test[]>([])
-  const [loading, setLoading] = useState(true)
+  const [tests, setTests] = useState<Test[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchLifeInUkTests()
-  }, [])
+    fetchLifeInUkTests();
+  }, []);
 
   const fetchLifeInUkTests = async () => {
     try {
       // Filter tests by Life in UK domain
-      const response = await fetch('/api/tests?category=life-in-uk')
-      const result = await response.json()
+      const response = await fetch("/api/tests?category=life-in-uk");
+      const result = await response.json();
       if (result.success) {
-        setTests(result.data.tests)
+        setTests(result.data.tests);
       }
     } catch (error) {
-      console.error('Error fetching Life in UK tests:', error)
+      console.error("Error fetching Life in UK tests:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
@@ -43,7 +43,8 @@ export default function LifeInUkPage() {
             Life in the UK Tests
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Prepare for your Life in the UK test with our comprehensive practice exams
+            Prepare for your Life in the UK test with our comprehensive practice
+            exams
           </p>
         </div>
 
@@ -66,22 +67,23 @@ export default function LifeInUkPage() {
           <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {tests.map((test) => (
-                <div key={test.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                <div
+                  key={test.id}
+                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                >
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {test.title}
                   </h3>
-                  
+
                   {test.description && (
-                    <p className="text-gray-600 mb-4">
-                      {test.description}
-                    </p>
+                    <p className="text-gray-600 mb-4">{test.description}</p>
                   )}
-                  
+
                   <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
                     <span>{test.questions} questions</span>
                     <span>{test.attempts} attempts</span>
                   </div>
-                  
+
                   <Link
                     href={`/test/${test.id}`}
                     className="block w-full text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
@@ -97,7 +99,9 @@ export default function LifeInUkPage() {
                 <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <span className="text-gray-400 text-2xl">📚</span>
                 </div>
-                <p className="text-gray-600 mb-4">No Life in UK tests available yet.</p>
+                <p className="text-gray-600 mb-4">
+                  No Life in UK tests available yet.
+                </p>
                 <Link
                   href="/create"
                   className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
@@ -125,7 +129,9 @@ export default function LifeInUkPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Tips for Success</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">
+                Tips for Success
+              </h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Study the official handbook thoroughly</li>
                 <li>• Take multiple practice tests</li>
@@ -137,5 +143,5 @@ export default function LifeInUkPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

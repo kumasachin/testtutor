@@ -117,6 +117,25 @@ export class ExamKitService {
     }
   }
 
+  static async getDomainByName(name: string) {
+    try {
+      const domain = await prisma.domain.findFirst({
+        where: { 
+          name: name,
+          isActive: true 
+        },
+      });
+
+      return { success: true, data: domain };
+    } catch (error) {
+      return {
+        success: false,
+        error:
+          error instanceof Error ? error.message : "Failed to fetch domain",
+      };
+    }
+  }
+
   // Test Management
   static async createTest(
     data: CreateTestInput,
