@@ -245,7 +245,7 @@ export default function TestResultsDisplay({
                     </p>
                     <p>
                       🔄 Take the test again when you&apos;re ready - practice
-                      makes perfect!
+                      helps!
                     </p>
                     <p>
                       ⏱️ Consider taking more time to read each question

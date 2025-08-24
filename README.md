@@ -1,39 +1,39 @@
-# ExamKit - Comprehensive Exam Platform
+# TestTutor - Online Exam Platform
 
-A modern, full-featured examination platform built with Next.js 14, TypeScript, and Supabase. Create, manage, and take professional-quality exams with built-in approval workflows and category-specific organization.
+A web platform for creating and taking practice tests, built with Next.js 14, TypeScript, and Supabase. Currently supports Life in UK and Driving Theory tests.
 
-## 🌟 Features
+## Features
 
 ### For Test Creators
 
-- **Intuitive Test Builder**: Create comprehensive exams with multiple-choice questions
-- **Rich Question Editor**: Add explanations, set point values, and configure multiple correct answers
-- **Category Organization**: Organize tests by domain (Life in UK, Driving Theory, etc.)
-- **Real-time Preview**: See how your test will look to students as you build it
+- **Test Builder**: Create exams with multiple-choice questions
+- **Question Editor**: Add explanations, set point values, and configure multiple correct answers
+- **Categories**: Organize tests by domain (Life in UK, Driving Theory, etc.)
+- **Preview**: See how your test will look before publishing
 
 ### For Administrators
 
 - **Approval Workflow**: Review and approve user-generated content before publication
-- **Admin Dashboard**: Comprehensive oversight with stats, user management, and content control
-- **Domain Management**: Configure test categories and their specific requirements
-- **User Role Management**: Control access levels and permissions
+- **Admin Dashboard**: Overview with stats, user management, and content control
+- **Domain Management**: Configure test categories and their requirements
+- **User Roles**: Control access levels and permissions
 
 ### For Test Takers
 
-- **Category-Specific Routes**: Dedicated pages for different test types
-- **Progress Tracking**: Monitor your performance across different test categories
-- **Responsive Design**: Take tests on any device with a seamless experience
-- **Detailed Results**: Get comprehensive feedback with explanations
+- **Different Test Types**: Dedicated pages for different test categories
+- **Progress Tracking**: See your performance across different test types
+- **Mobile Friendly**: Take tests on any device
+- **Results**: Get feedback with explanations
 
 ### Technical Features
 
-- **Multi-tenant Architecture**: Support for multiple domains and organizations
-- **Row Level Security**: Database-level security with Supabase RLS
-- **Type-safe Database**: Prisma ORM with full TypeScript integration
-- **Modern UI**: Built with Tailwind CSS and responsive design principles
-- **API-first Design**: RESTful APIs for all functionality
+- **Database**: PostgreSQL with Prisma ORM
+- **Security**: Row-level security with Supabase
+- **TypeScript**: Full type safety
+- **UI**: Built with Tailwind CSS
+- **API**: RESTful APIs
 
-## 🚀 Quick Start
+## Setup
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ A modern, full-featured examination platform built with Next.js 14, TypeScript, 
 
    ```bash
    git clone <repository-url>
-   cd examkit-next
+   cd testOnline
    ./setup.sh
    ```
 

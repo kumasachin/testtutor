@@ -43,8 +43,7 @@ export default function DrivingTheoryPage() {
             Driving Theory Tests
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Master your driving theory test with our comprehensive practice
-            exams
+            Practice for your driving theory test with real-style questions
           </p>
         </div>
 
@@ -64,7 +63,7 @@ export default function DrivingTheoryPage() {
               🚗 Car Theory Test
             </h2>
             <p className="text-gray-600 mb-4">
-              Prepare for your car driving theory test with official DVSA
+              Practice for your car driving theory test with DVSA-style
               questions
             </p>
             <Link

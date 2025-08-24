@@ -129,8 +129,8 @@ export default function TestSettingsComponent({
                   </div>
                   <div className="text-sm text-gray-600 mt-1">
                     See the correct answer immediately after answering each
-                    question. Perfect for learning and understanding mistakes
-                    right away.
+                    question. Good for learning and understanding mistakes right
+                    away.
                   </div>
                 </div>
               </label>

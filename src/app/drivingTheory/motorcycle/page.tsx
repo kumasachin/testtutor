@@ -64,8 +64,8 @@ export default function MotorcycleTheoryPage() {
             Motorcycle Theory Test Practice
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Master your motorcycle theory test with specialized practice
-            questions and safety guidance
+            Practice for your motorcycle theory test with specialized questions
+            and safety guidance
           </p>
         </div>
 

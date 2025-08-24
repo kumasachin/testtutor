@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Domain {
   id: string;
@@ -13,7 +13,6 @@ interface Domain {
 export default function Home() {
   const [domains, setDomains] = useState<Domain[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showCoursesDropdown, setShowCoursesDropdown] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // TODO: Replace with actual auth state
 
   useEffect(() => {
@@ -59,96 +58,24 @@ export default function Home() {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {/* Courses Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setShowCoursesDropdown(!showCoursesDropdown)}
-                  className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium"
-                >
-                  <span>Courses</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-
-                {showCoursesDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border py-2 z-50">
-                    <Link
-                      href="/lifeInUk"
-                      className="block px-4 py-3 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">🇬🇧</span>
-                        <div>
-                          <div className="font-medium text-gray-900">
-                            Life in UK Test
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            British citizenship test prep
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                    <Link
-                      href="/drivingTheory"
-                      className="block px-4 py-3 hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">🚗</span>
-                        <div>
-                          <div className="font-medium text-gray-900">
-                            Driving Theory
-                          </div>
-                          <div className="text-sm text-gray-500">
-                            Theory test preparation
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                    {loading ? (
-                      <div className="px-4 py-3 text-sm text-gray-500">
-                        Loading more courses...
-                      </div>
-                    ) : (
-                      domains.slice(0, 3).map((domain) => (
-                        <Link
-                          key={domain.id}
-                          href={`/courses/${domain.name}`}
-                          className="block px-4 py-3 hover:bg-gray-50 transition-colors"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <span className="text-2xl">📚</span>
-                            <div>
-                              <div className="font-medium text-gray-900">
-                                {domain.displayName}
-                              </div>
-                              <div className="text-sm text-gray-500">
-                                {domain.description || "Practice tests"}
-                              </div>
-                            </div>
-                          </div>
-                        </Link>
-                      ))
-                    )}
-                    <div className="border-t mt-2 pt-2">
-                      <Link
-                        href="/courses"
-                        className="block px-4 py-2 text-blue-600 hover:bg-blue-50 transition-colors font-medium"
-                      >
-                        View All Courses →
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <Link
+                href="/lifeInUk"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Life in UK Test
+              </Link>
+              <Link
+                href="/drivingTheory"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                Driving Theory
+              </Link>
+              <Link
+                href="/courses"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                All Courses
+              </Link>
 
               <Link
                 href="/contact"
@@ -228,28 +155,27 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Master Your
+              Ace Your
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                 {" "}
-                Exams
+                Tests
               </span>
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Prepare for Life in UK tests, Driving Theory exams, and more with
-              our comprehensive practice materials. Study smarter, pass with
-              confidence.
+              Practice for Life in UK tests, Driving Theory exams, and more.
+              Real questions, helpful explanations, completely free.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/lifeInUk"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors text-lg font-medium"
               >
                 🇬🇧 Start Life in UK Test →
               </Link>
               <Link
                 href="/drivingTheory"
-                className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-lg font-medium"
+                className="inline-flex items-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors text-lg font-medium"
               >
                 🚗 Driving Theory Practice
               </Link>
@@ -259,24 +185,24 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">800+</div>
               <div className="text-gray-600">Practice Questions</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
-              <div className="text-gray-600">Pass Rate</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">Free</div>
+              <div className="text-gray-600">Always</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-600 mb-2">
-                50K+
+                12K+
               </div>
-              <div className="text-gray-600">Students Helped</div>
+              <div className="text-gray-600">Users Helped</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-600 mb-2">
-                Free
+                Real
               </div>
-              <div className="text-gray-600">Always</div>
+              <div className="text-gray-600">Questions</div>
             </div>
           </div>
         </div>
@@ -287,59 +213,54 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              Popular Test Categories
+              Test Categories
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose from our comprehensive collection of practice tests
-              designed to help you succeed
+              Choose from different practice tests to help you prepare
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Link
               href="/lifeInUk"
-              className="group bg-gradient-to-br from-green-50 to-emerald-100 border-2 border-green-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-green-200"
+              className="group bg-green-50 border-2 border-green-100 rounded-2xl p-8 hover:shadow-lg transition-all hover:border-green-200"
             >
               <div className="text-center">
-                <div className="h-20 w-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="h-20 w-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <span className="text-green-600 text-4xl">🇬🇧</span>
                 </div>
-                <h4 className="text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors mb-3">
+                <h4 className="text-2xl font-bold text-gray-900 mb-3">
                   Life in UK Test
                 </h4>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Comprehensive preparation for your British citizenship test
-                  with official-style questions
+                  Practice for your British citizenship test with real-style
+                  questions
                 </p>
                 <div className="inline-flex items-center text-green-600 font-semibold">
                   15+ Practice Tests
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
+                  <span className="ml-2">→</span>
                 </div>
               </div>
             </Link>
 
             <Link
               href="/drivingTheory"
-              className="group bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:border-blue-200"
+              className="group bg-blue-50 border-2 border-blue-100 rounded-2xl p-8 hover:shadow-lg transition-all hover:border-blue-200"
             >
               <div className="text-center">
-                <div className="h-20 w-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors group-hover:scale-110 transform duration-300">
+                <div className="h-20 w-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <span className="text-blue-600 text-4xl">🚗</span>
                 </div>
-                <h4 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors mb-3">
+                <h4 className="text-2xl font-bold text-gray-900 mb-3">
                   Driving Theory Test
                 </h4>
                 <p className="text-gray-600 mb-4 leading-relaxed">
-                  Master your driving theory exam with Highway Code questions
+                  Practice your driving theory exam with Highway Code questions
                   and hazard perception
                 </p>
                 <div className="inline-flex items-center text-blue-600 font-semibold">
                   Multiple Categories
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                    →
-                  </span>
+                  <span className="ml-2">→</span>
                 </div>
               </div>
             </Link>
@@ -370,11 +291,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose TestTutor?
+              Why Use TestTutor?
             </h3>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We provide the most comprehensive and effective test preparation
-              platform
+              Simple, effective test preparation that actually works
             </p>
           </div>
 
@@ -384,11 +304,11 @@ export default function Home() {
                 <span className="text-white text-3xl">🎯</span>
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Exam-Focused Content
+                Real Questions
               </h4>
               <p className="text-gray-600 text-center leading-relaxed">
-                All our questions are based on official exam patterns and
-                syllabus to ensure you&apos;re prepared for the real test
+                Questions based on official exam patterns and syllabus so you
+                know what to expect on test day
               </p>
             </div>
 
@@ -400,8 +320,8 @@ export default function Home() {
                 Study Anywhere
               </h4>
               <p className="text-gray-600 text-center leading-relaxed">
-                Access your practice tests on any device, anytime. Study at your
-                own pace with our mobile-friendly platform
+                Use on any device, anytime. Study at your own pace wherever you
+                are
               </p>
             </div>
 
@@ -410,11 +330,11 @@ export default function Home() {
                 <span className="text-white text-3xl">📊</span>
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">
-                Track Progress
+                See Your Progress
               </h4>
               <p className="text-gray-600 text-center leading-relaxed">
-                Monitor your improvement with detailed analytics and
-                personalized recommendations for better performance
+                Keep track of your improvement with simple stats and feedback on
+                your weak areas
               </p>
             </div>
           </div>
@@ -426,10 +346,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              Success Stories
+              What People Say
             </h3>
             <p className="text-xl text-gray-600">
-              Join thousands who have achieved their goals with TestTutor
+              Real feedback from people who used TestTutor
             </p>
           </div>
 
@@ -437,8 +357,9 @@ export default function Home() {
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
               <div className="text-green-600 text-6xl mb-4">&quot;</div>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;Passed my Life in UK test on the first try! The practice
-                questions were exactly like the real exam.&quot;
+                &quot;Passed my Life in UK test on the second try. The practice
+                questions were really helpful for understanding the
+                format.&quot;
               </p>
               <div className="flex items-center">
                 <div className="h-12 w-12 bg-green-200 rounded-full flex items-center justify-center mr-4">
@@ -454,8 +375,8 @@ export default function Home() {
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
               <div className="text-blue-600 text-6xl mb-4">&quot;</div>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;The driving theory practice helped me understand the
-                Highway Code better than any other resource.&quot;
+                &quot;The driving theory practice helped me learn the Highway
+                Code better than just reading it.&quot;
               </p>
               <div className="flex items-center">
                 <div className="h-12 w-12 bg-blue-200 rounded-full flex items-center justify-center mr-4">
@@ -471,8 +392,8 @@ export default function Home() {
             <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl p-8 border border-purple-100">
               <div className="text-purple-600 text-6xl mb-4">&quot;</div>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                &quot;Free, comprehensive, and effective. This platform helped
-                me save money while achieving great results.&quot;
+                &quot;Good practice tests and it&apos;s free. Used it to prepare
+                for my citizenship test.&quot;
               </p>
               <div className="flex items-center">
                 <div className="h-12 w-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
@@ -501,8 +422,8 @@ export default function Home() {
                 <span className="text-2xl font-bold">TestTutor</span>
               </Link>
               <p className="text-gray-400 mb-4 leading-relaxed">
-                Your trusted partner for exam preparation. Free, comprehensive,
-                and effective test practice.
+                Free practice tests for Life in UK, Driving Theory, and other
+                exams.
               </p>
               <div className="flex space-x-4">
                 <a
@@ -625,15 +546,11 @@ export default function Home() {
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                © 2024 TestTutor. All rights reserved. Made with ❤️ for
-                learners worldwide.
+                © 2024 TestTutor. Free practice tests for everyone.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <span className="text-gray-400 text-sm">🌟 100% Free</span>
-                <span className="text-gray-400 text-sm">🔒 Privacy First</span>
-                <span className="text-gray-400 text-sm">
-                  📱 Mobile Friendly
-                </span>
+                <span className="text-gray-400 text-sm">🌟 Always Free</span>
+                <span className="text-gray-400 text-sm">� Works on Mobile</span>
               </div>
             </div>
           </div>
