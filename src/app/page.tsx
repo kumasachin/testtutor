@@ -270,13 +270,6 @@ export default function Home() {
               >
                 Contact Us
               </Link>
-
-              <Link
-                href="/donate"
-                className="text-gray-700 hover:text-orange-500 transition-colors font-medium"
-              >
-                💝 Donate
-              </Link>
             </nav>
 
             {/* Auth & Mobile Menu */}
@@ -507,26 +500,6 @@ export default function Home() {
                 Free practice tests for Life in UK, Driving Theory, and other
                 exams.
               </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <span className="text-xl">📧</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <span className="text-xl">📱</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <span className="text-xl">🐦</span>
-                </a>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -551,18 +524,10 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="/courses"
+                    href="/dashboard"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    All Courses
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    About Us
+                    Dashboard
                   </Link>
                 </li>
               </ul>
@@ -582,46 +547,30 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href="/help"
+                    href="/legal"
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Terms of Service
+                    Terms & Privacy
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Donate */}
+            {/* Community */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">
-                Support Our Mission
-              </h4>
+              <h4 className="font-semibold text-lg mb-4">Community Driven</h4>
               <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-                Help us keep TestTutor free for everyone. Your donation helps us
-                create more content and improve the platform.
+                TestTutor is completely free and built by the community, for the
+                community. Help us grow!
               </p>
-              <Link
-                href="/donate"
-                className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg hover:from-orange-600 hover:to-red-600 transition-all duration-300 font-medium"
-              >
-                💝 Donate Now
-              </Link>
+              <div className="flex space-x-3">
+                <span className="inline-flex items-center px-3 py-1 bg-green-600 text-white rounded-full text-xs font-medium">
+                  💚 Free Forever
+                </span>
+                <span className="inline-flex items-center px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-medium">
+                  🤝 Open Source
+                </span>
+              </div>
             </div>
           </div>
 

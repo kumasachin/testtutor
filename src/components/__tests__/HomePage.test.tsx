@@ -90,7 +90,7 @@ describe("HomePage", () => {
   it("renders the main heading", async () => {
     render(<HomePage />);
     expect(screen.getByText("Ace Your")).toBeInTheDocument();
-    expect(screen.getByText("Tests")).toBeInTheDocument();
+    expect(screen.getAllByText("Tests")).toHaveLength(2); // One in nav, one in hero
   });
 
   it("renders the hero description", () => {
@@ -154,11 +154,11 @@ describe("HomePage", () => {
   it("renders navigation and footer", () => {
     render(<HomePage />);
 
-    expect(screen.getByText("TestTutor")).toBeInTheDocument();
-    expect(screen.getByText("Contact Us")).toBeInTheDocument();
-    expect(screen.getByText("💝 Donate")).toBeInTheDocument();
+    expect(screen.getAllByText("TestTutor")).toHaveLength(2); // Header + footer
+    expect(screen.getAllByText("Contact Us")).toHaveLength(2); // Header + footer
     expect(screen.getByText("Quick Links")).toBeInTheDocument();
     expect(screen.getByText("Support")).toBeInTheDocument();
+    expect(screen.getByText("Community Driven")).toBeInTheDocument();
   });
 
   it("makes API calls to fetch domains and tests", () => {
