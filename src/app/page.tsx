@@ -368,7 +368,7 @@ export default function Home() {
                 applications
               </p>
               <Link
-                href="/lifeuk"
+                href="/lifeInUk"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
               >
                 Take Practice Test
@@ -390,7 +390,7 @@ export default function Home() {
                 UK driving theory test practice with official DVSA questions
               </p>
               <Link
-                href="/driving"
+                href="/drivingTheory"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
               >
                 Start Practicing
@@ -410,7 +410,7 @@ export default function Home() {
                 Browse our complete collection of practice tests and resources
               </p>
               <Link
-                href="/test"
+                href="/tests"
                 className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
               >
                 Browse All Tests

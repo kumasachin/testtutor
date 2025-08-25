@@ -142,56 +142,56 @@ export default function LifeInUkPage() {
     // Initialize with sample previous exam papers
     const sampleExamPapers = [
       {
-        id: "exam-2024-march",
+        id: "life-uk-test-1",
         title: "Life in UK Official Test - March 2024",
         year: 2024,
         month: "March",
         attempts: 1250,
       },
       {
-        id: "exam-2024-february",
+        id: "life-uk-test-2",
         title: "Life in UK Official Test - February 2024",
         year: 2024,
         month: "February",
         attempts: 1180,
       },
       {
-        id: "exam-2024-january",
+        id: "life-uk-test-3",
         title: "Life in UK Official Test - January 2024",
         year: 2024,
         month: "January",
         attempts: 1090,
       },
       {
-        id: "exam-2023-december",
+        id: "life-uk-test-4",
         title: "Life in UK Official Test - December 2023",
         year: 2023,
         month: "December",
         attempts: 980,
       },
       {
-        id: "exam-2023-november",
+        id: "life-uk-test-5",
         title: "Life in UK Official Test - November 2023",
         year: 2023,
         month: "November",
         attempts: 920,
       },
       {
-        id: "exam-2023-october",
+        id: "life-uk-test-6",
         title: "Life in UK Official Test - October 2023",
         year: 2023,
         month: "October",
         attempts: 850,
       },
       {
-        id: "exam-2023-september",
+        id: "life-uk-test-1",
         title: "Life in UK Official Test - September 2023",
         year: 2023,
         month: "September",
         attempts: 780,
       },
       {
-        id: "exam-2023-august",
+        id: "life-uk-test-2",
         title: "Life in UK Official Test - August 2023",
         year: 2023,
         month: "August",
@@ -457,7 +457,7 @@ export default function LifeInUkPage() {
 
                         <div className="border-t pt-2">
                           <Link
-                            href="/exams/previous-papers"
+                            href="/lifeInUk"
                             className="block px-4 py-2 text-blue-600 hover:bg-blue-50 transition-colors font-medium text-center"
                             onClick={() => setShowExamsDropdown(false)}
                           >
