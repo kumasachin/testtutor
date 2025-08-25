@@ -1,0 +1,41 @@
+{
+  "name": "TestTutor - Life in UK Practice Tests",
+  "short_name": "TestTutor",
+  "description": "Comprehensive Life in UK practice tests covering British history, culture, government, and law. Prepare for your UK citizenship test.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "reference"],
+  "lang": "en-GB",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

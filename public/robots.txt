@@ -1,0 +1,25 @@
+# robots.txt for TestTutor - Life in UK Practice Tests
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://testtutor.com/sitemap.xml
+
+# Block access to admin areas and API endpoints
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /dashboard/
+
+# Allow important pages
+Allow: /
+Allow: /lifeInUk
+Allow: /test/
+Allow: /about
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+
+# Crawl delay for being respectful
+Crawl-delay: 1

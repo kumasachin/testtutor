@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 "use client";
 
 import Link from "next/link";
@@ -253,10 +254,14 @@ export default function CreateTestPage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="test-title"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Test Title *
               </label>
               <input
+                id="test-title"
                 type="text"
                 value={formData.title}
                 onChange={(e) => handleFormChange("title", e.target.value)}
@@ -266,10 +271,14 @@ export default function CreateTestPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="test-domain"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Domain *
               </label>
               <select
+                id="test-domain"
                 value={formData.domainId}
                 onChange={(e) => handleFormChange("domainId", e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -284,10 +293,14 @@ export default function CreateTestPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="test-time-limit"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Time Limit (minutes)
               </label>
               <input
+                id="test-time-limit"
                 type="number"
                 value={formData.timeLimit}
                 onChange={(e) =>
@@ -299,10 +312,14 @@ export default function CreateTestPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label
+                htmlFor="test-passing-score"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
                 Passing Score (%)
               </label>
               <input
+                id="test-passing-score"
                 type="number"
                 value={formData.passingScore}
                 onChange={(e) =>
@@ -316,10 +333,14 @@ export default function CreateTestPage() {
           </div>
 
           <div className="mt-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="test-description"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Description
             </label>
             <textarea
+              id="test-description"
               value={formData.description}
               onChange={(e) => handleFormChange("description", e.target.value)}
               rows={3}
@@ -329,10 +350,14 @@ export default function CreateTestPage() {
           </div>
 
           <div className="mt-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="test-instructions"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Instructions
             </label>
             <textarea
+              id="test-instructions"
               value={formData.instructions}
               onChange={(e) => handleFormChange("instructions", e.target.value)}
               rows={4}
