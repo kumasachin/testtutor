@@ -160,6 +160,341 @@ const lifeInUKTests = [
       },
     ],
   },
+  {
+    id: "life-uk-test-3",
+    title: "Life in UK Official Test - January 2024",
+    description:
+      "Official Life in the UK test covering British history and traditions",
+    duration: 45,
+    totalQuestions: 5,
+    passingScore: 75,
+    maxAttempts: 3,
+    difficultyLevel: "MEDIUM",
+    isPublic: true,
+    questions: [
+      {
+        stem: "What is the capital city of Scotland?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Edinburgh is the capital city of Scotland, where the Scottish Parliament is located.",
+        order: 1,
+        points: 1,
+        options: [
+          { label: "Glasgow", isCorrect: false, order: 1 },
+          { label: "Edinburgh", isCorrect: true, order: 2 },
+          { label: "Aberdeen", isCorrect: false, order: 3 },
+          { label: "Dundee", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "When did women get the right to vote in the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Women over 30 got the vote in 1918, and all women over 21 got the vote in 1928.",
+        order: 2,
+        points: 1,
+        options: [
+          { label: "1918", isCorrect: true, order: 1 },
+          { label: "1920", isCorrect: false, order: 2 },
+          { label: "1928", isCorrect: false, order: 3 },
+          { label: "1945", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the name of the British national anthem?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "God Save the King (or Queen) is the national anthem of the United Kingdom.",
+        order: 3,
+        points: 1,
+        options: [
+          { label: "Rule Britannia", isCorrect: false, order: 1 },
+          { label: "God Save the King", isCorrect: true, order: 2 },
+          { label: "Jerusalem", isCorrect: false, order: 3 },
+          { label: "Land of Hope and Glory", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "Which of these is a traditional British food?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Fish and chips is a traditional British dish that became popular in the 19th century.",
+        order: 4,
+        points: 1,
+        options: [
+          { label: "Fish and chips", isCorrect: true, order: 1 },
+          { label: "Pasta", isCorrect: false, order: 2 },
+          { label: "Tacos", isCorrect: false, order: 3 },
+          { label: "Sushi", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the currency of the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "The pound sterling is the official currency of the United Kingdom.",
+        order: 5,
+        points: 1,
+        options: [
+          { label: "Euro", isCorrect: false, order: 1 },
+          { label: "Dollar", isCorrect: false, order: 2 },
+          { label: "Pound sterling", isCorrect: true, order: 3 },
+          { label: "Franc", isCorrect: false, order: 4 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "life-uk-test-4",
+    title: "Life in UK Official Test - December 2023",
+    description:
+      "Official Life in the UK test covering British culture and society",
+    duration: 45,
+    totalQuestions: 5,
+    passingScore: 75,
+    maxAttempts: 3,
+    difficultyLevel: "MEDIUM",
+    isPublic: true,
+    questions: [
+      {
+        stem: "What is the population of the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation: "The UK population is approximately 67 million people.",
+        order: 1,
+        points: 1,
+        options: [
+          { label: "50 million", isCorrect: false, order: 1 },
+          { label: "67 million", isCorrect: true, order: 2 },
+          { label: "80 million", isCorrect: false, order: 3 },
+          { label: "100 million", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the Church of England also known as?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "The Church of England is also known as the Anglican Church.",
+        order: 2,
+        points: 1,
+        options: [
+          { label: "Catholic Church", isCorrect: false, order: 1 },
+          { label: "Anglican Church", isCorrect: true, order: 2 },
+          { label: "Methodist Church", isCorrect: false, order: 3 },
+          { label: "Baptist Church", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "When is Christmas Day celebrated?",
+        type: "SINGLE_CHOICE" as const,
+        explanation: "Christmas Day is celebrated on 25 December each year.",
+        order: 3,
+        points: 1,
+        options: [
+          { label: "24 December", isCorrect: false, order: 1 },
+          { label: "25 December", isCorrect: true, order: 2 },
+          { label: "26 December", isCorrect: false, order: 3 },
+          { label: "1 January", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the minimum age to vote in UK elections?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "You must be 18 years old or over to vote in UK elections.",
+        order: 4,
+        points: 1,
+        options: [
+          { label: "16", isCorrect: false, order: 1 },
+          { label: "17", isCorrect: false, order: 2 },
+          { label: "18", isCorrect: true, order: 3 },
+          { label: "21", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What do the letters BBC stand for?",
+        type: "SINGLE_CHOICE" as const,
+        explanation: "BBC stands for British Broadcasting Corporation.",
+        order: 5,
+        points: 1,
+        options: [
+          {
+            label: "British Broadcasting Corporation",
+            isCorrect: true,
+            order: 1,
+          },
+          { label: "British Business Corporation", isCorrect: false, order: 2 },
+          { label: "British Book Company", isCorrect: false, order: 3 },
+          { label: "British Banking Corporation", isCorrect: false, order: 4 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "life-uk-test-5",
+    title: "Life in UK Official Test - November 2023",
+    description:
+      "Official Life in the UK test covering British geography and landmarks",
+    duration: 45,
+    totalQuestions: 5,
+    passingScore: 75,
+    maxAttempts: 3,
+    difficultyLevel: "MEDIUM",
+    isPublic: true,
+    questions: [
+      {
+        stem: "Which is the longest river in the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "The River Severn is the longest river in the UK at 220 miles (354 km).",
+        order: 1,
+        points: 1,
+        options: [
+          { label: "River Thames", isCorrect: false, order: 1 },
+          { label: "River Severn", isCorrect: true, order: 2 },
+          { label: "River Trent", isCorrect: false, order: 3 },
+          { label: "River Mersey", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the name of the British flag?",
+        type: "SINGLE_CHOICE" as const,
+        explanation: "The British flag is called the Union Flag or Union Jack.",
+        order: 2,
+        points: 1,
+        options: [
+          { label: "St George's Cross", isCorrect: false, order: 1 },
+          { label: "Union Jack", isCorrect: true, order: 2 },
+          { label: "Red Ensign", isCorrect: false, order: 3 },
+          { label: "Royal Standard", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "How many countries make up the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "The UK is made up of four countries: England, Scotland, Wales, and Northern Ireland.",
+        order: 3,
+        points: 1,
+        options: [
+          { label: "Three", isCorrect: false, order: 1 },
+          { label: "Four", isCorrect: true, order: 2 },
+          { label: "Five", isCorrect: false, order: 3 },
+          { label: "Six", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the highest mountain in the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Ben Nevis in Scotland is the highest mountain in the UK at 1,345 metres.",
+        order: 4,
+        points: 1,
+        options: [
+          { label: "Snowdon", isCorrect: false, order: 1 },
+          { label: "Scafell Pike", isCorrect: false, order: 2 },
+          { label: "Ben Nevis", isCorrect: true, order: 3 },
+          { label: "Helvellyn", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "Which city is known as the 'Second City' of the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Birmingham is often referred to as the 'Second City' of the UK due to its size and importance.",
+        order: 5,
+        points: 1,
+        options: [
+          { label: "Manchester", isCorrect: false, order: 1 },
+          { label: "Birmingham", isCorrect: true, order: 2 },
+          { label: "Liverpool", isCorrect: false, order: 3 },
+          { label: "Leeds", isCorrect: false, order: 4 },
+        ],
+      },
+    ],
+  },
+  {
+    id: "life-uk-test-6",
+    title: "Life in UK Official Test - October 2023",
+    description:
+      "Official Life in the UK test covering British sports and traditions",
+    duration: 45,
+    totalQuestions: 5,
+    passingScore: 75,
+    maxAttempts: 3,
+    difficultyLevel: "MEDIUM",
+    isPublic: true,
+    questions: [
+      {
+        stem: "What is the most popular sport in the UK?",
+        type: "SINGLE_CHOICE" as const,
+        explanation: "Football (soccer) is the most popular sport in the UK.",
+        order: 1,
+        points: 1,
+        options: [
+          { label: "Cricket", isCorrect: false, order: 1 },
+          { label: "Rugby", isCorrect: false, order: 2 },
+          { label: "Football", isCorrect: true, order: 3 },
+          { label: "Tennis", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "When is Burns Night celebrated?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Burns Night is celebrated on 25 January each year to honor the Scottish poet Robert Burns.",
+        order: 2,
+        points: 1,
+        options: [
+          { label: "25 January", isCorrect: true, order: 1 },
+          { label: "1 March", isCorrect: false, order: 2 },
+          { label: "23 April", isCorrect: false, order: 3 },
+          { label: "30 November", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the famous tennis tournament held in London?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Wimbledon is the famous tennis tournament held in London every summer.",
+        order: 3,
+        points: 1,
+        options: [
+          { label: "Wimbledon", isCorrect: true, order: 1 },
+          { label: "Queens", isCorrect: false, order: 2 },
+          { label: "Eastbourne", isCorrect: false, order: 3 },
+          { label: "Birmingham", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What is the traditional Sunday lunch in Britain?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Sunday roast is the traditional Sunday lunch, typically consisting of roasted meat with vegetables.",
+        order: 4,
+        points: 1,
+        options: [
+          { label: "Fish and chips", isCorrect: false, order: 1 },
+          { label: "Sunday roast", isCorrect: true, order: 2 },
+          { label: "Shepherd's pie", isCorrect: false, order: 3 },
+          { label: "Bangers and mash", isCorrect: false, order: 4 },
+        ],
+      },
+      {
+        stem: "What does 'Boxing Day' commemorate?",
+        type: "SINGLE_CHOICE" as const,
+        explanation:
+          "Boxing Day (26 December) traditionally was when servants received gifts from their employers.",
+        order: 5,
+        points: 1,
+        options: [
+          { label: "A boxing match", isCorrect: false, order: 1 },
+          { label: "Giving gifts to servants", isCorrect: true, order: 2 },
+          { label: "Opening boxes", isCorrect: false, order: 3 },
+          { label: "A religious ceremony", isCorrect: false, order: 4 },
+        ],
+      },
+    ],
+  },
 ];
 
 async function main() {

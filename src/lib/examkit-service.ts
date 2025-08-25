@@ -2,13 +2,13 @@ import type { Prisma } from "@prisma/client";
 
 import { prisma } from "./prisma";
 import type {
-  CreateTestInput,
-  Evaluation,
   ApiResponse,
+  CreateTestInput,
   DbTest,
   DbUser,
+  Evaluation,
 } from "./types";
-import { TestConfigSchema, QuestionSchema } from "./types";
+import { QuestionSchema, TestConfigSchema } from "./types";
 
 type TestWithQuestions = {
   id: string;
