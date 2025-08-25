@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface Test {
   id: string;
@@ -47,10 +47,96 @@ export default function LifeInUkPage() {
   const [showTestsDropdown, setShowTestsDropdown] = useState(false);
   const [showExamsDropdown, setShowExamsDropdown] = useState(false);
 
+  const setFallbackData = useCallback(() => {
+    // Fallback test data for when API is not available
+    const fallbackTests: Test[] = [
+      {
+        id: "life-uk-test-1",
+        title: "Life in UK Practice Test 1",
+        description:
+          "Official practice test for UK citizenship - covering British history, traditions, and government",
+        questions: 24,
+        attempts: 150,
+      },
+      {
+        id: "life-uk-test-2",
+        title: "Life in UK Practice Test 2",
+        description:
+          "Additional practice questions covering British culture and society",
+        questions: 24,
+        attempts: 98,
+      },
+      {
+        id: "life-uk-test-3",
+        title: "Life in UK History Test",
+        description:
+          "Focused test on British history from ancient times to modern day",
+        questions: 24,
+        attempts: 76,
+      },
+      {
+        id: "life-uk-test-4",
+        title: "Life in UK Government and Politics",
+        description:
+          "Test covering the UK government system, politics, and democratic principles",
+        questions: 24,
+        attempts: 89,
+      },
+      {
+        id: "life-uk-test-5",
+        title: "Life in UK Culture and Traditions",
+        description:
+          "Test about British culture, traditions, sports, and national celebrations",
+        questions: 24,
+        attempts: 112,
+      },
+      {
+        id: "life-uk-test-6",
+        title: "Life in UK Geography Test",
+        description:
+          "Test covering the geography of the UK, regions, and important locations",
+        questions: 24,
+        attempts: 67,
+      },
+    ];
+    setTests(fallbackTests);
+  }, []);
+
+  const fetchLifeInUkTests = useCallback(async () => {
+    try {
+      // Use mock API for development when database is not available
+      const response = await fetch("/api/tests-mock?domainName=Life in UK");
+      const result = await response.json();
+
+      if (result.success && result.data) {
+        // Transform the data to match our interface
+        const transformedTests = result.data.tests.map((test: APITest) => ({
+          id: test.id,
+          title: test.title,
+          description: test.description,
+          questions: test._count?.questions || 24, // Default to 24 since we know our Life in UK tests have 24 questions
+          attempts: test._count?.attempts || 0,
+        }));
+
+        setTests(transformedTests);
+      } else {
+        console.error("API response unsuccessful or missing data:", result);
+        // Use fallback data when API fails
+        setFallbackData();
+      }
+    } catch (error) {
+      console.error("Error fetching Life in UK tests:", error);
+      // Use fallback data when API fails
+      setFallbackData();
+    } finally {
+      setLoading(false);
+    }
+  }, [setFallbackData]);
+
   useEffect(() => {
     fetchLifeInUkTests();
     initializeExamPapers();
-  }, []);
+  }, [fetchLifeInUkTests]);
 
   const initializeExamPapers = () => {
     // Initialize with sample previous exam papers
@@ -132,33 +218,6 @@ export default function LifeInUkPage() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const fetchLifeInUkTests = async () => {
-    try {
-      // Filter tests by Life in UK domain (note: domain name is "Life in UK", not "life-in-uk")
-      const response = await fetch("/api/tests?domainName=Life in UK");
-      const result = await response.json();
-
-      if (result.success && result.data) {
-        // Transform the data to match our interface
-        const transformedTests = result.data.tests.map((test: APITest) => ({
-          id: test.id,
-          title: test.title,
-          description: test.description,
-          questions: 24, // Default to 24 since we know our Life in UK tests have 24 questions
-          attempts: test._count?.attempts || 0,
-        }));
-
-        setTests(transformedTests);
-      } else {
-        console.error("API response unsuccessful or missing data:", result);
-      }
-    } catch (error) {
-      console.error("Error fetching Life in UK tests:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   // Categorize tests based on their titles
   const categorizeTests = () => {

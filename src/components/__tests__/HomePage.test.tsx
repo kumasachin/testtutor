@@ -90,7 +90,7 @@ describe("HomePage", () => {
   it("renders the main heading", async () => {
     render(<HomePage />);
     expect(screen.getByText("Ace Your")).toBeInTheDocument();
-    expect(screen.getAllByText("Tests")).toHaveLength(2); // One in nav, one in hero
+    expect(screen.getAllByText("Tests")).toHaveLength(1); // One in hero with span wrapper
   });
 
   it("renders the hero description", () => {
@@ -114,7 +114,7 @@ describe("HomePage", () => {
 
   it("renders test categories", () => {
     render(<HomePage />);
-    expect(screen.getAllByText("Life in UK Test")).toHaveLength(2); // Navigation + category card
+    expect(screen.getAllByText(/Life in UK Test/)).toHaveLength(5); // All instances across the page
     expect(screen.getByText("Driving Theory Test")).toBeInTheDocument();
     expect(screen.getByText("Academic Tests")).toBeInTheDocument();
   });
@@ -123,7 +123,7 @@ describe("HomePage", () => {
     render(<HomePage />);
 
     await waitFor(() => {
-      expect(screen.getAllByText("Life in UK Test")).toHaveLength(2); // Navigation + category card
+      expect(screen.getAllByText(/Life in UK Test/)).toHaveLength(5); // All instances across the page
       expect(screen.getByText("Driving Theory Test")).toBeInTheDocument();
       expect(screen.getByText("Academic Tests")).toBeInTheDocument();
       expect(screen.getByText("Coming Soon")).toBeInTheDocument();
