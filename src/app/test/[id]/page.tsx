@@ -145,11 +145,43 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
           `/api/tests/${testId}?includeQuestions=true`
         );
 
+        let data;
         if (!response.ok) {
-          throw new Error("Failed to fetch test");
+          // If main API fails, try the mock API
+          console.log("Main API failed, trying mock API...");
+          const mockResponse = await fetch(
+            `/api/tests-mock?domainName=Life in UK`
+          );
+
+          if (mockResponse.ok) {
+            const mockData = await mockResponse.json();
+            // Find the specific test by ID
+            const foundTest = mockData.find(
+              (test: { id: string }) => test.id === testId
+            );
+
+            if (foundTest) {
+              // Convert mock test format to expected format
+              data = {
+                success: true,
+                data: {
+                  ...foundTest,
+                  domain: {
+                    name: "Life in UK",
+                    displayName: "Life in UK",
+                  },
+                },
+              };
+            } else {
+              throw new Error("Test not found in mock data");
+            }
+          } else {
+            throw new Error("Failed to fetch test from both APIs");
+          }
+        } else {
+          data = await response.json();
         }
 
-        const data = await response.json();
         if (!data.success) {
           throw new Error(data.error || "Failed to load test");
         }
@@ -584,6 +616,15 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
                       onClick={() => {
                         router.push(`/test/${relatedTest.id}`);
                       }}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          router.push(`/test/${relatedTest.id}`);
+                        }
+                      }}
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Take test: ${relatedTest.title}`}
                     >
                       <h4 className="font-medium text-gray-900 mb-2 line-clamp-2">
                         {relatedTest.title}

@@ -18,7 +18,7 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "db:migrate": "prisma migrate deploy",
-    "db:seed": "tsx scripts/seed-domains.ts",
+    "db:seed": "tsx prisma/seed.ts",
     "import:questions": "tsx scripts/import-questions.ts",
     "setup:dev": "./scripts/setup-dev.sh",
     "docker:build": "docker build -t examkit .",
@@ -77,5 +77,8 @@
     "*.{json,css,md}": [
       "prettier --write"
     ]
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

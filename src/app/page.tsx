@@ -3,37 +3,16 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-interface Domain {
-  id: string;
-  name: string;
-  displayName: string;
-  description?: string;
-}
-
-interface Test {
-  id: string;
-  title: string;
-  description: string;
-  domainId: string;
-  domain: {
-    name: string;
-    displayName: string;
-  };
-  _count: {
-    attempts: number;
-  };
-}
-
 export default function Home() {
-  const [domains, setDomains] = useState<Domain[]>([]);
-  const [tests, setTests] = useState<Test[]>([]);
+  // const [domains, setDomains] = useState<Domain[]>([]);
+  // const [tests, setTests] = useState<Test[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showTestsDropdown, setShowTestsDropdown] = useState(false);
-  const [showExamsDropdown, setShowExamsDropdown] = useState(false);
+  // const [showTestsDropdown, setShowTestsDropdown] = useState(false);
+  // const [showExamsDropdown, setShowExamsDropdown] = useState(false);
 
   useEffect(() => {
-    fetchDomains();
-    fetchTests();
+    // fetchDomains();
+    // fetchTests();
     checkAuthStatus();
   }, []);
 
@@ -42,8 +21,8 @@ export default function Home() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
       if (!target.closest(".dropdown-container")) {
-        setShowTestsDropdown(false);
-        setShowExamsDropdown(false);
+        // setShowTestsDropdown(false);
+        // setShowExamsDropdown(false);
       }
     };
 
@@ -52,30 +31,6 @@ export default function Home() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const fetchDomains = async () => {
-    try {
-      const response = await fetch("/api/domains");
-      const result = await response.json();
-      if (result.success) {
-        setDomains(result.data);
-      }
-    } catch (error) {
-      console.error("Error fetching domains:", error);
-    }
-  };
-
-  const fetchTests = async () => {
-    try {
-      const response = await fetch("/api/tests");
-      const result = await response.json();
-      if (result.success) {
-        setTests(result.data.tests || []);
-      }
-    } catch (error) {
-      console.error("Error fetching tests:", error);
-    }
-  };
 
   const checkAuthStatus = () => {
     setIsLoggedIn(false);

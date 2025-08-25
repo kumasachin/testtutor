@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model User {
@@ -89,7 +89,7 @@ model Question {
   order       Int
   points      Int          @default(1)
   difficulty  Difficulty   @default(MEDIUM)
-  tags        String[]     @default([])
+  tags        String?      @default("")
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
   options     Option[]

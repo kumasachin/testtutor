@@ -173,7 +173,9 @@ export class ExamKitService {
               points: question.points,
               difficulty: question.difficulty,
               order: index,
-              tags: question.tags,
+              tags: Array.isArray(question.tags)
+                ? question.tags.join(",")
+                : question.tags,
               options: {
                 create: question.options.map((option, optIndex) => ({
                   label: option.label,
