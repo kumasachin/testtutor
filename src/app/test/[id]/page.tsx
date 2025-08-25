@@ -34,21 +34,6 @@ interface Question {
   order: number;
 }
 
-interface Test {
-  id: string;
-  title: string;
-  description?: string;
-  timeLimit?: number;
-  passPercentage: number;
-  domainId: string;
-  domain?: {
-    id: string;
-    name: string;
-    displayName: string;
-  };
-  questions?: Question[];
-}
-
 interface TestSettings {
   shuffleQuestions: boolean;
   shuffleAnswers: boolean;
@@ -80,6 +65,25 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
   );
   const [timeRemaining, setTimeRemaining] = useState<number | null>(null);
   const [processedQuestions, setProcessedQuestions] = useState<Question[]>([]);
+
+  // Test results state
+  const [testCompleted, setTestCompleted] = useState(false);
+  const [testResults, setTestResults] = useState<{
+    score: number;
+    percentage: number;
+    passed: boolean;
+    totalQuestions: number;
+    correctAnswers: number;
+    wrongAnswers: number;
+    unanswered: number;
+    timeTaken: string;
+    detailedResults: Array<{
+      question: Question;
+      userAnswer: string | null;
+      isCorrect: boolean;
+      correctAnswer: string;
+    }>;
+  } | null>(null);
 
   // Test settings
   const [testSettings, setTestSettings] = useState<TestSettings>({
@@ -314,8 +318,95 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
   };
 
   const handleSubmitTest = () => {
-    // TODO: Implement test submission logic
-    alert("Test submitted! (Implementation pending)");
+    if (!test || !processedQuestions) return;
+
+    // Calculate results
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
+    let unanswered = 0;
+    const totalQuestions = processedQuestions.length;
+    const detailedResults: Array<{
+      question: Question;
+      userAnswer: string | null;
+      isCorrect: boolean;
+      correctAnswer: string;
+    }> = [];
+
+    processedQuestions.forEach((question) => {
+      const userAnswer = answers[question.id];
+      const correctOption = question.options.find((opt) => opt.isCorrect);
+      const correctAnswerId = correctOption?.id || "";
+
+      if (!userAnswer) {
+        unanswered++;
+        detailedResults.push({
+          question,
+          userAnswer: null,
+          isCorrect: false,
+          correctAnswer: correctOption?.label || "",
+        });
+      } else {
+        const selectedOption = question.options.find(
+          (opt) => opt.id === userAnswer
+        );
+        const isCorrect = selectedOption?.isCorrect || false;
+
+        if (isCorrect) {
+          correctAnswers++;
+        } else {
+          wrongAnswers++;
+        }
+
+        detailedResults.push({
+          question,
+          userAnswer: selectedOption?.label || "",
+          isCorrect,
+          correctAnswer: correctOption?.label || "",
+        });
+      }
+    });
+
+    // Calculate score based on points
+    const score = processedQuestions.reduce((sum, question) => {
+      const userAnswer = answers[question.id];
+      if (userAnswer) {
+        const selectedOption = question.options.find(
+          (opt) => opt.id === userAnswer
+        );
+        if (selectedOption?.isCorrect) {
+          return sum + question.points;
+        }
+      }
+      return sum;
+    }, 0);
+
+    const totalPossiblePoints = processedQuestions.reduce(
+      (sum, q) => sum + q.points,
+      0
+    );
+    const percentage = Math.round((score / totalPossiblePoints) * 100);
+    const passed = percentage >= test.passPercentage;
+
+    // Calculate time taken
+    const timeUsed = test.timeLimit
+      ? test.timeLimit * 60 - (timeRemaining || 0)
+      : 0;
+    const timeTaken = formatTime(timeUsed);
+
+    const results = {
+      score,
+      percentage,
+      passed,
+      totalQuestions,
+      correctAnswers,
+      wrongAnswers,
+      unanswered,
+      timeTaken,
+      detailedResults,
+    };
+
+    setTestResults(results);
+    setTestCompleted(true);
     setTestStarted(false);
   };
 
@@ -658,6 +749,275 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
                     </button>
                   </div>
                 )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Test Results Screen
+  if (testCompleted && testResults) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="bg-white rounded-lg shadow-sm p-8">
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div
+                className={`inline-flex items-center justify-center w-20 h-20 rounded-full mb-4 ${
+                  testResults.passed
+                    ? "bg-green-100 text-green-600"
+                    : "bg-red-100 text-red-600"
+                }`}
+              >
+                {testResults.passed ? (
+                  <svg
+                    className="w-10 h-10"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="w-10 h-10"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 001.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                )}
+              </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                {testResults.passed ? "Congratulations! 🎉" : "Test Complete"}
+              </h1>
+              <p className="text-lg text-gray-600">
+                {testResults.passed
+                  ? `You passed the test with ${testResults.percentage}%!`
+                  : `You scored ${testResults.percentage}%. You need ${test.passPercentage}% to pass.`}
+              </p>
+            </div>
+
+            {/* Results Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+              <div className="bg-blue-50 p-6 rounded-lg text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">
+                  {testResults.percentage}%
+                </div>
+                <div className="text-sm text-gray-600">Final Score</div>
+              </div>
+
+              <div className="bg-green-50 p-6 rounded-lg text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">
+                  {testResults.correctAnswers}
+                </div>
+                <div className="text-sm text-gray-600">Correct</div>
+              </div>
+
+              <div className="bg-red-50 p-6 rounded-lg text-center">
+                <div className="text-3xl font-bold text-red-600 mb-2">
+                  {testResults.wrongAnswers}
+                </div>
+                <div className="text-sm text-gray-600">Wrong</div>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg text-center">
+                <div className="text-3xl font-bold text-gray-600 mb-2">
+                  {testResults.unanswered}
+                </div>
+                <div className="text-sm text-gray-600">Unanswered</div>
+              </div>
+            </div>
+
+            {/* Additional Stats */}
+            <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                Test Summary
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Total Questions:</span>
+                  <span className="font-medium">
+                    {testResults.totalQuestions}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Time Taken:</span>
+                  <span className="font-medium">{testResults.timeTaken}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Points Earned:</span>
+                  <span className="font-medium">
+                    {testResults.score} /{" "}
+                    {test.questions?.reduce((sum, q) => sum + q.points, 0) || 0}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Detailed Results */}
+            <div className="mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                Answer Review
+              </h3>
+              <div className="space-y-4 max-h-96 overflow-y-auto">
+                {testResults.detailedResults.map((result, index) => (
+                  <div
+                    key={result.question.id}
+                    className={`p-4 rounded-lg border-l-4 ${
+                      result.isCorrect
+                        ? "bg-green-50 border-green-400"
+                        : result.userAnswer
+                          ? "bg-red-50 border-red-400"
+                          : "bg-gray-50 border-gray-400"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h4 className="font-medium text-gray-900">
+                        Question {index + 1}
+                      </h4>
+                      <div className="flex items-center">
+                        {result.isCorrect ? (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            <svg
+                              className="w-3 h-3 mr-1"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            Correct
+                          </span>
+                        ) : result.userAnswer ? (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                            <svg
+                              className="w-3 h-3 mr-1"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 001.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            Wrong
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                            Unanswered
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <p className="text-gray-800 mb-3">{result.question.stem}</p>
+
+                    <div className="space-y-2 text-sm">
+                      {result.userAnswer && (
+                        <div
+                          className={`flex items-center ${result.isCorrect ? "text-green-700" : "text-red-700"}`}
+                        >
+                          <span className="font-medium">Your answer:</span>
+                          <span className="ml-2">{result.userAnswer}</span>
+                        </div>
+                      )}
+                      {!result.isCorrect && (
+                        <div className="flex items-center text-green-700">
+                          <span className="font-medium">Correct answer:</span>
+                          <span className="ml-2">{result.correctAnswer}</span>
+                        </div>
+                      )}
+                      {result.question.explanation && (
+                        <div className="mt-2 p-3 bg-blue-50 rounded text-blue-800">
+                          <span className="font-medium">Explanation:</span>
+                          <span className="ml-2">
+                            {result.question.explanation}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => {
+                  // Reset all states to retake the test
+                  setTestCompleted(false);
+                  setTestResults(null);
+                  setTestStarted(false);
+                  setCurrentQuestionIndex(0);
+                  setAnswers({});
+                  setSubmittedQuestions(new Set());
+                  if (test?.timeLimit) {
+                    setTimeRemaining(test.timeLimit * 60);
+                  }
+                }}
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
+              >
+                Retake Test
+              </button>
+
+              <button
+                onClick={handleBackToTests}
+                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium"
+              >
+                Back to Tests
+              </button>
+            </div>
+
+            {/* Related Tests Section */}
+            {relatedTests.length > 0 && (
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-blue-600"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                  </svg>
+                  Try More Tests from {test?.domain?.displayName}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {relatedTests.slice(0, 4).map((relatedTest) => (
+                    <div
+                      key={relatedTest.id}
+                      className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors cursor-pointer"
+                      onClick={() => {
+                        router.push(`/test/${relatedTest.id}`);
+                      }}
+                    >
+                      <h4 className="font-medium text-gray-900 mb-2 line-clamp-2">
+                        {relatedTest.title}
+                      </h4>
+                      <div className="flex items-center justify-between text-xs text-gray-500">
+                        <span>{relatedTest._count.attempts} attempts</span>
+                        <span className="text-blue-600 hover:text-blue-800">
+                          Take Test →
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
