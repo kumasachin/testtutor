@@ -54,6 +54,7 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
   const [test, setTest] = useState<Test | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   // Test taking state
   const [testStarted, setTestStarted] = useState(false);
@@ -94,7 +95,10 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
     autoAdvance: false,
   });
 
-  // Related tests
+  // Hydration fix - ensure component is mounted before rendering dynamic content
+  useEffect(() => {
+    setMounted(true);
+  }, []); // Related tests
   const [relatedTests, setRelatedTests] = useState<
     Array<{
       id: string;
@@ -213,9 +217,15 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
     fetchTest();
   }, [testId]);
 
-  // Timer effect
+  // Timer effect - only run on client side
   useEffect(() => {
-    if (!testStarted || timeRemaining === null || timeRemaining <= 0) return;
+    if (
+      !mounted ||
+      !testStarted ||
+      timeRemaining === null ||
+      timeRemaining <= 0
+    )
+      return;
 
     const timer = setInterval(() => {
       setTimeRemaining((prev) => {
@@ -229,7 +239,7 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [testStarted, timeRemaining]);
+  }, [mounted, testStarted, timeRemaining]);
 
   // Shuffle array utility function
   const shuffleArray = <T,>(array: T[]): T[] => {
@@ -263,6 +273,7 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
 
   const handleStartTest = () => {
     if (test?.questions) {
+      // Only shuffle on client side when test actually starts
       const processed = processQuestionsWithSettings(test.questions);
       setProcessedQuestions(processed);
     }
@@ -419,6 +430,18 @@ export default function SimpleTestPage({ params }: SimpleTestPageProps) {
   const handleBackToTests = () => {
     router.push("/lifeInUk");
   };
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
