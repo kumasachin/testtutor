@@ -39,7 +39,9 @@ export default function LifeUkTestPage() {
     const fetchTest = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`/api/tests/${testId}`);
+        const response = await fetch(
+          `/api/tests/${testId}?includeQuestions=true`
+        );
 
         if (!response.ok) {
           throw new Error("Test not found");
@@ -117,10 +119,42 @@ export default function LifeUkTestPage() {
             setTimeRemaining(fallbackTest.timeLimit * 60); // Convert to seconds
           }
         } else {
-          setTest(data.test);
-          setSelectedAnswers(new Array(data.test.questions.length).fill(-1));
-          if (data.test.timeLimit) {
-            setTimeRemaining(data.test.timeLimit * 60);
+          // Transform API data to match frontend interface
+          const apiTest = data.data;
+          const transformedTest: Test = {
+            id: apiTest.id,
+            title: apiTest.title,
+            description: apiTest.description,
+            timeLimit: apiTest.timeLimit,
+            passPercentage: apiTest.passPercentage,
+            questions: apiTest.questions.map(
+              (q: {
+                id: string;
+                stem: string;
+                explanation: string;
+                options: { label: string; isCorrect: boolean; order: number }[];
+              }) => ({
+                id: q.id,
+                question: q.stem,
+                options: q.options
+                  .sort(
+                    (a: { order: number }, b: { order: number }) =>
+                      a.order - b.order
+                  )
+                  .map((opt: { label: string }) => opt.label),
+                correctAnswer: q.options.findIndex(
+                  (opt: { isCorrect: boolean }) => opt.isCorrect
+                ),
+                explanation: q.explanation,
+              })
+            ),
+          };
+          setTest(transformedTest);
+          setSelectedAnswers(
+            new Array(transformedTest.questions.length).fill(-1)
+          );
+          if (transformedTest.timeLimit) {
+            setTimeRemaining(transformedTest.timeLimit * 60);
           }
         }
       } catch (err) {
