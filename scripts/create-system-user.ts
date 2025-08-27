@@ -21,6 +21,7 @@ async function createSystemUser() {
       data: {
         email: "system@examkit.com",
         name: "System",
+        password: "system-password-placeholder",
         role: "SUPER_ADMIN",
       },
     });

@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 
 const prisma = new PrismaClient();
 
@@ -2325,17 +2326,34 @@ async function main() {
     console.log("✅ Created/found domain: Life in UK");
 
     // Create a test user
+    const hashedPassword = await bcrypt.hash("admin123", 10);
     const testUser = await prisma.user.upsert({
       where: { email: "admin@testtutor.com" },
       update: {},
       create: {
         email: "admin@testtutor.com",
         name: "Test Admin",
+        password: hashedPassword,
         role: "ADMIN",
       },
     });
 
     console.log("✅ Created/found user: Test Admin");
+
+    // Create a regular test user
+    const regularUserPassword = await bcrypt.hash("user123", 10);
+    const regularUser = await prisma.user.upsert({
+      where: { email: "user@testtutor.com" },
+      update: {},
+      create: {
+        email: "user@testtutor.com",
+        name: "Test User",
+        password: regularUserPassword,
+        role: "USER",
+      },
+    });
+
+    console.log("✅ Created/found user: Test User");
 
     // Create each test
     for (const testData of comprehensiveLifeInUKTests) {
@@ -2389,13 +2407,237 @@ async function main() {
       );
     }
 
+    // Create Driving Theory domain
+    const drivingTheoryDomain = await prisma.domain.upsert({
+      where: { name: "driving-theory" },
+      update: {},
+      create: {
+        name: "driving-theory",
+        displayName: "Driving Theory",
+        description: "UK Driving Theory Test preparation",
+        icon: "🚗",
+        config: {
+          timeLimit: 57,
+          passPercentage: 86,
+          difficulty: "medium",
+        },
+      },
+    });
+
+    console.log("✅ Created/found domain: Driving Theory");
+
+    // Create driving theory tests
+    const drivingTheoryTests = [
+      {
+        id: "driving-theory-test-1",
+        title: "Driving Theory Practice Test 1",
+        description:
+          "Official DVSA practice test covering highway code, road signs, and safe driving",
+        timeLimit: 57,
+        passPercentage: 86,
+        questions: [
+          {
+            stem: "What should you do when you see a red traffic light?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "A red traffic light means you must stop completely and wait until the light turns green.",
+            order: 1,
+            points: 1,
+            options: [
+              { label: "Slow down", isCorrect: false, order: 1 },
+              { label: "Stop completely", isCorrect: true, order: 2 },
+              { label: "Proceed with caution", isCorrect: false, order: 3 },
+              {
+                label: "Speed up to clear intersection",
+                isCorrect: false,
+                order: 4,
+              },
+            ],
+          },
+          {
+            stem: "What is the national speed limit on a single carriageway?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "The national speed limit on single carriageways is 60 mph for cars.",
+            order: 2,
+            points: 1,
+            options: [
+              { label: "50 mph", isCorrect: false, order: 1 },
+              { label: "60 mph", isCorrect: true, order: 2 },
+              { label: "70 mph", isCorrect: false, order: 3 },
+              { label: "80 mph", isCorrect: false, order: 4 },
+            ],
+          },
+          {
+            stem: "When must you use headlights?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "You must use headlights at night, in poor visibility conditions, and when it's raining to ensure you can see and be seen.",
+            order: 3,
+            points: 1,
+            options: [
+              { label: "Only at night", isCorrect: false, order: 1 },
+              { label: "In poor visibility", isCorrect: false, order: 2 },
+              { label: "When it's raining", isCorrect: false, order: 3 },
+              { label: "All of the above", isCorrect: true, order: 4 },
+            ],
+          },
+          {
+            stem: "What does a triangular road sign indicate?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "Triangular road signs indicate warnings of potential hazards ahead.",
+            order: 4,
+            points: 1,
+            options: [
+              { label: "Information", isCorrect: false, order: 1 },
+              { label: "Warning", isCorrect: true, order: 2 },
+              { label: "Prohibition", isCorrect: false, order: 3 },
+              { label: "Mandatory instruction", isCorrect: false, order: 4 },
+            ],
+          },
+          {
+            stem: "What is the minimum stopping distance at 30 mph?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "At 30 mph, the minimum stopping distance is 23 metres (9m thinking distance + 14m braking distance).",
+            order: 5,
+            points: 1,
+            options: [
+              { label: "23 metres", isCorrect: true, order: 1 },
+              { label: "36 metres", isCorrect: false, order: 2 },
+              { label: "53 metres", isCorrect: false, order: 3 },
+              { label: "73 metres", isCorrect: false, order: 4 },
+            ],
+          },
+        ],
+      },
+      {
+        id: "driving-theory-test-2",
+        title: "Driving Theory Practice Test 2",
+        description:
+          "Additional practice covering hazard perception and traffic rules",
+        timeLimit: 57,
+        passPercentage: 86,
+        questions: [
+          {
+            stem: "When approaching a roundabout, which lane should you use to turn right?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "When turning right at a roundabout, you should use the right-hand lane and signal right.",
+            order: 1,
+            points: 1,
+            options: [
+              { label: "Left lane", isCorrect: false, order: 1 },
+              { label: "Right lane", isCorrect: true, order: 2 },
+              { label: "Either lane", isCorrect: false, order: 3 },
+              { label: "Middle lane only", isCorrect: false, order: 4 },
+            ],
+          },
+          {
+            stem: "What should you do if your vehicle starts to skid?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "If your vehicle skids, ease off the accelerator and steer gently into the direction of the skid.",
+            order: 2,
+            points: 1,
+            options: [
+              { label: "Brake hard", isCorrect: false, order: 1 },
+              { label: "Steer away from the skid", isCorrect: false, order: 2 },
+              {
+                label: "Ease off accelerator and steer into the skid",
+                isCorrect: true,
+                order: 3,
+              },
+              {
+                label: "Accelerate out of the skid",
+                isCorrect: false,
+                order: 4,
+              },
+            ],
+          },
+          {
+            stem: "What is the legal minimum tread depth for car tyres?",
+            type: "SINGLE_CHOICE" as const,
+            explanation:
+              "The legal minimum tread depth for car tyres in the UK is 1.6mm across the central three-quarters of the tyre.",
+            order: 3,
+            points: 1,
+            options: [
+              { label: "1.0mm", isCorrect: false, order: 1 },
+              { label: "1.6mm", isCorrect: true, order: 2 },
+              { label: "2.0mm", isCorrect: false, order: 3 },
+              { label: "3.0mm", isCorrect: false, order: 4 },
+            ],
+          },
+        ],
+      },
+    ];
+
+    // Create driving theory tests
+    for (const testData of drivingTheoryTests) {
+      console.log(`📝 Creating driving theory test: ${testData.title}`);
+
+      const test = await prisma.test.create({
+        data: {
+          id: testData.id,
+          title: testData.title,
+          description: testData.description,
+          domainId: drivingTheoryDomain.id,
+          creatorId: testUser.id,
+          status: "PUBLISHED",
+          config: {},
+          passPercentage: testData.passPercentage,
+          timeLimit: testData.timeLimit,
+          shuffleQuestions: false,
+          shuffleAnswers: false,
+          isPublic: true,
+          publishedAt: new Date(),
+        },
+      });
+
+      // Create questions
+      for (const questionData of testData.questions) {
+        await prisma.question.create({
+          data: {
+            testId: test.id,
+            stem: questionData.stem,
+            explanation: questionData.explanation,
+            type: questionData.type,
+            order: questionData.order,
+            points: questionData.points,
+            difficulty: "MEDIUM",
+            tags: "driving-theory",
+            options: {
+              create: questionData.options.map((option) => ({
+                label: option.label,
+                isCorrect: option.isCorrect,
+                order: option.order,
+              })),
+            },
+          },
+        });
+
+        console.log(
+          `  ➕ Added question ${questionData.order}: ${questionData.stem.substring(0, 50)}...`
+        );
+      }
+
+      console.log(
+        `✅ Test created: ${testData.title} with ${testData.questions.length} questions`
+      );
+    }
+
     console.log("");
     console.log("🎉 Comprehensive database seed completed successfully!");
     console.log(
-      `📊 Created ${comprehensiveLifeInUKTests.length} complete tests with 24 questions each`
+      `📊 Created ${comprehensiveLifeInUKTests.length} Life in UK tests and ${drivingTheoryTests.length} Driving Theory tests`
     );
     console.log(
-      `📈 Total questions: ${comprehensiveLifeInUKTests.reduce((total, test) => total + test.questions.length, 0)}`
+      `📈 Total Life in UK questions: ${comprehensiveLifeInUKTests.reduce((total, test) => total + test.questions.length, 0)}`
+    );
+    console.log(
+      `📈 Total Driving Theory questions: ${drivingTheoryTests.reduce((total, test) => total + test.questions.length, 0)}`
     );
   } catch (error) {
     console.error("❌ Error seeding database:", error);

@@ -2,24 +2,12 @@ import jwt from "jsonwebtoken";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-interface MockUser {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  createdAt: Date;
-  updatedAt: Date;
-  isEmailVerified: boolean;
-}
+import { prisma } from "@/lib/prisma";
 
 interface JWTPayload {
   userId: string;
   email: string;
 }
-
-// Mock user database (replace with actual database)
-const users: MockUser[] = [];
 
 export async function GET(request: NextRequest) {
   try {
@@ -39,8 +27,11 @@ export async function GET(request: NextRequest) {
         process.env.JWT_SECRET || "your-secret-key"
       ) as JWTPayload;
 
-      // Find user
-      const user = users.find((u) => u.id === decoded.userId);
+      // Find user in database
+      const user = await prisma.user.findUnique({
+        where: { id: decoded.userId },
+      });
+
       if (!user) {
         return NextResponse.json(
           { success: false, message: "User not found" },
@@ -48,15 +39,19 @@ export async function GET(request: NextRequest) {
         );
       }
 
-      // Return user without password
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { password: _, ...userWithoutPassword } = user;
-
       return NextResponse.json({
         success: true,
-        user: userWithoutPassword,
+        user: {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          role: user.role,
+          avatar: user.avatar,
+          createdAt: user.createdAt,
+          updatedAt: user.updatedAt,
+        },
       });
-    } catch {
+    } catch (jwtError) {
       return NextResponse.json(
         { success: false, message: "Invalid token" },
         { status: 401 }

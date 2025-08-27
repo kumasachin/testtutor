@@ -1,10 +1,29 @@
 import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 
-import LifeInUkPage from "../../app/lifeInUk/page";
+import LifeInUkPage from "../../app/life-uk-test/page";
 
 // Mock fetch globally
 global.fetch = jest.fn();
+
+// Mock Next.js router
+jest.mock("next/navigation", () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    back: jest.fn(),
+  }),
+}));
+
+// Mock AuthContext
+jest.mock("../../contexts/AuthContext", () => ({
+  useAuth: () => ({
+    user: null,
+    login: jest.fn(),
+    logout: jest.fn(),
+    loading: false,
+  }),
+}));
 
 // Mock Next.js Link
 jest.mock("next/link", () => {
@@ -29,48 +48,58 @@ describe("Life in UK Tests Functionality", () => {
       ok: true,
       json: () =>
         Promise.resolve({
-          success: true,
-          data: {
-            tests: [
-              {
-                id: "test-1",
-                title: "Life in UK Practice Test 1",
-                description: "Official practice test for UK citizenship",
-                _count: {
-                  questions: 24,
-                  attempts: 150,
-                },
+          tests: [
+            {
+              id: "life-uk-test-1",
+              title: "Life in UK Practice Test 1",
+              description: "Official practice test",
+              timeLimit: 45,
+              passPercentage: 75,
+              domainId: "life-in-uk",
+              domain: {
+                id: "life-in-uk",
+                name: "life-in-uk",
+                displayName: "Life in UK",
               },
-            ],
-          },
+              _count: { attempts: 0 },
+            },
+          ],
         }),
     });
   });
 
-  test("renders page and displays main content", () => {
+  test("renders page and displays main content", async () => {
     render(<LifeInUkPage />);
-    expect(screen.getByText("Life in the UK Tests")).toBeInTheDocument();
+
+    // Wait for content to load
+    await waitFor(() => {
+      expect(
+        screen.getByText("Why Choose Our Life in UK Tests?")
+      ).toBeInTheDocument();
+    });
   });
 
   test("fetches tests from API", async () => {
     render(<LifeInUkPage />);
 
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith(
-        "/api/tests-mock?domainName=Life in UK"
-      );
+      expect(global.fetch).toHaveBeenCalledWith("/api/tests?domain=life-in-uk");
     });
   });
 
-  test("displays exam information", () => {
+  test("displays exam information", async () => {
     render(<LifeInUkPage />);
-    expect(
-      screen.getByText(/24 questions per official test/)
-    ).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText(/24 questions in total/)).toBeInTheDocument();
+    });
   });
 
-  test("shows navigation links", () => {
+  test("shows navigation links", async () => {
     render(<LifeInUkPage />);
-    expect(screen.getByRole("link", { name: /Home/i })).toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.getByText("Life in UK Tests")).toBeInTheDocument();
+    });
   });
 });

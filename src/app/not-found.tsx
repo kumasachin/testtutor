@@ -29,7 +29,7 @@ export default function NotFound() {
               Go to Homepage
             </Link>
             <Link
-              href="/lifeInUk"
+              href="/life-uk-test"
               className="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
             >
               Browse Life in UK Tests
@@ -42,7 +42,7 @@ export default function NotFound() {
             </h2>
             <div className="space-y-2 text-sm">
               <Link
-                href="/lifeInUk"
+                href="/life-uk-test"
                 className="block text-blue-600 hover:text-blue-800"
               >
                 Life in UK Practice Tests

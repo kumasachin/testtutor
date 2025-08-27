@@ -3,16 +3,54 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+interface Domain {
+  id: string;
+  name: string;
+  displayName: string;
+  description: string;
+}
+
+interface Test {
+  id: string;
+  title: string;
+  description: string;
+  domainId: string;
+}
+
 export default function Home() {
-  // const [domains, setDomains] = useState<Domain[]>([]);
-  // const [tests, setTests] = useState<Test[]>([]);
+  const [domains, setDomains] = useState<Domain[]>([]); // eslint-disable-line @typescript-eslint/no-unused-vars
+  const [tests, setTests] = useState<Test[]>([]); // eslint-disable-line @typescript-eslint/no-unused-vars
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [showTestsDropdown, setShowTestsDropdown] = useState(false);
   // const [showExamsDropdown, setShowExamsDropdown] = useState(false);
 
+  const fetchDomains = async () => {
+    try {
+      const response = await fetch("/api/domains");
+      if (response.ok) {
+        const data = await response.json();
+        setDomains(data.data || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch domains:", error);
+    }
+  };
+
+  const fetchTests = async () => {
+    try {
+      const response = await fetch("/api/tests");
+      if (response.ok) {
+        const data = await response.json();
+        setTests(data.data || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch tests:", error);
+    }
+  };
+
   useEffect(() => {
-    // fetchDomains();
-    // fetchTests();
+    fetchDomains();
+    fetchTests();
     checkAuthStatus();
   }, []);
 
@@ -96,14 +134,14 @@ export default function Home() {
               {/* Navigation */}
               <nav className="hidden md:flex items-center space-x-8">
                 <Link
-                  href="/lifeInUk"
+                  href="/life-uk-test"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
                 >
                   Life in UK Tests
                 </Link>
 
                 <Link
-                  href="/drivingTheory"
+                  href="/driving-theory"
                   className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
                 >
                   Driving Theory
@@ -276,7 +314,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Link
-                href="/lifeInUk"
+                href="/life-uk-test"
                 className="group bg-green-50 border-2 border-green-100 rounded-2xl p-8 hover:shadow-lg transition-all hover:border-green-200"
               >
                 <div className="text-center">
@@ -369,7 +407,7 @@ export default function Home() {
                   applications
                 </p>
                 <Link
-                  href="/lifeInUk"
+                  href="/life-uk-test"
                   className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold"
                 >
                   Take Practice Test
@@ -571,7 +609,7 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li>
                     <Link
-                      href="/lifeInUk"
+                      href="/life-uk-test"
                       className="text-gray-400 hover:text-white transition-colors"
                     >
                       Life in UK Test

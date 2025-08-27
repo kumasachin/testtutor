@@ -4,19 +4,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-interface MockUser {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  createdAt: Date;
-  updatedAt: Date;
-  isEmailVerified: boolean;
-}
-
-// Mock user database (replace with actual database)
-const users: MockUser[] = [];
+import { prisma } from "@/lib/prisma";
 
 const registerSchema = z.object({
   firstName: z.string().min(1),
@@ -31,7 +19,10 @@ export async function POST(request: NextRequest) {
     const { firstName, lastName, email, password } = registerSchema.parse(body);
 
     // Check if user already exists
-    const existingUser = users.find((u) => u.email === email);
+    const existingUser = await prisma.user.findUnique({
+      where: { email },
+    });
+
     if (existingUser) {
       return NextResponse.json(
         { success: false, message: "User with this email already exists" },
@@ -42,35 +33,15 @@ export async function POST(request: NextRequest) {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    // Create user
-    const newUser = {
-      id: Date.now().toString(),
-      firstName,
-      lastName,
-      email,
-      password: hashedPassword,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      isEmailVerified: false,
-      preferences: {
-        defaultFeedbackMode: "end",
-        defaultShuffleQuestions: false,
-        defaultShuffleAnswers: false,
-        emailNotifications: true,
-        theme: "light",
+    // Create user in database
+    const newUser = await prisma.user.create({
+      data: {
+        email,
+        name: `${firstName} ${lastName}`,
+        password: hashedPassword,
+        role: "USER",
       },
-      stats: {
-        totalTestsTaken: 0,
-        averageScore: 0,
-        totalTimeSpent: 0,
-        improvementRate: 0,
-        favoriteCategories: [],
-        strongAreas: [],
-        weakAreas: [],
-      },
-    };
-
-    users.push(newUser);
+    });
 
     // Generate JWT token
     const token = jwt.sign(
@@ -79,13 +50,17 @@ export async function POST(request: NextRequest) {
       { expiresIn: "7d" }
     );
 
-    // Return user without password
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _, ...userWithoutPassword } = newUser;
-
     return NextResponse.json({
       success: true,
-      user: userWithoutPassword,
+      user: {
+        id: newUser.id,
+        email: newUser.email,
+        name: newUser.name,
+        role: newUser.role,
+        avatar: newUser.avatar,
+        createdAt: newUser.createdAt,
+        updatedAt: newUser.updatedAt,
+      },
       token,
     });
   } catch (error) {

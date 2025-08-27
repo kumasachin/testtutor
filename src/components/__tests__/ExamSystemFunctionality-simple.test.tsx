@@ -47,7 +47,7 @@ jest.mock("next/link", () => {
 import LifeUkTestHomePage from "../../app/life-uk-test/page";
 import HomePage from "../../app/page";
 
-describe("Test and Exam System Functionality", () => {
+describe("Test and Exam System Functionality - Simple", () => {
   beforeEach(() => {
     jest.clearAllMocks();
 

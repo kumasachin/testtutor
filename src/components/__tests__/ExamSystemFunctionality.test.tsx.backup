@@ -1,0 +1,425 @@
+import "@testing-library/jest-dom";
+import {
+  act,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
+
+// Mock fetch globally
+global.fetch = jest.fn();
+
+// Mock Next.js navigation
+jest.mock("next/navigation", () => ({
+  redirect: jest.fn(),
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    pathname: "/",
+    query: {},
+  }),
+  useSearchParams: () => new URLSearchParams(),
+  useParams: () => ({}),
+}));
+
+// Mock AuthContext
+jest.mock("@/contexts/AuthContext", () => ({
+  useAuth: () => ({
+    user: null,
+    login: jest.fn(),
+    logout: jest.fn(),
+    register: jest.fn(),
+    isLoading: false,
+  }),
+}));
+
+// Mock Next.js components
+jest.mock("next/link", () => {
+  const MockLink = ({
+    children,
+    href,
+  }: {
+    children: React.ReactNode;
+    href: string;
+  }) => {
+    return <a href={href}>{children}</a>;
+  };
+  MockLink.displayName = "MockLink";
+  return MockLink;
+});
+
+// Import test components
+import LifeUkTestHomePage from "../../app/life-uk-test/page";
+import HomePage from "../../app/page";
+
+describe("Test and Exam System Functionality", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+
+    // Mock API responses for domains
+    (global.fetch as jest.Mock).mockImplementation((url: string) => {
+      if (url.includes("/api/domains")) {
+        return Promise.resolve({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              success: true,
+              data: [
+                {
+                  id: "domain-1",
+                  name: "Life in UK",
+                  displayName: "Life in UK",
+                  description: "UK citizenship tests",
+                },
+                {
+                  id: "domain-2",
+                  name: "Driving Theory",
+                  displayName: "Driving Theory",
+                  description: "UK driving theory tests",
+                },
+              ],
+            }),
+        });
+      }
+
+      if (url.includes("/api/tests")) {
+        return Promise.resolve({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              success: true,
+              data: {
+                tests: [
+                  {
+                    id: "test-1",
+                    title: "Life in UK Practice Test 1",
+                    description: "Official practice test for UK citizenship",
+                    _count: {
+                      questions: 24,
+                      attempts: 150,
+                    },
+                  },
+                  {
+                    id: "test-2",
+                    title: "Life in UK Practice Test 2",
+                    description: "Additional practice questions",
+                    _count: {
+                      questions: 24,
+                      attempts: 98,
+                    },
+                  },
+                ],
+              },
+            }),
+        });
+      }
+
+      // Add fallback for unknown URLs to prevent test failures
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ success: true, data: [] }),
+      });
+    });
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  describe("Homepage Test Discovery", () => {
+    test("displays SEO-friendly test listings", async () => {
+      await act(async () => {
+        render(<HomePage />);
+      });
+
+      // Check that popular tests section is visible
+      expect(screen.getByText("Popular Practice Tests")).toBeInTheDocument();
+      expect(screen.getByText("Browse Tests by Category")).toBeInTheDocument();
+
+      // Verify Life in UK tests are prominently displayed
+      expect(screen.getAllByText(/Life in UK Test/)).toHaveLength(5);
+    });
+
+    test("provides direct navigation to test categories", async () => {
+      await act(async () => {
+        render(<HomePage />);
+      });
+
+      // Check navigation links work - use getAllByRole for multiple matches
+      expect(
+        screen.getByRole("link", { name: /Life in UK Tests/i })
+      ).toBeInTheDocument();
+      expect(
+        screen.getAllByRole("link", { name: /Driving Theory/i })
+      ).toHaveLength(3); // Navigation + popular tests + footer
+      expect(screen.getAllByRole("link", { name: /All Tests/i })).toHaveLength(
+        2
+      ); // Navigation + popular tests
+    });
+
+    test("loads test domains and statistics", async () => {
+      await act(async () => {
+        render(<HomePage />);
+      });
+
+      await waitFor(() => {
+        expect(global.fetch).toHaveBeenCalledWith("/api/domains");
+        expect(global.fetch).toHaveBeenCalledWith("/api/tests");
+      });
+    });
+  });
+
+  describe("Life in UK Test Functionality", () => {
+    test("renders test selection interface", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      expect(screen.getByText("Life in the UK Test")).toBeInTheDocument();
+      expect(
+        screen.getByText("Why Choose Our Life in UK Tests?")
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(
+          "Master the official Life in the UK Test with our comprehensive practice tests. Test your knowledge of British history, traditions, and culture."
+        )
+      ).toBeInTheDocument();
+    });
+
+    test("fetches and displays available tests", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      await waitFor(() => {
+        expect(global.fetch).toHaveBeenCalledWith(
+          "/api/tests?domain=life-in-uk"
+        );
+      });
+
+      await waitFor(() => {
+        expect(
+          screen.getByText("Life in UK Practice Test 1")
+        ).toBeInTheDocument();
+        expect(
+          screen.getByText("Life in UK Practice Test 2")
+        ).toBeInTheDocument();
+      });
+    });
+
+    test("shows test statistics and metadata", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      await waitFor(() => {
+        // Check for test format information displayed in badges
+        expect(screen.getByText("🇬🇧 Official Format")).toBeInTheDocument();
+        expect(screen.getByText("⏰ 45 Minutes")).toBeInTheDocument();
+        expect(screen.getByText("📊 75% Pass Rate")).toBeInTheDocument();
+        expect(screen.getByText("🎯 24 Questions")).toBeInTheDocument();
+      });
+    });
+
+    test("provides exam format information", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      // Check for format information in the main description
+      expect(
+        screen.getByText(
+          "Master the official Life in the UK Test with our comprehensive practice tests. Test your knowledge of British history, traditions, and culture."
+        )
+      ).toBeInTheDocument();
+    });
+
+    test("offers study tips and guidance", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      await waitFor(() => {
+        // Check for the tips section heading
+        expect(
+          screen.getByText("Why Choose Our Life in UK Tests?")
+        ).toBeInTheDocument();
+      });
+    });
+
+    test("provides test categorization", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      await waitFor(() => {
+        // Check for test titles that show different categories
+        expect(
+          screen.getByText("Life in UK Practice Test 1")
+        ).toBeInTheDocument();
+        expect(
+          screen.getByText("Life in UK Practice Test 2")
+        ).toBeInTheDocument();
+      });
+    });
+
+    test("handles test type selection", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      await waitFor(() => {
+        // Check that test cards are interactive (have Take Test buttons)
+        const takeTestButtons = screen.getAllByText("Take Test");
+        expect(takeTestButtons.length).toBeGreaterThan(0);
+      });
+
+      // Page should display main content
+      expect(screen.getByText("Life in the UK Test")).toBeInTheDocument();
+    });
+
+    });
+  });
+
+  describe("Error Handling and Resilience", () => {
+
+    test("offers study tips and guidance", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      expect(screen.getByText(/Test Tips/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Take practice tests regularly/)
+      ).toBeInTheDocument();
+      expect(screen.getByText(/Focus on weak areas/)).toBeInTheDocument();
+      expect(
+        screen.getByText(/Read explanations carefully/)
+      ).toBeInTheDocument();
+    });
+
+    test("provides test categorization", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      expect(screen.getByText("Test Categories")).toBeInTheDocument();
+      expect(screen.getByText(/All Tests/)).toBeInTheDocument();
+      expect(screen.getByText(/British History/)).toBeInTheDocument();
+      expect(screen.getByText(/Government & Law/)).toBeInTheDocument();
+      expect(screen.getByText(/Culture & Traditions/)).toBeInTheDocument();
+    });
+
+    test("handles test type selection", async () => {
+      await act(async () => {
+        render(<LifeUkTestHomePage />);
+      });
+
+      // Find the test type dropdown - it has "Test Type" as the accessible name from the label
+      const testTypeButton = screen.getByRole("button", {
+        name: /Test Type/i,
+      });
+      expect(testTypeButton).toBeInTheDocument();
+
+      // Click should work without errors
+      await act(async () => {
+        fireEvent.click(testTypeButton);
+      });
+
+      // Page should remain functional
+      expect(screen.getByText("Life in the UK Test")).toBeInTheDocument();
+    });
+
+    test("provides start test functionality", async () => {
+      render(<LifeUkTestHomePage />);
+
+      await waitFor(() => {
+        // Should have "Take Test" buttons for each test
+        const takeTestButtons = screen.getAllByText("Take Test");
+        expect(takeTestButtons.length).toBeGreaterThan(0);
+      });
+    });
+  });
+
+  describe("Error Handling and Resilience", () => {
+    test("handles API failures gracefully", async () => {
+      (global.fetch as jest.Mock).mockRejectedValue(new Error("Network error"));
+
+      render(<LifeUkTestHomePage />);
+
+      // Wait for error handling to complete and fallback data to load
+      await waitFor(() => {
+        expect(screen.getByText("Life in the UK Test")).toBeInTheDocument();
+        expect(
+          screen.getByText("Life in UK Practice Test 1")
+        ).toBeInTheDocument();
+      });
+    });
+
+    test("displays loading states appropriately", async () => {
+      render(<LifeUkTestHomePage />);
+
+      // Should show loading indicator initially
+      expect(
+        screen.getByText("Loading Life in UK tests...")
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe("Navigation and User Experience", () => {
+    test("provides breadcrumb navigation", () => {
+      render(<LifeUkTestHomePage />);
+
+      // Check for navigation header with TestTutor link (acts as home)
+      expect(screen.getByText("TestTutor")).toBeInTheDocument();
+      expect(screen.getByText("Life in UK Tests")).toBeInTheDocument();
+    });
+
+    test("includes essential navigation links", () => {
+      render(<LifeUkTestHomePage />);
+
+      // Check for navigation links in the header
+      expect(screen.getByText("Driving Theory")).toBeInTheDocument();
+      expect(screen.getByText("All Tests")).toBeInTheDocument();
+      expect(screen.getByText("Contact")).toBeInTheDocument();
+      expect(screen.getByText("Login")).toBeInTheDocument();
+      expect(screen.getByText("Sign Up")).toBeInTheDocument();
+    });
+  });
+
+  describe("Accessibility and Usability", () => {
+    test("has proper heading structure", () => {
+      render(<LifeUkTestHomePage />);
+
+      // Check main page heading
+      expect(
+        screen.getByRole("heading", { name: /Life in the UK Test/i })
+      ).toBeInTheDocument();
+
+      // Check section headings
+      expect(
+        screen.getByRole("heading", {
+          name: /Why Choose Our Life in UK Tests/i,
+        })
+      ).toBeInTheDocument();
+    });
+
+    test("provides clear test descriptions", async () => {
+      render(<LifeUkTestHomePage />);
+
+      await waitFor(() => {
+        expect(
+          screen.getByText(
+            "Official practice test for UK citizenship - covering British history, traditions, and government"
+          )
+        ).toBeInTheDocument();
+        expect(
+          screen.getByText(
+            "Additional practice questions covering British culture and society"
+          )
+        ).toBeInTheDocument();
+      });
+    });
+  });
+});

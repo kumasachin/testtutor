@@ -1423,6 +1423,7 @@ async function main() {
       create: {
         email: "admin@testtutor.com",
         name: "Test Admin",
+        password: "admin-password-placeholder",
         role: "ADMIN",
       },
     });

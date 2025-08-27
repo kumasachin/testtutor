@@ -4,19 +4,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-interface MockUser {
-  id: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-  createdAt: string;
-  updatedAt: string;
-  isEmailVerified: boolean;
-}
-
-// Mock user database (replace with actual database)
-const users: MockUser[] = [];
+import { prisma } from "@/lib/prisma";
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -28,8 +16,11 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, password } = loginSchema.parse(body);
 
-    // Find user (in real app, query database)
-    const user = users.find((u) => u.email === email);
+    // Find user in database
+    const user = await prisma.user.findUnique({
+      where: { email },
+    });
+
     if (!user) {
       return NextResponse.json(
         { success: false, message: "Invalid email or password" },
@@ -37,8 +28,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check password
+    // Verify password
     const isValidPassword = await bcrypt.compare(password, user.password);
+
     if (!isValidPassword) {
       return NextResponse.json(
         { success: false, message: "Invalid email or password" },
@@ -53,13 +45,17 @@ export async function POST(request: NextRequest) {
       { expiresIn: "7d" }
     );
 
-    // Return user without password
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _, ...userWithoutPassword } = user;
-
     return NextResponse.json({
       success: true,
-      user: userWithoutPassword,
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        avatar: user.avatar,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      },
       token,
     });
   } catch (error) {

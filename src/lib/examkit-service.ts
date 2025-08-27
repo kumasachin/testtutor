@@ -35,6 +35,7 @@ export class ExamKitService {
   static async createUser(data: {
     email: string;
     name?: string;
+    password: string;
     role?: "ADMIN" | "USER";
   }): Promise<ApiResponse<DbUser>> {
     try {
@@ -42,6 +43,7 @@ export class ExamKitService {
         data: {
           email: data.email,
           name: data.name,
+          password: data.password,
           role: data.role || "USER",
         },
       });
