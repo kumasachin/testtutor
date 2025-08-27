@@ -34,7 +34,7 @@ export default function LifeUkTestHomePage() {
       try {
         setLoading(true);
         // Fetch tests specifically for Life in UK domain
-        const response = await fetch("/api/tests?domain=life-in-uk");
+        const response = await fetch("/api/tests?domainName=life-in-uk");
         if (!response.ok) {
           throw new Error("Failed to fetch tests");
         }

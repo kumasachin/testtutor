@@ -34,7 +34,7 @@ export default function DrivingTheoryHomePage() {
       try {
         setLoading(true);
         // Fetch tests specifically for Driving Theory domain
-        const response = await fetch("/api/tests?domain=driving-theory");
+        const response = await fetch("/api/tests?domainName=driving-theory");
         if (!response.ok) {
           throw new Error("Failed to fetch tests");
         }
