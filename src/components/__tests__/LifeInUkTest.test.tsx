@@ -83,7 +83,9 @@ describe("Life in UK Tests Functionality", () => {
     render(<LifeInUkPage />);
 
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith("/api/tests?domain=life-in-uk");
+      expect(global.fetch).toHaveBeenCalledWith(
+        "/api/tests?domainName=life-in-uk"
+      );
     });
   });
 

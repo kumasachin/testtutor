@@ -24,6 +24,17 @@ export default function Home() {
   // const [showTestsDropdown, setShowTestsDropdown] = useState(false);
   // const [showExamsDropdown, setShowExamsDropdown] = useState(false);
 
+  // Test Configuration State
+  const [showConfig, setShowConfig] = useState(false);
+  const [testConfig, setTestConfig] = useState({
+    timeLimit: 45, // minutes
+    passPercentage: 75,
+    shuffleQuestions: true,
+    shuffleAnswers: true,
+    showTimer: true,
+    immediateResults: false,
+  });
+
   const fetchDomains = async () => {
     try {
       const response = await fetch("/api/domains");
@@ -72,6 +83,44 @@ export default function Home() {
 
   const checkAuthStatus = () => {
     setIsLoggedIn(false);
+  };
+
+  // Load saved configuration on component mount
+  useEffect(() => {
+    const savedConfig = localStorage.getItem("testConfig");
+    if (savedConfig) {
+      try {
+        setTestConfig(JSON.parse(savedConfig));
+      } catch (error) {
+        console.error("Failed to load saved test configuration:", error);
+      }
+    }
+  }, []);
+
+  // Save configuration to localStorage
+  const saveTestConfig = (newConfig: typeof testConfig) => {
+    setTestConfig(newConfig);
+    localStorage.setItem("testConfig", JSON.stringify(newConfig));
+  };
+
+  const handleConfigChange = (
+    key: keyof typeof testConfig,
+    value: number | boolean
+  ) => {
+    const newConfig = { ...testConfig, [key]: value };
+    saveTestConfig(newConfig);
+  };
+
+  const resetToDefaults = () => {
+    const defaultConfig = {
+      timeLimit: 45,
+      passPercentage: 75,
+      shuffleQuestions: true,
+      shuffleAnswers: true,
+      showTimer: true,
+      immediateResults: false,
+    };
+    saveTestConfig(defaultConfig);
   };
 
   return (
@@ -296,6 +345,308 @@ export default function Home() {
                 </div>
                 <div className="text-gray-600">Questions</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Test Configuration Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                ⚙️ Customize Your Test Experience
+              </h3>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Personalize your practice tests with these configuration
+                options. Your preferences will be saved for future sessions.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              {/* Configuration Header */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xl font-bold text-white">
+                    Test Settings
+                  </h4>
+                  <button
+                    onClick={() => setShowConfig(!showConfig)}
+                    className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-4 py-2 rounded-lg transition-all"
+                  >
+                    {showConfig ? "Hide Settings" : "Show Settings"}
+                  </button>
+                </div>
+              </div>
+
+              {/* Configuration Content */}
+              {showConfig && (
+                <div className="p-8">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {/* Time Limit */}
+                    <div className="space-y-3">
+                      <label
+                        htmlFor="timeLimit"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        ⏱️ Time Limit (minutes)
+                      </label>
+                      <div className="relative">
+                        <input
+                          id="timeLimit"
+                          type="range"
+                          min="15"
+                          max="120"
+                          value={testConfig.timeLimit}
+                          onChange={(e) =>
+                            handleConfigChange(
+                              "timeLimit",
+                              parseInt(e.target.value)
+                            )
+                          }
+                          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                        />
+                        <div className="flex justify-between text-xs text-gray-500 mt-1">
+                          <span>15 min</span>
+                          <span className="font-bold text-blue-600">
+                            {testConfig.timeLimit} min
+                          </span>
+                          <span>2 hours</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Pass Percentage */}
+                    <div className="space-y-3">
+                      <label
+                        htmlFor="passPercentage"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        🎯 Pass Percentage
+                      </label>
+                      <div className="relative">
+                        <input
+                          id="passPercentage"
+                          type="range"
+                          min="50"
+                          max="100"
+                          value={testConfig.passPercentage}
+                          onChange={(e) =>
+                            handleConfigChange(
+                              "passPercentage",
+                              parseInt(e.target.value)
+                            )
+                          }
+                          className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
+                        />
+                        <div className="flex justify-between text-xs text-gray-500 mt-1">
+                          <span>50%</span>
+                          <span className="font-bold text-green-600">
+                            {testConfig.passPercentage}%
+                          </span>
+                          <span>100%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Shuffle Questions Toggle */}
+                    <div className="space-y-3">
+                      <span
+                        id="shuffleQuestions-label"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        🔀 Shuffle Questions
+                      </span>
+                      <div className="flex items-center space-x-3">
+                        <button
+                          aria-labelledby="shuffleQuestions-label"
+                          onClick={() =>
+                            handleConfigChange(
+                              "shuffleQuestions",
+                              !testConfig.shuffleQuestions
+                            )
+                          }
+                          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                            testConfig.shuffleQuestions
+                              ? "bg-blue-600"
+                              : "bg-gray-200"
+                          }`}
+                        >
+                          <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                              testConfig.shuffleQuestions
+                                ? "translate-x-6"
+                                : "translate-x-1"
+                            }`}
+                          />
+                        </button>
+                        <span className="text-sm text-gray-600">
+                          {testConfig.shuffleQuestions ? "Enabled" : "Disabled"}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Shuffle Answers Toggle */}
+                    <div className="space-y-3">
+                      <span
+                        id="shuffleAnswers-label"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        🎲 Shuffle Answer Options
+                      </span>
+                      <div className="flex items-center space-x-3">
+                        <button
+                          aria-labelledby="shuffleAnswers-label"
+                          onClick={() =>
+                            handleConfigChange(
+                              "shuffleAnswers",
+                              !testConfig.shuffleAnswers
+                            )
+                          }
+                          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                            testConfig.shuffleAnswers
+                              ? "bg-blue-600"
+                              : "bg-gray-200"
+                          }`}
+                        >
+                          <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                              testConfig.shuffleAnswers
+                                ? "translate-x-6"
+                                : "translate-x-1"
+                            }`}
+                          />
+                        </button>
+                        <span className="text-sm text-gray-600">
+                          {testConfig.shuffleAnswers ? "Enabled" : "Disabled"}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Show Timer Toggle */}
+                    <div className="space-y-3">
+                      <span
+                        id="showTimer-label"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        ⏰ Show Timer
+                      </span>
+                      <div className="flex items-center space-x-3">
+                        <button
+                          aria-labelledby="showTimer-label"
+                          onClick={() =>
+                            handleConfigChange(
+                              "showTimer",
+                              !testConfig.showTimer
+                            )
+                          }
+                          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                            testConfig.showTimer ? "bg-blue-600" : "bg-gray-200"
+                          }`}
+                        >
+                          <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                              testConfig.showTimer
+                                ? "translate-x-6"
+                                : "translate-x-1"
+                            }`}
+                          />
+                        </button>
+                        <span className="text-sm text-gray-600">
+                          {testConfig.showTimer ? "Visible" : "Hidden"}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Immediate Results Toggle */}
+                    <div className="space-y-3">
+                      <span
+                        id="immediateResults-label"
+                        className="block text-sm font-semibold text-gray-700"
+                      >
+                        📊 Immediate Results
+                      </span>
+                      <div className="flex items-center space-x-3">
+                        <button
+                          aria-labelledby="immediateResults-label"
+                          onClick={() =>
+                            handleConfigChange(
+                              "immediateResults",
+                              !testConfig.immediateResults
+                            )
+                          }
+                          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                            testConfig.immediateResults
+                              ? "bg-blue-600"
+                              : "bg-gray-200"
+                          }`}
+                        >
+                          <span
+                            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                              testConfig.immediateResults
+                                ? "translate-x-6"
+                                : "translate-x-1"
+                            }`}
+                          />
+                        </button>
+                        <span className="text-sm text-gray-600">
+                          {testConfig.immediateResults
+                            ? "After each question"
+                            : "At test end"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Reset Button and Current Settings Summary */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                      <div className="text-sm text-gray-600">
+                        <strong>Current Settings:</strong>{" "}
+                        {testConfig.timeLimit} min timer,{" "}
+                        {testConfig.passPercentage}% pass rate,
+                        {testConfig.shuffleQuestions
+                          ? " shuffled questions,"
+                          : " ordered questions,"}
+                        {testConfig.shuffleAnswers
+                          ? " shuffled answers"
+                          : " ordered answers"}
+                      </div>
+                      <button
+                        onClick={resetToDefaults}
+                        className="px-6 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-colors font-medium"
+                      >
+                        Reset to Defaults
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Quick Action Buttons */}
+              {!showConfig && (
+                <div className="px-8 py-6 bg-gray-50">
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="text-sm text-gray-600 bg-white px-4 py-2 rounded-lg border">
+                      ⏱️ {testConfig.timeLimit} min timer
+                    </div>
+                    <div className="text-sm text-gray-600 bg-white px-4 py-2 rounded-lg border">
+                      🎯 {testConfig.passPercentage}% pass rate
+                    </div>
+                    <div className="text-sm text-gray-600 bg-white px-4 py-2 rounded-lg border">
+                      🔀{" "}
+                      {testConfig.shuffleQuestions
+                        ? "Questions shuffled"
+                        : "Questions ordered"}
+                    </div>
+                    <div className="text-sm text-gray-600 bg-white px-4 py-2 rounded-lg border">
+                      🎲{" "}
+                      {testConfig.shuffleAnswers
+                        ? "Answers shuffled"
+                        : "Answers ordered"}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>

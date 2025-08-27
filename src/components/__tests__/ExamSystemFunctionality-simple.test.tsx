@@ -139,7 +139,7 @@ describe("Test and Exam System Functionality - Simple", () => {
 
       await waitFor(() => {
         expect(global.fetch).toHaveBeenCalledWith(
-          "/api/tests?domain=life-in-uk"
+          "/api/tests?domainName=life-in-uk"
         );
       });
 
