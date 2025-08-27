@@ -50,7 +50,7 @@ export default function DrivingTheoryTestPage() {
         const data = await response.json();
 
         // If no test from API, use fallback data
-        if (!data.test) {
+        if (!data.data || !data.success) {
           const fallbackTest: Test = {
             id: testId,
             title: "Driving Theory Practice Test",
