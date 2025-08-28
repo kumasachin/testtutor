@@ -176,8 +176,10 @@ export class ExamKitService {
               difficulty: question.difficulty,
               order: index,
               tags: Array.isArray(question.tags)
-                ? question.tags.join(",")
-                : question.tags,
+                ? question.tags
+                : question.tags
+                  ? [question.tags]
+                  : [],
               options: {
                 create: question.options.map((option, optIndex) => ({
                   label: option.label,
@@ -211,8 +213,10 @@ export class ExamKitService {
 
   static async getTestById(id: string, includeQuestions = false) {
     try {
-      const test = await prisma.test.findUnique({
-        where: { id },
+      const test = await prisma.test.findFirst({
+        where: {
+          OR: [{ id }, { slug: id }],
+        },
         include: {
           creator: true,
           domain: true,

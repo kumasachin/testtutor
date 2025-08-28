@@ -92,7 +92,7 @@ async function importTestFromJSON(
             type: questionData.type || "SINGLE_CHOICE",
             difficulty: questionData.difficulty || "MEDIUM",
             order: i + 1,
-            tags: questionData.tags ? questionData.tags.join(",") : null,
+            tags: questionData.tags ? questionData.tags : [],
             options: {
               create: questionData.options.map((option, index) => ({
                 label: option.label,

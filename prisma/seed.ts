@@ -2362,6 +2362,7 @@ async function main() {
       const test = await prisma.test.create({
         data: {
           id: testData.id,
+          slug: testData.id,
           title: testData.title,
           description: testData.description,
           domainId: lifeInUKDomain.id,
@@ -2581,6 +2582,7 @@ async function main() {
       const test = await prisma.test.create({
         data: {
           id: testData.id,
+          slug: testData.id,
           title: testData.title,
           description: testData.description,
           domainId: drivingTheoryDomain.id,
@@ -2607,7 +2609,7 @@ async function main() {
             order: questionData.order,
             points: questionData.points,
             difficulty: "MEDIUM",
-            tags: "driving-theory",
+            tags: ["driving-theory"],
             options: {
               create: questionData.options.map((option) => ({
                 label: option.label,
