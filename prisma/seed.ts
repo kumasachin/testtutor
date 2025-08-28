@@ -11,6 +11,18 @@ const comprehensiveLifeInUKTests = [
       "Official practice test covering British history, culture, and government - 24 questions",
     timeLimit: 45,
     passPercentage: 75,
+    config: {
+      showResultsMode: "end", // Show results at end of test
+      showExplanations: true,
+      showCorrectAnswers: true,
+      allowReview: true,
+      shuffleQuestions: false, // Questions in sequence
+      shuffleAnswers: false, // Options in fixed position
+      timeLimit: 45, // 45 minutes for whole test
+      passingScore: 75,
+      questionTimeLimit: null, // No time limit per question
+      allowQuestionNavigation: true,
+    },
     questions: [
       // Question 1
       {
@@ -404,8 +416,20 @@ const comprehensiveLifeInUKTests = [
     title: "Life in the UK Test 2",
     description:
       "Official practice test covering Tudor period, Reformation, and British Empire - 24 questions",
-    timeLimit: 45,
-    passPercentage: 75,
+    timeLimit: 30,
+    passPercentage: 70,
+    config: {
+      showResultsMode: "immediate", // Show results after each question
+      showExplanations: true,
+      showCorrectAnswers: true,
+      allowReview: true,
+      shuffleQuestions: true, // Questions shuffled each time
+      shuffleAnswers: true, // Answer options shuffled
+      timeLimit: 30, // 30 minutes for whole test
+      passingScore: 70,
+      questionTimeLimit: 90, // 90 seconds per question
+      allowQuestionNavigation: false, // Must answer in sequence
+    },
     questions: [
       // Tudor Period and Reformation - Questions 1-8
       {
@@ -798,8 +822,20 @@ const comprehensiveLifeInUKTests = [
     title: "Life in the UK Test 3",
     description:
       "Official practice test covering Industrial Revolution and Victorian Britain - 24 questions",
-    timeLimit: 45,
-    passPercentage: 75,
+    timeLimit: null,
+    passPercentage: 80,
+    config: {
+      showResultsMode: "end", // Show results at end
+      showExplanations: true,
+      showCorrectAnswers: true,
+      allowReview: true,
+      shuffleQuestions: true, // Questions shuffled
+      shuffleAnswers: false, // Options in fixed position
+      timeLimit: null, // No time limit for test
+      passingScore: 80,
+      questionTimeLimit: null, // No time limit per question
+      allowQuestionNavigation: true, // Can jump between questions
+    },
     questions: [
       {
         stem: "When did the Industrial Revolution begin?",
@@ -1176,8 +1212,20 @@ const comprehensiveLifeInUKTests = [
     title: "Life in the UK Test 4",
     description:
       "Official practice test covering 20th century Britain and World Wars - 24 questions",
-    timeLimit: 45,
+    timeLimit: 60,
     passPercentage: 75,
+    config: {
+      showResultsMode: "immediate",
+      showExplanations: false, // No explanations shown
+      showCorrectAnswers: false, // Correct answers not shown immediately
+      allowReview: false, // No review allowed
+      shuffleQuestions: false,
+      shuffleAnswers: true, // Only answer options shuffled
+      timeLimit: 60, // 60 minutes for test
+      passingScore: 75,
+      questionTimeLimit: 120, // 2 minutes per question
+      allowQuestionNavigation: true,
+    },
     questions: [
       {
         stem: "When did the First World War begin?",
@@ -1549,8 +1597,20 @@ const comprehensiveLifeInUKTests = [
     title: "Life in the UK Test 5",
     description:
       "Official practice test covering modern Britain and contemporary society - 24 questions",
-    timeLimit: 45,
-    passPercentage: 75,
+    timeLimit: 40,
+    passPercentage: 85,
+    config: {
+      showResultsMode: "never", // Never show results during test
+      showExplanations: true,
+      showCorrectAnswers: true,
+      allowReview: true,
+      shuffleQuestions: true, // Both questions and answers shuffled
+      shuffleAnswers: true,
+      timeLimit: 40,
+      passingScore: 85, // Higher passing score
+      questionTimeLimit: 60, // 1 minute per question
+      allowQuestionNavigation: false, // Sequential only
+    },
     questions: [
       {
         stem: "Who was the first woman Prime Minister of the UK?",
@@ -1897,8 +1957,20 @@ const comprehensiveLifeInUKTests = [
     title: "Life in the UK Test 6",
     description:
       "Official practice test covering British government, law, and citizenship - 24 questions",
-    timeLimit: 45,
-    passPercentage: 75,
+    timeLimit: 35,
+    passPercentage: 90,
+    config: {
+      showResultsMode: "end",
+      showExplanations: true,
+      showCorrectAnswers: true,
+      allowReview: true,
+      shuffleQuestions: false, // Questions in order
+      shuffleAnswers: false, // Answers in order
+      timeLimit: 35, // Short time limit
+      passingScore: 90, // Very high passing score
+      questionTimeLimit: 45, // 45 seconds per question
+      allowQuestionNavigation: true,
+    },
     questions: [
       {
         stem: "How often are general elections held in the UK?",
@@ -2368,20 +2440,11 @@ async function main() {
           domainId: lifeInUKDomain.id,
           creatorId: testUser.id,
           status: "PUBLISHED",
-          config: {
-            showResultsMode: "end",
-            showExplanations: true,
-            showCorrectAnswers: true,
-            allowReview: true,
-            shuffleQuestions: false,
-            shuffleAnswers: false,
-            timeLimit: testData.timeLimit,
-            passingScore: testData.passPercentage,
-          },
+          config: testData.config,
           passPercentage: testData.passPercentage,
           timeLimit: testData.timeLimit,
-          shuffleQuestions: false,
-          shuffleAnswers: false,
+          shuffleQuestions: testData.config.shuffleQuestions,
+          shuffleAnswers: testData.config.shuffleAnswers,
           isPublic: true,
           publishedAt: new Date(),
         },
